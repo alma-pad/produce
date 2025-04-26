@@ -1,7 +1,7 @@
 :root {
     --color-primary: #5F8E45;     /* Default to Summer */
-    --color-secondary: #FFC2B0;
-    --color-background: #F7F0DC;
+    --color-secondary: #C6EAFF;
+    --color-background: #FFF9E7;
     --color-text: #333333;
   }
 
@@ -107,6 +107,7 @@ p.small{
 
 .card{
     text-align: center;
+    /* background-color: lightgray; */
     padding: 10px; 
     width: 100px; 
     transition: opacity .3s ease-in-out;
