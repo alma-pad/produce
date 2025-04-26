@@ -1,9 +1,10 @@
 // import { producePeriods } from './produce-data.js';
+import {producePeriods, seasonThemes, seasonMapping} from "./produce-data.js";
 
 document.addEventListener('DOMContentLoaded', function() {
   var now = new Date(); 
   // change date for testing purposes 
-  var now = new Date('2025-07-22');
+  //var now = new Date('2025-07-22');
 
   // Insert date and time into HTML
   var datetime = now.toLocaleDateString('en-US', {
@@ -78,16 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
   } 
 
   
-  // NO SPACES BETWEEN ACTIVE PERIODS
-  const producePeriods = {
-    "Strawberry": "Early April,Late April,Early May",
-    "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
-    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
-    "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
 
-    "Placeholder": "Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
-    // Add more produce items as needed
-  };
 
    // Apply data attributes to cards based on their content
    const cards = document.querySelectorAll('.card');
@@ -199,62 +191,14 @@ function filterCardsByPeriod(period) {
 
 
 // map activePeriod to season
-const seasonMapping = {
-  "Early January": "Winter",
-  "Late January": "Winter",
-  "Early February": "Winter",
-  "Late February": "Winter",
-  "Early March": "Spring",
-  "Late March": "Spring",
-  "Early April": "Spring",
-  "Late April": "Spring",
-  "Early May": "Spring",
-  "Late May": "Spring",
-  "Early June": "Spring",
-  "Late June": "Summer",
-  "Early July": "Summer",
-  "Late July": "Summer",
-  "Early August": "Summer",
-  "Late August": "Summer",
-  "Early September": "Summer",
-  "Late September": "Fall",
-  "Early October": "Fall",
-  "Late October": "Fall",
-  "Early November": "Fall",
-  "Late November": "Fall",
-  "Early December": "Winter",
-  "Late December": "Winter"
-};
+// const seasonMapping is defined in produce-data.js 
 
 
 // Set season color themes  
-// update the comments
-const seasonThemes = {
-  "Spring": {
-    primary: "#5F8E45",      // Green (header)
-    secondary: "#FFC2B0",    // Soft pink (footer)
-    background: "#F7F0DC",   // Light cream
-    text: "#333333"          // Dark text
-  },
-  "Summer": {
-    primary: "#FF7F50",      // Coral (header)
-    secondary: "#4FB0C6",    // Turquoise (footer)
-    background: "#FFF8E1",   // Warm light
-    text: "#333333"          // Dark text
-  },
-  "Fall": {
-    primary: "D2691E" ,      // Firebrick red (header)
-    secondary: "#D2691E",    // Chocolate (footer)
-    background: "#F5D6A7",   // Light orange/tan
-    text: "#4A3C31"          // Dark brown text
-  },
-  "Winter": {
-    primary: "#4682B4",      // Steel blue (header)
-    secondary: "#708090",    // Slate gray (footer)
-    background: "#E6F2FF",   // Very light blue
-    text: "#2C3E50"          // Dark blue text
-  }
-};
+// const seasonThemes is defined in produce-data.js
+
+// define which produce item is in season during which activePeriod
+// const producePeriods is defined in produce-data.js
 
 
 function applySeasonTheme(activePeriod) {
