@@ -1,3 +1,4 @@
+// import { producePeriods } from './produce-data.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   var now = new Date(); 
@@ -75,11 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
   } else if (month == 12 && day >= 16) {
     activePeriod = 'Late December';
   } 
+
   
+  // NO SPACES BETWEEN ACTIVE PERIODS
   const producePeriods = {
     "Strawberry": "Early April,Late April,Early May",
-    "Tomato": "Late July",
-    "Pear": "Late December",
+    "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
+    "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
+
     "Placeholder": "Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
     // Add more produce items as needed
   };
@@ -113,10 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });  
 
 
-
+  applySeasonTheme(activePeriod);
  
   filterCardsByPeriod(activePeriod);
 
+ 
 
 
 
@@ -145,6 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Filter cards
       filterCardsByPeriod(selectedPeriod);
+
+      // Change the season theme 
+      applySeasonTheme(selectedPeriod);
   });
   });
 
@@ -184,4 +193,80 @@ function filterCardsByPeriod(period) {
       }, 300);
     }
   });
-}
+};
+
+
+
+
+// map activePeriod to season
+const seasonMapping = {
+  "Early January": "Winter",
+  "Late January": "Winter",
+  "Early February": "Winter",
+  "Late February": "Winter",
+  "Early March": "Spring",
+  "Late March": "Spring",
+  "Early April": "Spring",
+  "Late April": "Spring",
+  "Early May": "Spring",
+  "Late May": "Spring",
+  "Early June": "Spring",
+  "Late June": "Summer",
+  "Early July": "Summer",
+  "Late July": "Summer",
+  "Early August": "Summer",
+  "Late August": "Summer",
+  "Early September": "Summer",
+  "Late September": "Fall",
+  "Early October": "Fall",
+  "Late October": "Fall",
+  "Early November": "Fall",
+  "Late November": "Fall",
+  "Early December": "Winter",
+  "Late December": "Winter"
+};
+
+
+// Set season color themes  
+// update the comments
+const seasonThemes = {
+  "Spring": {
+    primary: "#5F8E45",      // Green (header)
+    secondary: "#FFC2B0",    // Soft pink (footer)
+    background: "#F7F0DC",   // Light cream
+    text: "#333333"          // Dark text
+  },
+  "Summer": {
+    primary: "#FF7F50",      // Coral (header)
+    secondary: "#4FB0C6",    // Turquoise (footer)
+    background: "#FFF8E1",   // Warm light
+    text: "#333333"          // Dark text
+  },
+  "Fall": {
+    primary: "D2691E" ,      // Firebrick red (header)
+    secondary: "#D2691E",    // Chocolate (footer)
+    background: "#F5D6A7",   // Light orange/tan
+    text: "#4A3C31"          // Dark brown text
+  },
+  "Winter": {
+    primary: "#4682B4",      // Steel blue (header)
+    secondary: "#708090",    // Slate gray (footer)
+    background: "#E6F2FF",   // Very light blue
+    text: "#2C3E50"          // Dark blue text
+  }
+};
+
+
+function applySeasonTheme(activePeriod) {
+  const season = seasonMapping[activePeriod] || "Summer";
+  
+  // Get the theme colors
+  const theme = seasonThemes[season];
+  document.documentElement.style.setProperty('--color-primary', theme.primary);
+  document.documentElement.style.setProperty('--color-secondary', theme.secondary);
+  document.documentElement.style.setProperty('--color-background', theme.background);
+  document.documentElement.style.setProperty('--color-text', theme.text);
+  
+  // Add season class to body
+  document.body.className = season.toLowerCase();
+};
