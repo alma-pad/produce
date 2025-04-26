@@ -107,7 +107,6 @@ p.small{
 
 .card{
     text-align: center;
-    background-color: lightgray;
     padding: 10px; 
     width: 100px; 
     transition: opacity .3s ease-in-out;
