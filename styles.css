@@ -19,7 +19,7 @@ body {
 
 .dropdown {
     position: relative; 
-    width: 250px; 
+    width: 300px; 
     max-height: 200px; 
     margin: 0 auto; 
 
@@ -124,7 +124,7 @@ p.small{
     display: flex;
     flex-wrap: wrap;
     gap: 150px;
-    padding: 60px 20px;
+    padding: 60px 200px;
     margin: 10px;
     justify-content: center;
   }
@@ -176,7 +176,6 @@ img {
     background: var(--color-background);
     border-radius: 0.5em;
     border-style: solid;
-    /* box-shadow: 0 0.5em 1em black;  */
     text-align: left;
     color: var(--color-primary);
     position: absolute; 
