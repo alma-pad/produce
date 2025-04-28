@@ -291,7 +291,7 @@ img {
         min-width: 50px; /* Ensure cards don't get too small */
     }
     .card p {
-        font-size: 12px; 
+        font-size: 14px; 
     }
 
     img {
@@ -312,7 +312,7 @@ img {
     }
 
     .footer p {
-        font-size: 12px; 
+        font-size: 14px; 
     }
   }
   
