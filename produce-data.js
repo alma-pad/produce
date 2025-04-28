@@ -4,28 +4,28 @@ export {producePeriods, seasonThemes, seasonMapping};
 
 const seasonThemes = {
   "Spring": {
-    primary: "#DE688B",      // pink
-    secondary: "#D6B9FF",    // light purple
-    background: "#FEFAFF",   // very light purple
-    text: "#333333"          // Dark text
+    primary: "#F06668",      
+    secondary: "#E2F0B2",    
+    background: "#FBFEEB",   
+    text: "#333333"          
   },
   "Summer": {
-    primary: "#5F8E45",      // moss green
-    secondary: "#C6EAFF",    // light blue
-    background: "#FFF9E7",   // cream
-    text: "#333333"          // Dark text
+    primary: "#5F8E45",      
+    secondary: "#FFDA75",    
+    background: "#FFF9E7",   
+    text: "#333333"          
   },
   "Fall": {
-    primary: "#A52A10",      // Firebrick red (header)
-    secondary: "#FFB73B",    // gold
-    background: "#FCE7E1",   // Light orange/tan
-    text: "#4A3C31"          // Dark brown text
+    primary: "#D86703",      
+    secondary: "#D6D5E7",    
+    background: "#FFF3F0",  
+    text: "#4A3C31"          
   },
   "Winter": {
-    primary: "#5C8DB8",      // Steel blue (header)  
-    secondary: "#C1B9C8",    // Slate gray (footer)
-    background: "#EBF4EB",   // Very light blue
-    text: "#2C3E50"          // Dark blue text
+    primary: "#588AB6",      
+    secondary: "#DBDBDB",             
+    background: "#EFF2F5",   
+    text: "#2C3E50"        
   }
 };
 
@@ -69,7 +69,7 @@ const producePeriods = {
     "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
 
     // placeholder fruit 
-    "Placeholder": "Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
+    "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
   
   };
 
