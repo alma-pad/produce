@@ -1,14 +1,14 @@
 
-/* Work on the styles color palettes!!!!!!!! */
+
 :root {
     --color-primary: #5F8E45;     /* Default to Summer */
-    --color-secondary: #C6EAFF;
+    --color-secondary: #FFDA75;
     --color-background: #FFF9E7;
     --color-text: #333333;
   }
 
 body {
-    background-color: var(--color-background);
+   background-color: var(--color-background);
    color: var(--color-text);
   }
   
@@ -79,7 +79,7 @@ body {
 
 
 h1 {
-   color: #F7F0DC; 
+   color: var(--color-background); 
    font-family: "Libre Caslon Text", serif; 
    font-weight: 700; 
    font-style: normal;
@@ -89,7 +89,7 @@ h1 {
 
 
 h2 {
-    color: #FFC2B0;
+    color: var(--color-secondary);
     font-family: "Libre Caslon Text", serif; 
     font-weight: 700; 
     font-style: normal;
@@ -174,11 +174,12 @@ img {
 .menu{
     list-style: none; 
     padding: .5em .5em; 
-    background: orange; 
+    background: var(--color-background);
     border-radius: 0.5em;
+    border-style: solid;
     /* box-shadow: 0 0.5em 1em black;  */
     text-align: left;
-    color: #5F8E45;
+    color: var(--color-primary);
     position: absolute; 
     top: 3em; 
     left: 50%; 
@@ -195,11 +196,11 @@ img {
 }
 
 .select:hover{
-    background:rebeccapurple;
+    background: var(--color-secondary);
 }
 
 .select-clicked{
-    border: 2px #5F8E45 solid; 
+    border: 2px var(--color-primary) solid; 
     box-shadow: 0 0 0.8 em lightblue; 
 }
 
@@ -219,7 +220,7 @@ img {
 
 
 .active {
-    background: yellow; 
+    background: var(--color-secondary); 
     width: 100%; 
     box-sizing: border-box; 
     margin: 0; 
