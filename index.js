@@ -1,3 +1,4 @@
+
 // import { producePeriods } from './produce-data.js';
 import {producePeriods, seasonThemes, seasonMapping} from "./produce-data.js";
 
@@ -21,11 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var day = now.getDate();
   var activePeriod = '';
 
-  const select = document.querySelector('.select');
-  const caret = document.querySelector('.caret');
-  const menu = document.querySelector('.menu');
-  const options = document.querySelectorAll('.menu li');
-  const selected = document.querySelector('.selected'); 
+
 
   // Set active period based on date
   if (month == 1 && day < 16) {
@@ -78,7 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
     activePeriod = 'Late December';
   } 
 
-  
+  const select = document.querySelector('.select');
+  const caret = document.querySelector('.caret');
+  const menu = document.querySelector('.menu');
+  const options = document.querySelectorAll('.menu li');
+  const selected = document.querySelector('.selected'); 
+  const dropdown = document.querySelector('.dropdown');  
 
 
    // Apply data attributes to cards based on their content
@@ -117,13 +119,33 @@ document.addEventListener('DOMContentLoaded', function() {
  
 
 
-
+  //toggle drop down when the user clicks on it 
   select.addEventListener('click', () => {
     select.classList.toggle('select-clicked'); 
     caret.classList.toggle('caret-rotate'); 
     menu.classList.toggle('menu-open');
   });
+
+   // Close dropdown when clicking outside
+   document.addEventListener('click', (e) => {
+    // Check if the click was outside the dropdown
+    if (!dropdown.contains(e.target)) {
+      select.classList.remove('select-clicked');
+      caret.classList.remove('caret-rotate');
+      menu.classList.remove('menu-open');
+    }
+  });
+
+  dropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  select.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    select.click();
+  });
   
+
   options.forEach(option => {
     option.addEventListener('click', () => {
       selected.innerText = option.innerText; 
@@ -131,23 +153,31 @@ document.addEventListener('DOMContentLoaded', function() {
       caret.classList.remove('caret-rotate'); 
       menu.classList.remove('menu-open');
   
-    // remove active class from all option elements
-    options.forEach(option => {
-      option.classList.remove('active'); 
-    });
-    // add active class to clicked option element
-    option.classList.add('active'); 
-  
-       // Get the selected period
+      // remove active class from all option elements
+      options.forEach(option => {
+        option.classList.remove('active'); 
+      });
+      // add active class to clicked option element
+      option.classList.add('active'); 
+    
+      // Get the selected period
       const selectedPeriod = option.textContent.trim();
-      
+        
       // Filter cards
       filterCardsByPeriod(selectedPeriod);
 
       // Change the season theme 
       applySeasonTheme(selectedPeriod);
+   });
+
+    option.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    option.click();
+    });
+
   });
-  });
+
+
 
 
 });
