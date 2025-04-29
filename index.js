@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // touch screen tracking
   let touchStartY = 0;
   let touchEndY = 0;
-  const touchThreshold = 10; //adjust this pixel size to liking
+  const touchThreshold = 20; //adjust this pixel size to liking
 
 
    // Apply data attributes to cards based on their content
