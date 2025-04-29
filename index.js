@@ -172,7 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     option.addEventListener('touchend', (e) => {
     e.preventDefault();
-    option.click();
     });
 
   });
