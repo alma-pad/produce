@@ -82,6 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const selected = document.querySelector('.selected'); 
   const dropdown = document.querySelector('.dropdown');  
 
+  // touch screen tracking
+  let touchStartY = 0;
+  let touchEndY = 0;
+  const touchThreshold = 10; //adjust this pixel size to liking
+
 
    // Apply data attributes to cards based on their content
    const cards = document.querySelectorAll('.card');
@@ -140,9 +145,17 @@ document.addEventListener('DOMContentLoaded', function() {
     e.stopPropagation();
   });
 
+  select.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  });
+
   select.addEventListener('touchend', (e) => {
-    e.preventDefault();
-    // select.click();
+    touchEndY = e.changedTouches[0].clientY;
+
+    if (Math.abs(touchEndY - touchStartY) < touchThreshold) {
+      e.preventDefault();
+      select.click();
+    }
   });
   
 
@@ -170,9 +183,20 @@ document.addEventListener('DOMContentLoaded', function() {
       applySeasonTheme(selectedPeriod);
    });
 
-    // option.addEventListener('touchend', (e) => {
-    // e.preventDefault();
-    // });
+   // for mobile 
+    option.addEventListener('touchend', (e) => {
+      touchStartY = e.touches[0].clientY;
+    });
+
+
+    option.addEventListener('touchend', (e) => {
+      touchEndY = e.changedTouches[0].clientY;
+      
+      if (Math.abs(touchEndY - touchStartY) < touchThreshold) {
+        e.preventDefault();
+        option.click();
+      }
+    });
 
   });
 
