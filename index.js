@@ -170,9 +170,9 @@ document.addEventListener('DOMContentLoaded', function() {
       applySeasonTheme(selectedPeriod);
    });
 
-    option.addEventListener('touchend', (e) => {
-    e.preventDefault();
-    });
+    // option.addEventListener('touchend', (e) => {
+    // e.preventDefault();
+    // });
 
   });
 
