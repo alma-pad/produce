@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   select.addEventListener('touchend', (e) => {
     e.preventDefault();
-    select.click();
+    // select.click();
   });
   
 
