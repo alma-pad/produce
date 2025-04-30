@@ -3,8 +3,16 @@
 import {producePeriods, seasonThemes, seasonMapping} from "./produce-data.js";
 
 document.addEventListener('DOMContentLoaded', function() {
+
+   // touch screen tracking
+   // adjust touch sensitivity here 
+   let touchStartY = 0;
+   let touchEndY = 0;
+   const touchThreshold = 5; 
+
+
   var now = new Date(); 
-  // change date for testing purposes 
+  // test other dates
   //var now = new Date('2025-07-22');
 
   // Insert date and time into HTML
@@ -82,10 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const selected = document.querySelector('.selected'); 
   const dropdown = document.querySelector('.dropdown');  
 
-  // touch screen tracking
-  let touchStartY = 0;
-  let touchEndY = 0;
-  const touchThreshold = 5; //adjust this pixel size to liking
+ 
 
 
    // Apply data attributes to cards based on their content
