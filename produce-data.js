@@ -27,7 +27,7 @@ const seasonThemes = {
     background: "#EFF2F5",   
     text: "#2C3E50"        
   }
-};
+};z
 
 
 const seasonMapping = {
