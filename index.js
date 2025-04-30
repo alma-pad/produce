@@ -103,6 +103,17 @@ document.addEventListener('DOMContentLoaded', function() {
      if (producePeriods[produceName]) {
        card.dataset.activeperiod = producePeriods[produceName];
      }
+
+     card.style.cursor = 'pointer';
+     card.addEventListener('click', () => {
+
+       // Get the produce name and create a URL-friendly version (lowercase, no spaces)
+       const produceName = card.querySelector('p').textContent.trim();
+       const produceId = produceName.toLowerCase().replace(/\s+/g, '');
+
+       // Navigate to the produce detail page
+       window.location.href = `produce.html?id=${produceId}`;
+     });
    });
 
   // Set active class on the appropriate menu item
