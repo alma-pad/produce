@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
        const produceId = produceName.toLowerCase().replace(/\s+/g, '');
 
        // Navigate to the produce detail page
-       window.location.href = `produce.html?id=${produceId}`;
+       window.location.href = `produce-details.html?id=${produceId}`;
      });
    });
 
