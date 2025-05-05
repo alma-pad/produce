@@ -1,4 +1,6 @@
-import { seasonThemes, seasonMapping } from "./produce-data.js";
+// produce detail page  
+
+import { seasonThemes, seasonMapping, produceData} from "./produce-data.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   // Get the produce ID from the URL parameter
@@ -27,9 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('produce-img').src = produce.image;
   document.getElementById('produce-img').alt = produce.name;
 
-  document.getElementById('produce-season').textContent = produce.season;
-  document.getElementById('produce-about').textContent = produce.about;
-  document.getElementById('produce-benefits').textContent = produce.benefits;
+  const sections = [
+    { id: 'produce-season', property: 'season', label: 'Season' },
+    { id: 'produce-benefits', property: 'benefits', label: 'Benefits' },
+    { id: 'produce-recipes', property: 'recipes', label: 'Recipes' },
+    { id: 'produce-notes', property: 'notes', label: 'Notes' }
+  ];
+
+  sections.forEach(section => {
+    const element = document.getElementById(section.id);
+    const parentSection = element.closest('.info-section');
+    
+    if (produce[section.property]) {
+      // If the property exists, show the section and set the content
+      element.textContent = produce[section.property];
+      parentSection.style.display = 'block'; // Make sure it's visible
+    } else {
+      // If the property doesn't exist, hide the entire section
+      parentSection.style.display = 'none';
+    }
+  });
 
   // Apply appropriate season theme based on current produce's peak season
   const peakSeason = determinePeakSeason(produce.season);
@@ -110,48 +129,3 @@ function applySeasonTheme(activePeriod) {
   document.body.className = season.toLowerCase();
 }
 
-// Produce data with detailed information
-const produceData = {
-  avocado: {
-    name: "Avocado",
-    image: "./images/avocado.png",
-    season: "Early June through Late Aug",
-    about: "This is a placeholder for future produce items.",
-    benefits: "Benefits information will be added soon."
-  },
-  blueberry: {
-    name: "Blueberry",
-    image: "./images/blueberry.png",
-    season: "Late April through Early August",
-    about: "This is a placeholder for future produce items.",
-    benefits: "Benefits information will be added soon."
-  },
-  strawberry: {
-    name: "Strawberry",
-    image: "./images/strawberry.png",
-    season: "Late April through Early July",
-    about: "This is a placeholder for future produce items.",
-    benefits: "Benefits information will be added soon."
-  },
-  tomato: {
-    name: "Tomato",
-    image: "./images/tomato.png",
-    season: "Late May through Late September",
-    about: "This is a placeholder for future produce items.",
-    benefits: "Benefits information will be added soon."
-  },
-  pear: {
-    name: "Pear",
-    image: "./images/pear.png",
-    season: "Peak season: Late August through Early November",
-    about: "This is a placeholder for future produce items.",
-    benefits: "Benefits information will be added soon."
-  },
-  placeholder: {
-    name: "Placeholder",
-    image: "./images/strawberry_placeholder.jpg",
-    season: "Season information will be added soon",
-    about: "This is a placeholder for future produce items.",
-    benefits: "Benefits information will be added soon."
-  }
-};
