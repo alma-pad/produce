@@ -1,5 +1,91 @@
+// add all the data about produce and seasons here   
+
+
+export {producePeriods, seasonThemes, seasonMapping, produceData};
+
+
+// ALPHABETICAL ORDERING!!!!!!!!!!!! 
+// NO SPACES BETWEEN ACTIVE PERIODS!!!!!!!!!!!!!!!!!!!!!!!!
+const producePeriods = {
+    "Avocado" : "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September",
+    "Apple": "Early September,Late September,Early October,Late October,Early November",
+    "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
+    "Lemon": "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
+    "Pomegranate": "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    "Strawberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
+    "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
+
+    // placeholder fruit 
+    "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
   
-export {producePeriods, seasonThemes, seasonMapping}; 
+  };
+
+
+
+// Produce data with detailed information
+const produceData = {
+  avocado: {
+    name: "Avocado",
+    image: "./images/avocado.png",
+    season: "Early April through Early September",
+    benefits: "Benefits information will be added soon.",
+    recipes: "Recipes will be added soon", 
+    notes: "Notes will be added soon"
+  },
+  apple: {
+    name: "Apple",
+    image: "./images/apple.png",
+    season: "Early September through Early November",
+    benefits: "Apples contain pectin, a soluble fiber that lowers cholesterol and feeds beneficial gut bacteria and supports a healthy gut microbiome. They also contain various phytochemicals that benefit the immune system, support bone density, and may reduce the risk of chronic disease.", 
+    recipes: "pie!!"
+  },
+  blueberry: {
+    name: "Blueberry",
+    image: "./images/blueberry.png",
+    season: "Late April through Early August",
+    benefits: "Benefits information will be added soon."
+  },
+
+  lemon: {
+    name: "Lemon",
+    image: "./images/lemon.png",
+    season: "Early December through Late March",
+    benefits: "Benefits information will be added soon."
+  },
+
+  pomegranate: {
+    name: "Pomegranate",
+    image: "./images/pomegranate.png",
+    season: "Late September through Late December",
+    benefits: "Benefits information will be added soon."
+  },
+
+  strawberry: {
+    name: "Strawberry",
+    image: "./images/strawberry.png",
+    season: "Late April through Early July",
+    // benefits: "benefits of strawberries"
+  },
+  tomato: {
+    name: "Tomato",
+    image: "./images/tomato.png",
+    season: "Late May through Late September",
+    benefits: "Benefits information will be added soon."
+  },
+  pear: {
+    name: "Pear",
+    image: "./images/pear.png",
+    season: "Peak season: Late August through Early November",
+    benefits: "Benefits information will be added soon."
+  },
+  placeholder: {
+    name: "Placeholder",
+    image: "./images/strawberry_placeholder.jpg",
+    season: "Season information will be added soon",
+    benefits: "Benefits information will be added soon."
+  }
+};
 
 
 const seasonThemes = {
@@ -56,22 +142,3 @@ const seasonMapping = {
   "Early December": "Winter",
   "Late December": "Winter"
 };
-
-
-  // ALPHABETICAL ORDERING!!!!!!!!!!!! 
-  // NO SPACES BETWEEN ACTIVE PERIODS!!!!!!!!!!!!!!!!!!!!!!!!
-const producePeriods = {
-    "Avocado" : "Early June,Late June,Early July,Late July,Early August,Late August",
-    "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
-
-    "Strawberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
-    "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
-    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
-
-    // placeholder fruit 
-    "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
-  
-  };
-
-
-
