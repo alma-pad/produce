@@ -29,9 +29,14 @@ const produceData = {
     name: "Avocado",
     image: "./images/avocado.png",
     season: "Early April through Early September",
-    benefits: "Benefits information will be added soon.",
-    recipes: "Recipes will be added soon", 
-    notes: "Notes will be added soon"
+    benefits: "Rich in heart-healthy monounsaturated fats, avocados provide a creamy satisfaction while supporting brain function and nutrient absorption. They're packed with potassium, fiber, and various vitamins and minerals, and their versatility makes them perfect for everything from breakfast to dessert.",
+    recipes: [
+      "Avocado toast is always a classic", 
+      "Guacamole", 
+      "Avocado salad with cucumber", 
+      "Avocado brownies"
+    ],
+    notes: "Fun fact: Alma has an avocado hair clip"
   },
   apple: {
     name: "Apple",
