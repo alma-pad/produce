@@ -11,10 +11,13 @@ const producePeriods = {
     "Apple": "Early September,Late September,Early October,Late October,Early November",
     "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
     "Lemon": "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
+    "Orange":"Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
+    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
     "Pomegranate": "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     "Strawberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
     "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
-    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
+    
+    
 
     // placeholder fruit 
     "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
@@ -72,6 +75,21 @@ const produceData = {
     ],
   },
 
+
+  orange: {
+    name: "Orange",
+    image: "./images/orange.png",
+    season: "Early January through Late April",
+    benefits: "Although oranges are known for their high vitamin C content, they also have other nutrients beneficial for hydration, digestion, and immune health. Additionally, they help boost collgen production, which is important for skin elasticity. Oranges are refreshing and filling. ", 
+    recipes: [
+      "Fennel orange salad",
+      "Chinese chicken salad",
+      "Orange, carrot, and ginger juice",
+      "Orange creamsicle overnight oats",
+      "Orange cardamom olive oil cake"
+    ],
+  },
+
   pomegranate: {
     name: "Pomegranate",
     image: "./images/pomegranate.png",
@@ -100,7 +118,13 @@ const produceData = {
     name: "Tomato",
     image: "./images/tomato.png",
     season: "Late May through Late September",
-    benefits: "Benefits information will be added soon."
+    benefits: "Tomatoes contain lycopene, a powerful antioxidant that becomes more bioavailable when cooked, protecting your skin and heart while potentially reducing cancer risk. Their versatility shines in countless cuisines, providing essential vitamins and minerals with a perfect balance of acidity and umami that enhances almost any savory dish.",
+    recipes: [
+      "Gazpacho", 
+      "Shakshuka", 
+      "Chinese tomato egg stir-fry 番茄炒鸡蛋",
+      "Hierloom tomato galette"
+    ],
   },
   pear: {
     name: "Pear",
