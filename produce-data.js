@@ -10,7 +10,9 @@ const producePeriods = {
     "Avocado" : "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September",
     "Apple": "Early September,Late September,Early October,Late October,Early November",
     "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
+    "Butternut Squash": "Early January,Late January,Early October,Late October,Early November,Late November,Early December,Late December",
     "Lemon": "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
+    "Leek": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May",
     "Orange":"Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
     "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
     "Pomegranate": "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
@@ -20,13 +22,23 @@ const producePeriods = {
     
 
     // placeholder fruit 
-    "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
+    "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
+    "Placeholder1": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
+    "Placeholder2": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
+    "Placeholder3": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
+    "Placeholder4": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
+    "Placeholder5": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+
+
+
+
   
   };
 
 
 
 // Produce data with detailed information
+// lower case, use _ for space for example butternut_squash
 const produceData = {
   avocado: {
     name: "Avocado",
@@ -34,7 +46,7 @@ const produceData = {
     season: "Early April through Early September",
     benefits: "Rich in heart-healthy monounsaturated fats, avocados provide a creamy satisfaction while supporting brain function and nutrient absorption. They're packed with potassium, fiber, and various vitamins and minerals, and their versatility makes them perfect for everything from breakfast to dessert.",
     recipes: [
-      "Avocado toast is always a classic", 
+      "Avocado toast with egg", 
       "Guacamole", 
       "Avocado salad with cucumber, tomato, red onion, and lime", 
       "Avocado brownies"
@@ -57,9 +69,21 @@ const produceData = {
     season: "Early April through Late June",
     benefits: "These tiny powerhouses pack more antioxidants than almost any other food, protecting your cells from damage while supporting brain function and memory. Just a handful of blueberries delivers essential nutrients that promote eye health, reduce inflammation, and may even help slow aging.",
     recipes: [
-      "Add as a topping to salads", 
+      "Blueberry broccoli spinach salad", 
       "Blueberry banana pancakes", 
       "Blueberry mint matcha latte"
+    ],
+  },
+
+  butternut_squash: {
+    name: "Butternut Squash",
+    image: "./images/butternut_squash.png",
+    season: "Early October through Late January",
+    benefits: "Butternut squash is a nutritional powerhouse, particularly rich in vitamin A, vitamin C, and fiber. It's also a good source of potassium, magnesium, and manganese. Butternut squash is relatively low in calories and carbs, making it a healthy and versatile addition to many diets.",
+    recipes: [
+      "Roasted butternut squash with olive oil and herbs", 
+      "Butternut squash soup with sage and rosemary", 
+      "Mashed butternut squash"
     ],
   },
 
@@ -75,12 +99,24 @@ const produceData = {
     ],
   },
 
+  leek: {
+    name: "Leek",
+    image: "./images/leek.png",
+    season: "Early January through Late May",
+    benefits: "Leeks offer a range of health benefits due to their rich nutrient profile. They are a good source of vitamins A, C, and K, and minerals like iron and magnesium. Leeks also contain dietary fiber, which supports digestive health and helps prevent constipation. Furthermore, they are rich in antioxidants like lutein and zeaxanthin, which are beneficial for eye health.", 
+    recipes: [
+      "Potato leek soup", 
+      "Frittata with leek and asparagus and prosciutto", 
+      "Caramelized leek pasta"
+    ],
+  },
+
 
   orange: {
     name: "Orange",
     image: "./images/orange.png",
     season: "Early January through Late April",
-    benefits: "Although oranges are known for their high vitamin C content, they also have other nutrients beneficial for hydration, digestion, and immune health. Additionally, they help boost collgen production, which is important for skin elasticity. Oranges are refreshing and filling. ", 
+    benefits: "Although oranges are known for their high vitamin C content, they also have other nutrients beneficial for hydration, digestion, and immune health. Additionally, they help boost collgen production, which is important for skin elasticity. In Chinese culture oranges represent properity and financial prosperity because they are brightly colored and round.", 
     recipes: [
       "Fennel orange salad",
       "Chinese chicken salad",
@@ -134,10 +170,14 @@ const produceData = {
   },
   placeholder: {
     name: "Placeholder",
-    image: "./images/strawberry_placeholder.jpg",
+    image: "./images/placeholder.png",
     season: "Season information will be added soon",
     benefits: "Benefits information will be added soon."
-  }
+  }, 
+
+
+
+  
 };
 
 
