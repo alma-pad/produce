@@ -1,15 +1,12 @@
-
 // import { producePeriods } from './produce-data.js';
-import {producePeriods, seasonThemes, seasonMapping} from "./produce-data.js";
+import {producePeriods, seasonThemes, seasonMapping, produceData} from "./produce-data.js";
 
 document.addEventListener('DOMContentLoaded', function() {
-
-   // touch screen tracking
-   // adjust touch sensitivity here 
-   let touchStartY = 0;
-   let touchEndY = 0;
-   const touchThreshold = 5; 
-
+  // touch screen tracking
+  // adjust touch sensitivity here 
+  let touchStartY = 0;
+  let touchEndY = 0;
+  const touchThreshold = 5; 
 
   var now = new Date(); 
   // test other dates
@@ -24,13 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById("datetime").innerHTML = "Today's date: " + datetime;
 
-
-    // assign active state to list item based on month and day 
+  // assign active state to list item based on month and day 
   var month = now.getMonth()+1;
   var day = now.getDate();
   var activePeriod = '';
-
-
 
   // Set active period based on date
   if (month == 1 && day < 16) {
@@ -90,31 +84,55 @@ document.addEventListener('DOMContentLoaded', function() {
   const selected = document.querySelector('.selected'); 
   const dropdown = document.querySelector('.dropdown');  
 
- 
+  // Get the container where we'll add the cards
+  const cardsContainer = document.getElementById('cards-container');
+  
+  // Make sure the container has the correct classes for styling
+  cardsContainer.classList.add('container');
+  
+  // Clear any existing cards in the container
+  cardsContainer.innerHTML = '';
 
-
-   // Apply data attributes to cards based on their content
-   const cards = document.querySelectorAll('.card');
-   cards.forEach(card => {
-     // Get the produce name from the card's paragraph text
-     const produceName = card.querySelector('p').textContent.trim();
-     
-     // If we have season data for this produce, apply it
-     if (producePeriods[produceName]) {
-       card.dataset.activeperiod = producePeriods[produceName];
-     }
-
-     card.style.cursor = 'pointer';
-     card.addEventListener('click', () => {
-
-       // Get the produce name and create a URL-friendly version (lowercase, no spaces)
-       const produceName = card.querySelector('p').textContent.trim();
-       const produceId = produceName.toLowerCase().replace(/\s+/g, '');
-
-       // Navigate to the produce detail page
-       window.location.href = `produce-details.html?id=${produceId}`;
-     });
-   });
+  // Create cards dynamically based on producePeriods data
+  
+    for (const produceName in producePeriods) {
+      // Create the card element
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.dataset.activeperiod = producePeriods[produceName];
+      
+      // Get the produce key (lowercase, no spaces)
+      const produceKey = produceName.toLowerCase().replace(/\s+/g, '_');
+      
+      // Create image element
+      const img = document.createElement('img');
+      
+      // Use image path from produceData if available, otherwise fallback to conventional path
+      if (produceData[produceKey] && produceData[produceKey].image) {
+        img.src = produceData[produceKey].image;
+      } else {
+        img.src = `./images/${produceKey}.png`;
+      }
+      img.alt = produceName;
+      
+      // Create text element
+      const p = document.createElement('p');
+      p.textContent = produceName;
+      
+      // Add elements to card
+      card.appendChild(img);
+      card.appendChild(p);
+      
+      // Add click event listener
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        // Navigate to the produce detail page
+        window.location.href = `produce-details.html?id=${produceKey}`;
+      });
+      
+      // Add card to container
+      cardsContainer.appendChild(card);
+  }
 
   // Set active class on the appropriate menu item
   options.forEach(option => {
@@ -132,13 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });  
 
-
   applySeasonTheme(activePeriod);
- 
   filterCardsByPeriod(activePeriod);
-
- 
-
 
   //toggle drop down when the user clicks on it 
   select.addEventListener('click', () => {
@@ -147,8 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
     menu.classList.toggle('menu-open');
   });
 
-   // Close dropdown when clicking outside
-   document.addEventListener('click', (e) => {
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
     // Check if the click was outside the dropdown
     if (!dropdown.contains(e.target)) {
       select.classList.remove('select-clicked');
@@ -174,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-
   options.forEach(option => {
     option.addEventListener('click', () => {
       selected.innerText = option.innerText; 
@@ -200,10 +212,9 @@ document.addEventListener('DOMContentLoaded', function() {
    });
 
    // for mobile 
-    option.addEventListener('touchend', (e) => {
+    option.addEventListener('touchstart', (e) => {
       touchStartY = e.touches[0].clientY;
     });
-
 
     option.addEventListener('touchend', (e) => {
       touchEndY = e.changedTouches[0].clientY;
@@ -213,21 +224,9 @@ document.addEventListener('DOMContentLoaded', function() {
         option.click();
       }
     });
-
   });
-
-
-
-
 });
 // DOM function ends 
-
-
-
-
-
-
-
 
 function filterCardsByPeriod(period) {
   // Get all cards
@@ -255,20 +254,6 @@ function filterCardsByPeriod(period) {
     }
   });
 };
-
-
-
-
-// map activePeriod to season
-// const seasonMapping is defined in produce-data.js 
-
-
-// Set season color themes  
-// const seasonThemes is defined in produce-data.js
-
-// define which produce item is in season during which activePeriod
-// const producePeriods is defined in produce-data.js
-
 
 function applySeasonTheme(activePeriod) {
   const season = seasonMapping[activePeriod] || "Summer";
