@@ -1,237 +1,139 @@
-// add all the data about produce and seasons here   
+// produce detail page  
 
+import { seasonThemes, seasonMapping, produceData} from "./produce-data.js";
 
-export {producePeriods, seasonThemes, seasonMapping, produceData};
-
-
-// ALPHABETICAL ORDERING!!!!!!!!!!!! 
-// NO SPACES BETWEEN ACTIVE PERIODS!!!!!!!!!!!!!!!!!!!!!!!!
-const producePeriods = {
-    "Avocado" : "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September",
-    "Apple": "Early September,Late September,Early October,Late October,Early November",
-    "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
-    "Butternut Squash": "Early January,Late January,Early October,Late October,Early November,Late November,Early December,Late December",
-    "Lemon": "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
-    "Leek": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May",
-    "Orange":"Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
-    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
-    "Pomegranate": "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
-    "Strawberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
-    "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
-    
-    
-
-    // placeholder fruit 
-    "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    "Placeholder1": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    "Placeholder2": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    "Placeholder3": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    "Placeholder4": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    "Placeholder5": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
-
-
-
-
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the produce ID from the URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const produceId = urlParams.get('id');
   
-  };
-
-
-
-// Produce data with detailed information
-// lower case, use _ for space for example butternut_squash
-const produceData = {
-  avocado: {
-    name: "Avocado",
-    image: "./images/avocado.png",
-    season: "Early April through Early September",
-    benefits: "Rich in heart-healthy monounsaturated fats, avocados provide a creamy satisfaction while supporting brain function and nutrient absorption. They're packed with potassium, fiber, and various vitamins and minerals, and their versatility makes them perfect for everything from breakfast to dessert.",
-    recipes: [
-      "Avocado toast with egg", 
-      "Guacamole", 
-      "Avocado salad with cucumber, tomato, red onion, and lime", 
-      "Avocado brownies"
-    ],
-    notes: "Fun fact: Alma has an avocado hair clip"
-  },
-  apple: {
-    name: "Apple",
-    image: "./images/apple.png",
-    season: "Early September through Early November",
-    benefits: "Apples contain pectin, a soluble fiber that lowers cholesterol and feeds beneficial gut bacteria and supports a healthy gut microbiome. They also contain various phytochemicals that benefit the immune system, support bone density, and may reduce the risk of chronic disease.", 
-    recipes: [
-      "Apple with yogurt and nut butter", 
-      "Apple pie!!", 
-    ],
-  },
-  blueberry: {
-    name: "Blueberry",
-    image: "./images/blueberry.png",
-    season: "Early April through Late June",
-    benefits: "These tiny powerhouses pack more antioxidants than almost any other food, protecting your cells from damage while supporting brain function and memory. Just a handful of blueberries delivers essential nutrients that promote eye health, reduce inflammation, and may even help slow aging.",
-    recipes: [
-      "Blueberry broccoli spinach salad", 
-      "Blueberry banana pancakes", 
-      "Blueberry mint matcha latte"
-    ],
-  },
-
-  butternut_squash: {
-    name: "Butternut Squash",
-    image: "./images/butternut_squash.png",
-    season: "Early October through Late January",
-    benefits: "Butternut squash is a nutritional powerhouse, particularly rich in vitamin A, vitamin C, and fiber. It's also a good source of potassium, magnesium, and manganese. Butternut squash is relatively low in calories and carbs, making it a healthy and versatile addition to many diets.",
-    recipes: [
-      "Roasted butternut squash with olive oil and herbs", 
-      "Butternut squash soup with sage and rosemary", 
-      "Mashed butternut squash"
-    ],
-  },
-
-  lemon: {
-    name: "Lemon",
-    image: "./images/lemon.png",
-    season: "Early December through Late March",
-    benefits: "Bursting with vitamin C, lemons boost your immune system while adding bright, vibrant flavor to any dish without extra calories. Their citric acid aids digestion and their alkalizing effect helps balance your body's pH levels. ", 
-    recipes: [
-      "Add a squeeze to cold water, hot water, or sparking water for an elevated drink", 
-      "Avgolemono", 
-      "Classic lemon tart"
-    ],
-  },
-
-  leek: {
-    name: "Leek",
-    image: "./images/leek.png",
-    season: "Early January through Late May",
-    benefits: "Leeks offer a range of health benefits due to their rich nutrient profile. They are a good source of vitamins A, C, and K, and minerals like iron and magnesium. Leeks also contain dietary fiber, which supports digestive health and helps prevent constipation. Furthermore, they are rich in antioxidants like lutein and zeaxanthin, which are beneficial for eye health.", 
-    recipes: [
-      "Potato leek soup", 
-      "Frittata with leek and asparagus and prosciutto", 
-      "Caramelized leek pasta"
-    ],
-  },
-
-
-  orange: {
-    name: "Orange",
-    image: "./images/orange.png",
-    season: "Early January through Late April",
-    benefits: "Although oranges are known for their high vitamin C content, they also have other nutrients beneficial for hydration, digestion, and immune health. Additionally, they help boost collgen production, which is important for skin elasticity. In Chinese culture oranges represent properity and financial prosperity because they are brightly colored and round.", 
-    recipes: [
-      "Fennel orange salad",
-      "Chinese chicken salad",
-      "Orange, carrot, and ginger juice",
-      "Orange creamsicle overnight oats",
-      "Orange cardamom olive oil cake"
-    ],
-  },
-
-  pomegranate: {
-    name: "Pomegranate",
-    image: "./images/pomegranate.png",
-    season: "Late September through Late December",
-    benefits: "Bursting with jewel-like seeds, pomegranates deliver potent antioxidants that fight cellular damage while reducing inflammation throughout your body. Their unique combination of sweet-tart flavor and satisfying crunch makes them nature's perfect snack, while studies suggest they may improve heart health and exercise performance.", 
-    recipes: [
-      "Pomegranate chicken", 
-      "Salad with spinach, kale, pomegranate, blue cheese, walnuts, and sweet potato", 
-      "Pomegranate molasses for use in salad dressings or as a marinade for meat or tofu"
-    ],
-  },
-
-  strawberry: {
-    name: "Strawberry",
-    image: "./images/strawberry.png",
-    season: "Late April throgh Early July",
-    benefits: "Strawberries deliver a perfect balance of sweetness and subtle acidity that satisfies cravings naturally. Their abundant antioxidants and polyphenols support skin health, help manage blood sugar, lower inflamation, and delay age-related memory loss. Plus they're delicious and low-calorie!", 
-    recipes: [
-      "They're delicious on their own", 
-      "Strawberry banana smoothie", 
-      "Salad with spinach, strawberry, feta cheese, shaved almonds", 
-      "Strawberry rhubarb crisp"
-    ],
-  },
-  tomato: {
-    name: "Tomato",
-    image: "./images/tomato.png",
-    season: "Late May through Late September",
-    benefits: "Tomatoes contain lycopene, a powerful antioxidant that becomes more bioavailable when cooked, protecting your skin and heart while potentially reducing cancer risk. Their versatility shines in countless cuisines, providing essential vitamins and minerals with a perfect balance of acidity and umami that enhances almost any savory dish.",
-    recipes: [
-      "Gazpacho", 
-      "Shakshuka", 
-      "Chinese tomato egg stir-fry 番茄炒鸡蛋",
-      "Hierloom tomato galette"
-    ],
-  },
-  pear: {
-    name: "Pear",
-    image: "./images/pear.png",
-    season: "Peak season: Late August through Early November",
-    benefits: "Benefits information will be added soon."
-  },
-  placeholder: {
-    name: "Placeholder",
-    image: "./images/placeholder.png",
-    season: "Season information will be added soon",
-    benefits: "Benefits information will be added soon."
-  }, 
-
-
-
-  
-};
-
-
-const seasonThemes = {
-  "Spring": {
-    primary: "#F06668",      
-    secondary: "#E2F0B2",    
-    background: "#FBFEEB",   
-    text: "#333333"          
-  },
-  "Summer": {
-    primary: "#5F8E45",      
-    secondary: "#FFDA75",    
-    background: "#FFF9E7",   
-    text: "#333333"          
-  },
-  "Fall": {
-    primary: "#D86703",      
-    secondary: "#D6D5E7",    
-    background: "#FFF3F0",  
-    text: "#4A3C31"          
-  },
-  "Winter": {
-    primary: "#588AB6",      
-    secondary: "#DBDBDB",             
-    background: "#EFF2F5",   
-    text: "#2C3E50"        
+  // If no ID was provided, redirect to home page
+  if (!produceId) {
+    window.location.href = 'index.html';
+    return;
   }
-};
+  
+  const produce = produceData[produceId];
 
+  // If the produce doesn't exist in our data, redirect home
+  if (!produce) {
+    window.location.href = 'index.html';
+    return;
+  }
+  
+  // Update page title
+  document.title = `${produce.name} - Seasonal Produce`;
+  
+  // Populate the HTML with produce data
+  document.getElementById('produce-title').textContent = produce.name;
+  document.getElementById('produce-img').src = produce.image;
+  document.getElementById('produce-img').alt = produce.name;
 
-const seasonMapping = {
-  "Early January": "Winter",
-  "Late January": "Winter",
-  "Early February": "Winter",
-  "Late February": "Winter",
-  "Early March": "Spring",
-  "Late March": "Spring",
-  "Early April": "Spring",
-  "Late April": "Spring",
-  "Early May": "Spring",
-  "Late May": "Spring",
-  "Early June": "Spring",
-  "Late June": "Summer",
-  "Early July": "Summer",
-  "Late July": "Summer",
-  "Early August": "Summer",
-  "Late August": "Summer",
-  "Early September": "Summer",
-  "Late September": "Fall",
-  "Early October": "Fall",
-  "Late October": "Fall",
-  "Early November": "Fall",
-  "Late November": "Fall",
-  "Early December": "Winter",
-  "Late December": "Winter"
-};
+  const sections = [
+    { id: 'produce-season', property: 'season', label: 'Season' },
+    { id: 'produce-benefits', property: 'benefits', label: 'Benefits' },
+    { id: 'produce-recipes', property: 'recipes', label: 'Recipes' },
+    { id: 'produce-notes', property: 'notes', label: 'Notes' }
+  ];
+
+  sections.forEach(section => {
+    const element = document.getElementById(section.id);
+    const parentSection = element.closest('.info-section');
+    
+    if (produce[section.property]) {
+      // If the property exists, show the section and set the content
+      element.textContent = produce[section.property];
+      parentSection.style.display = 'block'; // Make sure it's visible
+    } else {
+      // If the property doesn't exist, hide the entire section
+      parentSection.style.display = 'none';
+    }
+  });
+
+  if (produce.recipes && Array.isArray(produce.recipes)) {
+    const recipeListHTML = `<ul class="recipe-list">
+      ${produce.recipes.map(recipe => `<li>${recipe}</li>`).join('')}
+    </ul>`;
+    
+    document.getElementById('produce-recipes').innerHTML = recipeListHTML;
+  }
+
+  // Apply appropriate season theme based on current produce's peak season
+  const peakSeason = determinePeakSeason(produce.season);
+  applySeasonTheme(peakSeason);
+
+  // Get current date for the header
+  const now = new Date();
+  var datetime = now.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+  if (document.getElementById("datetime")) {
+    document.getElementById("datetime").innerHTML = "Today's date: " + datetime;
+  }
+});
+
+// Function to determine the peak season period based on the season text
+function determinePeakSeason(seasonText) {
+  const peakMatch = seasonText.match(/Peak season: ([\w\s]+)/);
+  if (peakMatch && peakMatch[1]) {
+    // Extract the first period mentioned as the peak
+    const periods = peakMatch[1].split(' through ');
+    if (periods[0]) {
+      return periods[0].trim();
+    }
+  }
+  // Default to current period if we can't determine
+  return getCurrentPeriod();
+}
+
+// Function to get the current period based on date
+function getCurrentPeriod() {
+  const now = new Date();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  
+  if (month == 1 && day < 16) return 'Early January';
+  if (month == 1 && day >= 16) return 'Late January';
+  if (month == 2 && day < 16) return 'Early February';
+  if (month == 2 && day >= 16) return 'Late February';
+  if (month == 3 && day < 16) return 'Early March';
+  if (month == 3 && day >= 16) return 'Late March';
+  if (month == 4 && day < 16) return 'Early April';
+  if (month == 4 && day >= 16) return 'Late April';
+  if (month == 5 && day < 16) return 'Early May';
+  if (month == 5 && day >= 16) return 'Late May';
+  if (month == 6 && day < 16) return 'Early June';
+  if (month == 6 && day >= 16) return 'Late June';
+  if (month == 7 && day < 16) return 'Early July';
+  if (month == 7 && day >= 16) return 'Late July';
+  if (month == 8 && day < 16) return 'Early August';
+  if (month == 8 && day >= 16) return 'Late August';
+  if (month == 9 && day < 16) return 'Early September';
+  if (month == 9 && day >= 16) return 'Late September';
+  if (month == 10 && day < 16) return 'Early October';
+  if (month == 10 && day >= 16) return 'Late October';
+  if (month == 11 && day < 16) return 'Early November';
+  if (month == 11 && day >= 16) return 'Late November';
+  if (month == 12 && day < 16) return 'Early December';
+  if (month == 12 && day >= 16) return 'Late December';
+  
+  return 'Late April'; // Default fallback
+}
+
+// Apply the seasonal theme styling
+function applySeasonTheme(activePeriod) {
+  const season = seasonMapping[activePeriod] || "Summer";
+  
+  // Get the theme colors
+  const theme = seasonThemes[season];
+  document.documentElement.style.setProperty('--color-primary', theme.primary);
+  document.documentElement.style.setProperty('--color-secondary', theme.secondary);
+  document.documentElement.style.setProperty('--color-background', theme.background);
+  document.documentElement.style.setProperty('--color-text', theme.text);
+  
+  // Add season class to body
+  document.body.className = season.toLowerCase();
+}
+
