@@ -7,17 +7,23 @@ export {producePeriods, seasonThemes, seasonMapping, produceData};
 // ALPHABETICAL ORDERING!!!!!!!!!!!! 
 // NO SPACES BETWEEN ACTIVE PERIODS!!!!!!!!!!!!!!!!!!!!!!!!
 const producePeriods = {
+    "Asparagus": "Late February,Early March,Late March,Early April,Late April,Early May,Late May",   
     "Avocado" : "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September",
+  
     "Apple": "Early September,Late September,Early October,Late October,Early November",
     "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
     "Butternut Squash": "Early January,Late January,Early October,Late October,Early November,Late November,Early December,Late December",
-    "Lemon": "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
+    "Cherry": "Early May,Late May,Early June,Late June,Early July",
     "Leek": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May",
+    "Lemon": "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
     "Orange":"Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
-    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Late December",
+    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Early December,Late December",
     "Pomegranate": "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    "Pomelo": "Early January,Late January,Early February,Late February,Early March,Late March,Early April",
+
     "Strawberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
     "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    "Watermelon": "Late May,Early June,Late June,Early July ,Late July,Early August,Late August",
     
     
 
@@ -27,7 +33,7 @@ const producePeriods = {
     "Placeholder2": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
     "Placeholder3": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
     "Placeholder4": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    "Placeholder5": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    "Placeholder5": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
 
 
 
@@ -40,6 +46,18 @@ const producePeriods = {
 // Produce data with detailed information
 // lower case, use _ for space for example butternut_squash
 const produceData = {
+  asparagus: {
+    name: "Asparagus",
+    image: "./images/asparagus.png",
+    season: "Late February through Late May",
+    benefits: "Asparagus spears deliver a remarkable nutrient density, providing folate for cellular health and prebiotic fiber that nourishes beneficial gut bacteria for improved digestion. Their unique combination of antioxidants and anti-inflammatory compounds supports detoxification while their distinctive flavor adds sophisticated elegance to any meal.",
+    recipes: [
+      "Sheet pan asparagus with salmon and lemon", 
+      "Orzo with asparagus and peas", 
+      "Frittata with asparagus"
+    ],
+  },
+
   avocado: {
     name: "Avocado",
     image: "./images/avocado.png",
@@ -59,6 +77,7 @@ const produceData = {
     season: "Early September through Early November",
     benefits: "Apples contain pectin, a soluble fiber that lowers cholesterol and feeds beneficial gut bacteria and supports a healthy gut microbiome. They also contain various phytochemicals that benefit the immune system, support bone density, and may reduce the risk of chronic disease.", 
     recipes: [
+      "Roasted apples with savory companions like chicken or pork",
       "Apple with yogurt and nut butter", 
       "Apple pie!!", 
     ],
@@ -84,6 +103,18 @@ const produceData = {
       "Roasted butternut squash with olive oil and herbs", 
       "Butternut squash soup with sage and rosemary", 
       "Mashed butternut squash"
+    ],
+  },
+
+  cherry: {
+    name: "Cherry",
+    image: "./images/cherry.png",
+    season: "Early May through Early July",
+    benefits: "Cherries contain natural melatonin that may improve sleep quality, while their potent antioxidants have been shown to reduce inflammation and speed recovery after exercise. Their deep crimson color signals abundant anthocyanins that fight oxidative stress, making these sweet little gems as beneficial for your health as they are delightful to your taste buds.",
+    recipes: [
+      "Cherries paired with dark chocolate", 
+      "Cherry compote", 
+      "Cherry cobbler"
     ],
   },
 
@@ -125,6 +156,28 @@ const produceData = {
       "Orange cardamom olive oil cake"
     ],
   },
+  pear: {
+    name: "Pear",
+    image: "./images/pear.png",
+    season: "Early September through Late December",
+    benefits: "With their honey-sweet flavor and uniquely satisfying texture, pears deliver soluble fiber that supports digestive health while helping manage cholesterol levels. Their high water content promotes hydration and skin health, while their portable nature makes them the perfect grab-and-go fruit for sustained energy without the crash.", 
+    recipes: [
+      "Pear with yogurt and nut butter", 
+      "Pear and gorgonzola salad", 
+      "Goat cheese and pear pizza with caramelized onion",
+      "Grilled brie and pear sandwich"
+    ],
+  },
+
+  pomelo: {
+    name: "Pomelo",
+    image: "./images/pomelo.png",
+    season: "Early January through Early April",
+    benefits: "This giant citrus fruit delivers an explosion of sweet-tart flavor while providing vitamin C, boosting immunity and collagen production for healthier skin. Pomelos contain powerful antioxidants that fight inflammation and may help reduce blood pressure, all while promoting feelings of fullness. It is very fun hold a large, round fruit and to peel off each segment and eat the juicy contents!", 
+    notes: [
+      "Try an oro blanco, which is a hybrid of a pomelo and grapefruit." 
+    ]
+  },
 
   pomegranate: {
     name: "Pomegranate",
@@ -162,18 +215,25 @@ const produceData = {
       "Hierloom tomato galette"
     ],
   },
-  pear: {
-    name: "Pear",
-    image: "./images/pear.png",
-    season: "Peak season: Late August through Early November",
-    benefits: "Benefits information will be added soon."
+
+  watermelon: {
+    name: "Watermelon",
+    image: "./images/watermelon.png",
+    season: "Late May through Late August",
+    benefits: "Watermelon's juicy sweetness delivers hydration and electrolytes that quench thirst more effectively than water alone, making it nature's perfect summer refresher. With its high lycopene content protecting your skin from sun damage and its natural sugars providing quick energy, this low-calorie treat satisfies sweet cravings while supporting overall health.",
+    recipes: [
+      "Watermelon juice with lime", 
+      "Watermelon, feta, cucumuber, and mint salad", 
+      "Watermelon sorbet"
+    ],
   },
+
   placeholder: {
     name: "Placeholder",
     image: "./images/placeholder.png",
     season: "Season information will be added soon",
     benefits: "Benefits information will be added soon."
-  }, 
+  }
 
 
 
