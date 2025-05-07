@@ -4,26 +4,39 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Seasonal Produce</title>
+    <title>Seasonal Produce - About</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <div class = "header"> 
-        <h1>About this website</h1>
-    </div>
+    <div class="header-details"> 
+      <div class = "header-content">
+    
+          <nav>
+              <a href="index.html" class="back-button">
+                  <span class="material-symbols-outlined">arrow_back</span>
+              </a>
+          </nav>
+          <div class = "header-container">
+              <h1 id="header-title">About this website</h1>
+              <h2 id="datetime"></h2>
+          </div>
+      
+      </div>
+  </div>
+
+
    <div class="about-section">
      <p> About this website</p>
 
 
     <p>Why Eat Seasonally?<p>
     <p>Eating seasonal produce has many benefits. </p>
-     <nav>
-        <a href="index.html">Back to Home</a>
-      </nav>
+
    </div> 
  
 
@@ -33,6 +46,7 @@
         <p class="small"> List of produce is based on Alma’s experience in Northern California </p>
       
     </div>
+    <script type="module" src="index.js" charset="utf-8"></script>
   </body>
 
 
