@@ -204,6 +204,37 @@ h2 {
 
 }
 
+.date-link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  /* transition: all 0.3s ease; */
+  position: relative;
+}
+
+.date-link:hover {
+  color: var(--color-primary);
+}
+
+/* date-link transition styles  */
+
+/* .date-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-primary);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.date-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+} */
+
 p{ 
 
   font-family: "Libre Caslon Text", serif;
