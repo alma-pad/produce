@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const produceId = urlParams.get('id');
   
   // If no ID was provided, redirect to home page
+  // for placeholders only
   if (!produceId) {
     window.location.href = 'index.html';
     return;
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Apply appropriate season theme based on current produce's peak season
-  const peakSeason = determinePeakSeason(produce.season);
+  const peakSeason = determinePeakSeason(produce.activeperiods);
   applySeasonTheme(peakSeason);
 
   // Get current date for the header
@@ -72,68 +73,46 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById("datetime")) {
     document.getElementById("datetime").innerHTML = "Today's date: " + datetime;
   }
+
+  document.querySelectorAll('.back-button').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // If there's browser history, go back
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        // Fallback to index.html if there's no history
+        window.location.href = 'index.html';
+      }
+    });
+  });
+  
 });
+// DOM function ends 
 
-// Function to determine the peak season period based on the season text
-function determinePeakSeason(seasonText) {
-  const peakMatch = seasonText.match(/Peak season: ([\w\s]+)/);
-  if (peakMatch && peakMatch[1]) {
-    // Extract the first period mentioned as the peak
-    const periods = peakMatch[1].split(' through ');
-    if (periods[0]) {
-      return periods[0].trim();
-    }
-  }
-  // Default to current period if we can't determine
-  return getCurrentPeriod();
+// Function to determine the peak season by finding the middle period in the activeperiods list
+// I will ensure no empty arrays
+
+function determinePeakSeason(activeperiodsStr) {
+  const periods = activeperiodsStr.split(',').map(period => period.trim());
+  
+  const middleIndex = Math.floor(periods.length/2)-1;
+    return periods[middleIndex];
+ 
 }
 
-// Function to get the current period based on date
-function getCurrentPeriod() {
-  const now = new Date();
-  const month = now.getMonth() + 1;
-  const day = now.getDate();
-  
-  if (month == 1 && day < 16) return 'Early January';
-  if (month == 1 && day >= 16) return 'Late January';
-  if (month == 2 && day < 16) return 'Early February';
-  if (month == 2 && day >= 16) return 'Late February';
-  if (month == 3 && day < 16) return 'Early March';
-  if (month == 3 && day >= 16) return 'Late March';
-  if (month == 4 && day < 16) return 'Early April';
-  if (month == 4 && day >= 16) return 'Late April';
-  if (month == 5 && day < 16) return 'Early May';
-  if (month == 5 && day >= 16) return 'Late May';
-  if (month == 6 && day < 16) return 'Early June';
-  if (month == 6 && day >= 16) return 'Late June';
-  if (month == 7 && day < 16) return 'Early July';
-  if (month == 7 && day >= 16) return 'Late July';
-  if (month == 8 && day < 16) return 'Early August';
-  if (month == 8 && day >= 16) return 'Late August';
-  if (month == 9 && day < 16) return 'Early September';
-  if (month == 9 && day >= 16) return 'Late September';
-  if (month == 10 && day < 16) return 'Early October';
-  if (month == 10 && day >= 16) return 'Late October';
-  if (month == 11 && day < 16) return 'Early November';
-  if (month == 11 && day >= 16) return 'Late November';
-  if (month == 12 && day < 16) return 'Early December';
-  if (month == 12 && day >= 16) return 'Late December';
-  
-  return 'Late April'; // Default fallback
-}
+
 
 // Apply the seasonal theme styling
 function applySeasonTheme(activePeriod) {
   const season = seasonMapping[activePeriod] || "Summer";
-  
-  // Get the theme colors
+
   const theme = seasonThemes[season];
   document.documentElement.style.setProperty('--color-primary', theme.primary);
   document.documentElement.style.setProperty('--color-secondary', theme.secondary);
   document.documentElement.style.setProperty('--color-background', theme.background);
   document.documentElement.style.setProperty('--color-text', theme.text);
   
-  // Add season class to body
   document.body.className = season.toLowerCase();
 }
-
