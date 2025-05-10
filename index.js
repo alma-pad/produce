@@ -1,4 +1,4 @@
-// import { seasonThemes, seasonMapping, produceData } from "./produce-data.js";
+
 import { seasonThemes, seasonMapping, produceData } from "./produce-data.js";
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Insert date and time into HTML for all pages
   var now = new Date(); 
   // test other dates
-  // var now = new Date('2025-07-22');
+  var now = new Date('2025-01-22');
 
   // Insert date and time into HTML
   var datetime = now.toLocaleDateString('en-US', {
@@ -287,39 +287,71 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
-  // make datetime button
-  if (document.getElementById("datetime")) {
- 
+
+ // make datetime button
+if (document.getElementById("datetime")) {
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  let currentPeriod;
   
-    
-
-        const month = now.getMonth() + 1;
-        const day = now.getDate();
-        let currentPeriod;
-        
-        // Determine period based on date
-        if (day < 16) {
-          currentPeriod = `Early ${now.toLocaleDateString('en-US', { month: 'long' })}`;
-        } else {
-          currentPeriod = `Late ${now.toLocaleDateString('en-US', { month: 'long' })}`;
-        }
-
-        document.getElementById("datetime").innerHTML = 
-        `<a href="index.html" class="date-link" data-period="${currentPeriod}">Today's date: ${datetime}</a>`;
-        
-        applySeasonTheme(currentPeriod);
-      
-      // Add click event to store the period in sessionStorage
-      document.getElementById("datetime").querySelector('a').addEventListener('click', function(e) {
-        sessionStorage.setItem('selectedPeriod', this.getAttribute('data-period'));
-      });
-    
+  // Determine period based on date
+  if (day < 16) {
+    currentPeriod = `Early ${now.toLocaleDateString('en-US', { month: 'long' })}`;
+  } else {
+    currentPeriod = `Late ${now.toLocaleDateString('en-US', { month: 'long' })}`;
   }
+
+  document.getElementById("datetime").innerHTML = 
+    `<a href="#" class="date-link" data-period="${currentPeriod}">Today's date: ${datetime}</a>`;
+  
+  // Remove the immediate call to applySeasonTheme here
+  // and only call it when button is clicked
+  
+  // Add click event to store the period in sessionStorage and apply theme
+  document.getElementById("datetime").querySelector('a').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default anchor behavior
+    const selectedPeriod = this.getAttribute('data-period');
+    sessionStorage.setItem('selectedPeriod', selectedPeriod);
+    
+    // Apply the season theme when clicked
+    applySeasonTheme(selectedPeriod);
+    
+    // Update dropdown selection if we're on a page with the dropdown
+    const selected = document.querySelector('.selected');
+    const options = document.querySelectorAll('.menu li');
+    
+    if (selected && options.length) {
+      // Update the selected text
+      selected.textContent = selectedPeriod;
+      
+      // Update the active class on menu items
+      options.forEach(option => {
+        option.classList.remove('active');
+        if (option.textContent.trim() === selectedPeriod) {
+          option.classList.add('active');
+        }
+      });
+    }
+    
+    // Filter cards if on the main page
+    if (document.getElementById('cards-container')) {
+      filterCardsByPeriod(selectedPeriod);
+    }
+    
+    // Optionally redirect to index.html if not already there
+    if (!window.location.href.includes('index.html')) {
+      window.location.href = 'index.html';
+    }
+  });
+}
 
 
 
 });
 // DOM function ends 
+
+
+
 
 function filterCardsByPeriod(period) {
   // Get all cards
