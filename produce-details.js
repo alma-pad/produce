@@ -107,6 +107,7 @@ function determinePeakSeason(activeperiodsStr) {
 // Apply the seasonal theme styling
 function applySeasonTheme(activePeriod) {
   const season = seasonMapping[activePeriod] || "Summer";
+  console.log(`Applying theme for period: ${activePeriod}, Season: ${season}`);
 
   const theme = seasonThemes[season];
   document.documentElement.style.setProperty('--color-primary', theme.primary);
