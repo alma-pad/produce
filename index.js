@@ -352,6 +352,9 @@ function filterCardsByPeriod(period) {
 
 function applySeasonTheme(activePeriod) {
   const season = seasonMapping[activePeriod] || "Summer";
+
+  console.log(`Applying theme for period: ${activePeriod}, Season: ${season}`);
+
   
   // Get the theme colors
   const theme = seasonThemes[season];
