@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Insert date and time into HTML for all pages
   var now = new Date(); 
   // test other dates
-  var now = new Date('2025-01-22');
+  //var now = new Date('2025-01-22');
 
   // Insert date and time into HTML
   var datetime = now.toLocaleDateString('en-US', {
