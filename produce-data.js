@@ -1,48 +1,11 @@
 // add all the data about produce and seasons here   
 
 
-export {producePeriods, seasonThemes, seasonMapping, produceData};
+export {seasonThemes, seasonMapping, produceData};
 
 
 // ALPHABETICAL ORDERING!!!!!!!!!!!! 
 // NO SPACES BETWEEN ACTIVE PERIODS!!!!!!!!!!!!!!!!!!!!!!!!
-const producePeriods = {
-    "Asparagus": "Late February,Early March,Late March,Early April,Late April,Early May,Late May",   
-    "Avocado" : "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September",
-  
-    "Apple": "Early September,Late September,Early October,Late October,Early November",
-    "Blueberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
-    "Butternut Squash": "Early January,Late January,Early October,Late October,Early November,Late November,Early December,Late December",
-    "Cherry": "Early May,Late May,Early June,Late June,Early July",
-    "Leek": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May",
-    "Lemon": "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
-    "Orange":"Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
-    "Pear": "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Early December,Late December",
-    "Pomegranate": "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
-    "Pomelo": "Early January,Late January,Early February,Late February,Early March,Late March,Early April",
-
-    "Strawberry": "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
-    "Tomato": "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
-    "Watermelon": "Late May,Early June,Late June,Early July ,Late July,Early August,Late August",
-    
-    
-
-    // placeholder fruit 
-    // "Placeholder": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    // "Placeholder1": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    // "Placeholder2": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    // "Placeholder3": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    // "Placeholder4": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
-    // "Placeholder5": "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December"
-
-
-
-
-  
-  };
-
-
-
 // Produce data with detailed information
 // lower case, use _ for space for example butternut_squash
 const produceData = {
@@ -210,7 +173,6 @@ const produceData = {
     activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
     benefits: "Strawberries deliver a perfect balance of sweetness and subtle acidity that satisfies cravings naturally. Their abundant antioxidants and polyphenols support skin health, help manage blood sugar, lower inflamation, and delay age-related memory loss. Plus they're delicious and low-calorie!", 
     recipes: [
-      "They're delicious on their own", 
       "Strawberry banana smoothie", 
       "Salad with spinach, strawberry, feta cheese, shaved almonds", 
       "Strawberry rhubarb crisp"
@@ -242,6 +204,21 @@ const produceData = {
       "Watermelon sorbet"
     ],
   },
+
+  zucchini: {
+    name: "Zucchini",
+    image: "./images/zucchini.png",
+    season: "Early June through Late August",
+    activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August",
+    benefits: "Zucchini's high water content keeps you hydrated while its fiber promotes digestive health and sustained energy without weighing you down. This versatile summer squash absorbs flavors brilliantly while providing essential minerals like potassium and manganese that support muscle function and metabolism, all with minimal calories that fit perfectly into any healthy eating plan.",
+    recipes: [
+      "Baked zucchini crusted with breadcrumbs", 
+       "Ratatouille", 
+       "Zucchini noodles"
+    ],
+  },
+
+
 
   placeholder: {
     name: "Placeholder",
