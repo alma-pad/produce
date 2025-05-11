@@ -87,6 +87,20 @@ const produceData = {
     ],
   },
 
+  eggplant: {
+    name: "Eggplant",
+    image: "./images/eggplant.png",
+    season: "Early June through Late October",
+    activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
+    benefits: "Eggplant's deep purple skin contains nasunin, a powerful antioxidant that specifically protects brain cell membranes from damage while supporting healthy circulation. Its meaty texture absorbs flavors beautifully while providing satisfying bulk with minimal calories, making it the perfect centerpiece for meals that keep you feeling full without weighing you down.",
+    recipes: [
+      "Eggplant parmesean", 
+      "Chinese eggplant with garlic sauce 鱼香茄子", 
+      "baba ganoush", 
+      "ratatouille"
+    ],
+  },
+
   lemon: {
     name: "Lemon",
     image: "./images/lemon.png",
@@ -114,6 +128,16 @@ const produceData = {
   },
 
 
+  lychee: {
+    name: "Lychee",
+    image: "./images/lychee.png",
+    season: "Late June through Early September",
+    activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
+    benefits: "Lychees deliver an impressive amount of vitamin C wrapped in a sweet, floral flavor profile that feels truly indulgent. Their unique combination of antioxidants supports immune function and skin health, while their juicy texture and exotic taste transform ordinary moments into special treats.", 
+    notes: "Although some lychee is grown in Southern California, most lychee is imported from China."
+  },
+
+
   orange: {
     name: "Orange",
     image: "./images/orange.png",
@@ -128,6 +152,20 @@ const produceData = {
       "Orange cardamom olive oil cake"
     ],
   },
+
+  pea_shoot: {
+    name: "Pea Shoot",
+    image: "./images/pea_shoot.png",
+    season: "Late February through Late April",
+    activeperiods: "Late February,Early March,Late March,Early April,Late April",
+    benefits: "Pea shoots deliver the concentrated nutrition of mature peas in a delicate, tender green that contains more vitamin C than blueberries and more folate than spinach. Their sweet, fresh flavor carries hints of both peas and spring itself, providing a versatile ingredient that adds both nutrition and visual elegance to everything from salads to stir-fries with minimal effort.", 
+    recipes: [
+      "Sir fry pea shoots with garlic", 
+      "Pea shoot lemon pasta"
+    ],
+    notes: "Pea shoot season is frightening short. If you see them being sold, definitely take advantage of it and get yourself a bag!"
+  },
+
   pear: {
     name: "Pear",
     image: "./images/pear.png",
@@ -140,6 +178,19 @@ const produceData = {
       "Goat cheese and pear pizza with caramelized onion",
       "Grilled brie and pear sandwich"
     ],
+  },
+
+  persimmon: {
+    name: "Persimmon",
+    image: "./images/persimmon.png",
+    season: "Late September through Early December",
+    activeperiods: "Late September,Early October,Late October,Early November,Late November,Early December",
+    benefits: "Persimmons contain exceptional levels of antioxidants and tannins that support heart health while their natural sweetness rivals candy when fully ripened. Rich in beta-carotene that promotes eye health and healthy skin, these golden fruits deliver a unique honey-cinnamon flavor experience that changes throughout the ripening process, making them one of nature's most intriguing seasonal treasures.", 
+    recipes: [
+      "Persimmon bread", 
+      "Salad with leafy greens, pomegranate, persimmon, and almonds"
+    ],
+    notes: "The most common varities are fuyu and hachiya. The fuyu (pictured) has a flat end and can be eaten when hard or soft. The hachiya has a pointy end and must be eaten when soft and ripe."
   },
 
   pomelo: {
@@ -196,7 +247,7 @@ const produceData = {
     name: "Watermelon",
     image: "./images/watermelon.png",
     season: "Late May through Late August",
-    activeperiods: "Late May,Early June,Late June,Early July ,Late July,Early August,Late August",
+    activeperiods: "Late May,Early June,Late June,Early July,Late July,Early August,Late August",
     benefits: "Watermelon's juicy sweetness delivers hydration and electrolytes that quench thirst more effectively than water alone, making it nature's perfect summer refresher. With its high lycopene content protecting your skin from sun damage and its natural sugars providing quick energy, this low-calorie treat satisfies sweet cravings while supporting overall health.",
     recipes: [
       "Watermelon juice with lime", 
