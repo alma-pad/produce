@@ -22,6 +22,20 @@ const produceData = {
     ],
   },
 
+  apricot: {
+    name: "Apricot",
+    image: "./images/apricot.png",
+    season: "Early May through Late July",
+    activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July", 
+    benefits: "Apricots pack impressive amounts of vitamin A for eye health and beta-carotene for skin protection, all within their sun-kissed, velvety exterior. Round and yellow, they look like a smaller version of a peach but share the tartness of purple plums. They're a perfectly cute size and a great way to get your daily serving of fruit and veggies. ",
+    recipes: [
+      "Apricot chicken with orzo", 
+      "Grilled apricot and blueberry goat cheese salad", 
+      "Apricot clafoutis", 
+      "Apricot jam"
+    ],
+  },
+
   avocado: {
     name: "Avocado",
     image: "./images/avocado.png",
@@ -48,6 +62,20 @@ const produceData = {
       "Apple pie!!", 
     ],
   },
+
+  blackberry: {
+    name: "Blackberry",
+    image: "./images/blackberry.png",
+    season: "Early June through Late August",
+    activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August",
+    benefits: "Blackberries contain one of the highest antioxidant contents of any fruit, with their deep purple-black color signaling powerful compounds that fight inflammation and support brain health. Their unique balance of sweetness and tartness comes with impressive fiber content that supports digestive health and blood sugar regulation, making these juicy berries as beneficial for your body as they are delightful to your taste buds.",
+    recipes: [
+      "Blackberry pie", 
+      "Blackberry jam (eat with yogurt or in PB&J)", 
+      "Blackberry grilled cheese"
+    ],
+  },
+
   blueberry: {
     name: "Blueberry",
     image: "./images/blueberry.png",
@@ -85,6 +113,21 @@ const produceData = {
       "Cherry, banana, and almond butter smoothie", 
 
     ],
+  },
+
+
+  chives: {
+    name: "Chives",
+    image: "./images/chives.png",
+    season: "Early March through Late October",
+    activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
+    benefits: "Chives deliver surprisingly potent antioxidants and immune-supporting vitamin K, while their delicate onion flavor enhances dishes without overwhelming them. The are the perfect low-effort, high-impact addition to transform everyday meals into more nutritious and flavorful experiences.",
+    recipes: [
+      "Scrambled eggs with chives", 
+      "Chive pancakes", 
+      "Chive and parsley pesto"
+    ],
+    notes: "Large chives can be hard to find. The best bet is probably going to Asian grocery stores like Ranch 99 or Hmart."
   },
 
   eggplant: {
