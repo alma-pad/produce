@@ -174,9 +174,9 @@ white-space: normal;
   font-weight: 400;
   font-style: normal; 
   font-size: 14px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: var(--color-primary);
-  transition: background .3s; 
+  transition: all 0.3s ease; 
 }
 
 a:hover {
@@ -207,14 +207,14 @@ h2 {
 .date-link {
   color: var(--color-secondary);
   text-decoration: none;
-  /* transition: all 0.3s ease; */
+  transition: all 0.5s ease; 
   position: relative;
 }
 
 
-/* .date-link:hover {
+.date-link:hover {
   color: var(--color-primary);
-} */
+}
 
 /* date-link transition styles  */
 
@@ -386,7 +386,7 @@ img {
   border-left: 6px solid transparent; 
   border-right: 6px solid transparent; 
   border-top: 7px solid var(--color-primary); 
-  transition: 0.1s
+  transition: 0.3s
 }
 
 .caret-rotate{
@@ -609,9 +609,9 @@ height: 225px;
   text-align: center;
   margin: 0;
   width: 300px;
-  height: 500px;
+  height: 300px;
   object-fit: cover;
-  background-color: lightcyan;
+  /* background-color: lightcyan; */
   opacity: 1;
 
   }
