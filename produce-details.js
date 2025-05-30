@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Get current date for the header
   const now = new Date();
+  
+  // const now = new Date('2025-01-22');
   var datetime = now.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -87,18 +89,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
+
 });
 // DOM function ends 
 
-// Function to determine the peak season by finding the middle period in the activeperiods list
+// Function to determine the peak season by finding the midpoint of the the activeperiods list
+// If the item is available year-round the function will style based on today's date
 // I will ensure no empty arrays
 
 function determinePeakSeason(activeperiodsStr) {
   const periods = activeperiodsStr.split(',').map(period => period.trim());
+
+  const now = new Date(); 
+  //const now = new Date('2025-01-22');
+
+  const activePeriod = (now.getDate() < 16 ? 'Early ' : 'Late ') + 
+                   now.toLocaleDateString('en-US', { month: 'long' });
+
+  if (periods.length==24){
+    return activePeriod;
+  } else {
   
   const middleIndex = Math.floor(periods.length/2)-1;
     return periods[middleIndex];
+  }
  
 }
 
