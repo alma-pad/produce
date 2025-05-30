@@ -7,7 +7,8 @@ export {seasonThemes, seasonMapping, produceData};
 // ALPHABETICAL ORDERING!!!!!!!!!!!! 
 // NO SPACES BETWEEN ACTIVE PERIODS!!!!!!!!!!!!!!!!!!!!!!!!
 // Produce data with detailed information
-// lower case, use _ for space for example butternut_squash
+// lower case use _ for space for example butternut_squash
+
 const produceData = {
   asparagus: {
     name: "Asparagus",
@@ -47,8 +48,7 @@ const produceData = {
       "Guacamole", 
       "Avocado salad with cucumber, tomato, red onion, and lime", 
       "Avocado brownies"
-    ],
-    notes: "Fun fact: Alma has an avocado hair clip"
+    ]
   },
   apple: {
     name: "Apple",
@@ -61,6 +61,7 @@ const produceData = {
       "Apple with yogurt and nut butter", 
       "Apple pie!!", 
     ],
+    notes: "Although apples are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques."
   },
 
   blackberry: {
@@ -143,6 +144,34 @@ const produceData = {
       "ratatouille"
     ],
   },
+  
+  frisee: {
+    name: "Frisée",
+    image: "./images/frisee.png",
+    season: "Late December to Late February",
+    activeperiods: "Early January,Late January,Early February,Late February,Late December",
+    benefits: "Frisée's distinctive bitter edge stimulates digestion while its feathery, pale green leaves provide folate and vitamin A that support cellular health and immune function. This elegant chicory adds sophisticated texture and flavor complexity to salads, balancing sweeter ingredients while delivering prebiotic compounds that nourish beneficial gut bacteria, making it the perfect ingredient to elevate ordinary greens into restaurant-quality dishes.",
+    recipes: [
+      "Warm frisée with mushroom salad", 
+      "Frisée and citrus salad "
+    ],
+    notes: "Frisée is grown year-round in California. Shown is the peak harvest season."
+  },
+
+
+  kale: {
+    name: "Kale",
+    image: "./images/kale.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Kale delivers more nutrients per calorie than almost any other food, providing exceptional amounts of vitamins A, C, and K along with powerful antioxidants that support eye health and may help prevent chronic diseases.",
+    recipes: [
+      "Kale chips", 
+      "Kale slaw with cabbage, carrots, and other seasonal veggies",
+      "Tuscan bean and kale soup"
+    ],
+    notes: "Frisée is grown year-round in California. Shown is the peak harvest season."
+  },
 
   lemon: {
     name: "Lemon",
@@ -221,6 +250,7 @@ const produceData = {
       "Goat cheese and pear pizza with caramelized onion",
       "Grilled brie and pear sandwich"
     ],
+    notes: "Although pears are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques."
   },
 
   persimmon: {
@@ -258,6 +288,20 @@ const produceData = {
       "Salad with spinach, kale, pomegranate, blue cheese, walnuts, and sweet potato", 
       "Pomegranate molasses for use in salad dressings or as a marinade for meat or tofu"
     ],
+  },
+
+  pumpkin: {
+    name: "Pumpkin",
+    image: "./images/pumpkin.png",
+    season: "Early October through Late November",
+    activeperiods:  "Early October,Late October,Early November,Late November",
+    benefits: "Pumpkins are a nutritional powerhouse, particularly rich in vitamin A, vitamin C, and potassium. They also contain fiber, iron, and other beneficial nutrients. Their fun shapes, sizes, and bold colors make them very pleasing to keep around as festive decorations. And then when you're done with having them around as decorations you an eat them! How fun!", 
+    recipes: [
+      "Pumpkin purée that can then be made into pumpkin pie, pumpkin bread, or even pumpkin overnight oats", 
+      "Roasted pumpkin with cinnamon and spices", 
+      "Savory stuffed pumpkin"
+    ],
+    notes: "All halloween pumpkins are edible, but the sugar pie pumpkin (pictured) is the tastiest."
   },
 
   strawberry: {
@@ -298,6 +342,19 @@ const produceData = {
       "Watermelon sorbet"
     ],
   },
+
+  yam_leaf: {
+    name: "Yam Leaves",
+    image: "./images/yam_leaf.png",
+    season: "Early April through Late September",
+    activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    benefits: "Yam leaves offer numerous health benefits due to their rich nutrient content, including vitamins A, B6, C, and E, as well as minerals like potassium, phosphorus, and magnesium, and even protein! Additionally, the chorophyll in green leaves boost red blood cells, help with weight loss, heal damaged skin, neutralize toxins, and so much more.",
+    recipes: [
+      "Stir fry yam leaves with garlic"
+    ],
+    notes: "Try going to farmers markets, specialty grocery stores, or Asian grocery stores to find yam leaves."
+  },
+
 
   zucchini: {
     name: "Zucchini",
