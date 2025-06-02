@@ -372,8 +372,11 @@ img {
   padding: 1em; 
   width: 100%; 
   box-sizing: border-box;
-  transition: background .3s; 
   transform: translateY(20%);
+  transition: 
+    background-color 0.3s ease-out,
+    border 0.3s ease-out,
+    color 0.3s ease-out;
 
 }
 
@@ -409,6 +412,11 @@ img {
 .recipe-list li{
   margin: 5px; 
 }
+
+.list li{
+  margin: 5px;
+}
+
 .select:hover{
   background: var(--color-secondary);
 }
@@ -531,6 +539,7 @@ img {
 
   li {
     font-size: 14px; 
+    margin: 5px
   }
   
   .card {
