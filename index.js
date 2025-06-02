@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Insert date and time into HTML for all pages
   var now = new Date(); 
   // test other dates
-  //var now = new Date('2025-01-22');
+  //var now = new Date('2025-10-22');
+
 
   // Insert date and time into HTML
   var datetime = now.toLocaleDateString('en-US', {
@@ -51,60 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const touchThreshold = 5; 
 
     // assign active state to list item based on month and day 
-    var month = now.getMonth()+1;
-    var day = now.getDate();
-    var activePeriod = '';
+    var activePeriod = (now.getDate() < 16 ? 'Early ' : 'Late ') + 
+    now.toLocaleDateString('en-US', { month: 'long' });
 
-    // Set active period based on date
-    if (month == 1 && day < 16) {
-      activePeriod = 'Early January';
-    } else if (month == 1 && day >= 16) {
-      activePeriod = 'Late January';
-    } else if (month == 2 && day < 16) {
-      activePeriod = 'Early February';
-    } else if (month == 2 && day >= 16) {
-      activePeriod = 'Late February';
-    } else if (month == 3 && day < 16) {
-      activePeriod = 'Early March';
-    } else if (month == 3 && day >= 16) {
-      activePeriod = 'Late March';
-    } else if (month == 4 && day < 16) {
-      activePeriod = 'Early April';
-    } else if (month == 4 && day >= 16) {
-      activePeriod = 'Late April';
-    } else if (month == 5 && day < 16) {
-      activePeriod = 'Early May';
-    } else if (month == 5 && day >= 16) {
-      activePeriod = 'Late May';
-    } else if (month == 6 && day < 16) {
-      activePeriod = 'Early June';
-    } else if (month == 6 && day >= 16) {
-      activePeriod = 'Late June';
-    } else if (month == 7 && day < 16) {
-      activePeriod = 'Early July';
-    } else if (month == 7 && day >= 16) {
-      activePeriod = 'Late July';
-    } else if (month == 8 && day < 16) {
-      activePeriod = 'Early August';
-    } else if (month == 8 && day >= 16) {
-      activePeriod = 'Late August';
-    } else if (month == 9 && day < 16) {
-      activePeriod = 'Early September';
-    } else if (month == 9 && day >= 16) {
-      activePeriod = 'Late September';
-    }else if (month == 10 && day < 16) {
-      activePeriod = 'Early October';
-    } else if (month == 10 && day >= 16) {
-      activePeriod = 'Late October';
-    } else if (month == 11 && day < 16) {
-      activePeriod = 'Early November';
-    } else if (month == 11 && day >= 16) {
-      activePeriod = 'Late November';
-    } else if (month == 12 && day < 16) {
-      activePeriod = 'Early December';
-    } else if (month == 12 && day >= 16) {
-      activePeriod = 'Late December';
-    } 
 
     // Check if these elements exist before trying to work with them
     const select = document.querySelector('.select');
@@ -345,7 +295,19 @@ if (document.getElementById("datetime")) {
   });
 }
 
+  // Trigger fade-in animation after content is loaded
+  // Small delay ensures all content is rendered before animation starts
+  setTimeout(() => {
+    const aboutContent = document.querySelector('.about-content');
+    const containerWrapper = document.querySelector('.container-wrapper');
+    if (aboutContent) {
+      aboutContent.classList.add('fade-in');
+    }
 
+    if (containerWrapper) {
+      containerWrapper.classList.add('fade-in');
+    }
+  }, 50);
 
 });
 // DOM function ends 
@@ -369,15 +331,34 @@ function filterCardsByPeriod(period) {
     // Get the seasons data for this card
     const activeperiods = card.dataset.activeperiod.split(',');
     
-    // Show the card if it's in season, hide it if not
+    // Check if card should be visible for this period
     if (activeperiods.includes(period)) {
-      card.classList.remove('hidden');
-      card.classList.add('visible');
+      // Card should be visible
+      if (card.classList.contains('hidden')) {
+        // Card is currently hidden, fade it in
+        card.classList.remove('hidden');
+        card.classList.remove('fade-out');
+        
+        // Small delay to ensure the hidden class is removed before adding fade-in
+        setTimeout(() => {
+          card.classList.add('visible');
+          card.classList.add('fade-in');
+        }, 50);
+      }
     } else {
-      card.classList.add('hidden');
-      setTimeout(() => {
-        card.classList.remove('visible');
-      }, 300);
+      // Card should be hidden
+      if (!card.classList.contains('hidden')) {
+        // Card is currently visible, fade it out
+        card.classList.add('fade-out');
+        card.classList.remove('fade-in');
+        
+        // Wait for fade-out animation to complete before hiding
+        setTimeout(() => {
+          card.classList.add('hidden');
+          card.classList.remove('visible');
+          card.classList.remove('fade-out');
+        }, 50); // Adjust this timing to match your CSS transition duration
+      }
     }
   });
 }
@@ -395,6 +376,11 @@ function applySeasonTheme(activePeriod) {
   document.documentElement.style.setProperty('--color-background', theme.background);
   document.documentElement.style.setProperty('--color-text', theme.text);
   
-  // Add season class to body
-  document.body.className = season.toLowerCase();
+  setTimeout(() => {
+    // Remove all season classes first
+    document.body.classList.remove('spring', 'summer', 'autumn', 'winter', 'fall');
+    
+    // Add the new season class
+    document.body.className = season.toLowerCase();
+  }, 50);
 }
