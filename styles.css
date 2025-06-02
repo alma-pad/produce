@@ -1,8 +1,8 @@
 :root {
-  --color-primary: #5F8E45;     /* Default to Summer */
-  --color-secondary: #FFDA75;
-  --color-background: #FFF9E7;
-  --color-text: #333333;
+  --color-primary: #EDEDED;     /* Default to gray */
+  --color-secondary: #EDEDED;
+  --color-background: #EDEDED;
+  --color-text: #EDEDED;
 
 }
 
@@ -11,8 +11,8 @@ body {
  background-color: var(--color-background);
  color: var(--color-text);
  transition: 
- background-color 0.6s ease-in-out,
- color 0.6s ease-in-out;
+ background-color 0.3s ease-out,
+ color 0.3s ease-out;
 }
 
 .dropdown-container {
@@ -67,8 +67,8 @@ display:flex;
 justify-content: center;
 align-items: center;
 transition: 
-background-color 0.6s ease-in-out,
-color 0.6s ease-in-out;
+background-color 0.3s ease-out,
+color 0.3s ease-out;
 }
 
 .header-details::after {
@@ -83,8 +83,8 @@ mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130
 -webkit-mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
 z-index: 0; 
 transition: 
-background-color 0.6s ease-in-out,
-color 0.6s ease-in-out;
+background-color 0.3s ease-out,
+color 0.3s ease-out;
 }
 
 .header-content{
@@ -885,7 +885,7 @@ color: var(--color-primary);
   .produce-content {
     display: flex;
     margin: 5px; 
-    padding: 20px 15px;
+    padding: 20px 15px 80px 15px;
     flex-wrap: wrap; 
     justify-content: center;
     gap: 1.5rem;
