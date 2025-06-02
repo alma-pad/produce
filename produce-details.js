@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get current date for the header
   const now = new Date();
   
-  // const now = new Date('2025-01-22');
+  //const now = new Date('2025-01-22');
   var datetime = now.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -89,6 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Trigger fade-in animation after content is loaded
+  // Small delay ensures all content is rendered before animation starts
+  setTimeout(() => {
+    const produceContent = document.querySelector('.produce-content');
+    if (produceContent) {
+      produceContent.classList.add('fade-in');
+    }
+  }, 50);
 
 });
 // DOM function ends 
@@ -131,3 +140,5 @@ function applySeasonTheme(activePeriod) {
   
   document.body.className = season.toLowerCase();
 }
+
+
