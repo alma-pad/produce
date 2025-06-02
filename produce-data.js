@@ -103,6 +103,20 @@ const produceData = {
     ],
   },
 
+  carrot: {
+    name: "Carrot",
+    image: "./images/carrot.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Carrots offer many plant compounds, including carotenoids. These are substances with powerful antioxidant activity that have been linked to improved immune function and reduced risk of many illnesses, including heart disease, various degenerative ailments, and certain types of cancer.",
+    recipes: [
+      "Carrot ginger soup", 
+      "Roasted carrot with maple syrup, olive oil, sea salt",
+      "Pickled carrot and daikon"
+    ],
+    notes: "Carrots are planted in the spring and fall. Due to California's diverse climate, carrot harvest season is effectively year-round."
+  },
+
   cherry: {
     name: "Cherry",
     image: "./images/cherry.png",
@@ -140,8 +154,9 @@ const produceData = {
     recipes: [
       "Eggplant parmesean", 
       "Chinese eggplant with garlic sauce 鱼香茄子", 
-      "baba ganoush", 
-      "ratatouille"
+      "Baba ganoush", 
+      "Stuffed eggplant",
+      "Ratatouille"
     ],
   },
   
@@ -158,6 +173,19 @@ const produceData = {
     notes: "Frisée is grown year-round in California. Shown is the peak harvest season."
   },
 
+  fig: {
+    name: "Fig",
+    image: "./images/fig.png",
+    season: "Late July through Early October",
+    activeperiods: "Late July,Early August,Late August,Early September,Late September,Early October",
+    benefits: "Figs provide exceptional fiber content that supports digestive health and blood sugar regulation, while their uniquely sweet flavor profile satisfies dessert cravings naturally. Their seed-studded interior delivers a combination of creamy texture and subtle crunch alongside minerals like calcium and potassium, making these ancient fruits a sophisticated treat that supports modern wellness goals.",
+    recipes: [
+      "Fig ricotta toast", 
+      "Baguette sandwich with brie, fig (or fig jam), arugula, and prosciutto", 
+      "Fig frangipane tart"
+    ]
+  },
+
 
   kale: {
     name: "Kale",
@@ -170,7 +198,7 @@ const produceData = {
       "Kale slaw with cabbage, carrots, and other seasonal veggies",
       "Tuscan bean and kale soup"
     ],
-    notes: "Frisée is grown year-round in California. Shown is the peak harvest season."
+    notes: "Kale is grown year-round in California."
   },
 
   lemon: {
@@ -206,7 +234,7 @@ const produceData = {
     season: "Late June through Early September",
     activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
     benefits: "Lychees deliver an impressive amount of vitamin C wrapped in a sweet, floral flavor profile that feels truly indulgent. Their unique combination of antioxidants supports immune function and skin health, while their juicy texture and exotic taste transform ordinary moments into special treats.", 
-    notes: "Although some lychee is grown in Southern California, most lychee is imported from China."
+    notes: "Although some lychee is grown in Southern California, most lychee is imported from China or Mexico."
   },
 
 
