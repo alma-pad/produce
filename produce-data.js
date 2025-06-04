@@ -37,6 +37,33 @@ const produceData = {
     ],
   },
 
+  arugula: {
+    name: "Arugula",
+    image: "./images/arugula.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
+    benefits: "Arugula's distinctive peppery flavor brings sophisticated depth to salads and dishes while delivering impressive amounts of calcium, potassium, and folate for bone and heart health. This nutrient-dense green contains cancer-fighting compounds called glucosinolates that help detoxify the body, making its bold flavor profile as beneficial for your health as it is exciting for your palate.",
+    recipes: [
+      "Cacio e pepe with agrugula and lemon", 
+      "Sautéed arugula with mushroom and white wine", 
+      "Arugula salad with lemon and parmesan "
+    ],
+  },
+
+  artichoke: {
+    name: "Artichoke",
+    image: "./images/artichoke.png",
+    season: "Early March through Late May",
+    activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May", 
+    benefits: "Artichokes offer a range of health benefits due to their fiber, antioxidants, and other nutrients. They may improve digestion, lower blood sugar and cholesterol levels, protect the liver, and protect against heart disease.",
+    recipes: [
+      "Roasted artichoke with herby aioli", 
+      "Spinach artichoke dip", 
+      "Baked artichoke hears with white wine, garlic, parmesean, lemon, breadcrumbs"
+    ],
+    notes: "Many recipes use artichoke hearts. To extract the heart, first cook the artichoke by roasting, steaming, or boiling. Then cut off the top and remove the outer leaves, then carefully scoop out the fuzzy choke with a spoon. Then discard the fuzzy part and you will be left with the artichoke heart. You can dip the outer leaves in a sauce and scrape off the fleshy part with your teeth. This vegetable can look intimidating. Fear not!! You go for it!"
+  },
+
   avocado: {
     name: "Avocado",
     image: "./images/avocado.png",
@@ -64,6 +91,21 @@ const produceData = {
     notes: "Although apples are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques."
   },
 
+  beet: {
+    name: "Beet",
+    image: "./images/beet.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Beets contain natural nitrates that improve blood flow and may enhance athletic performance while their vibrant color comes from betalains that support detoxification and reduce inflammation. Their earthy sweetness becomes even more pronounced when roasted, delivering a satisfying depth of flavor alongside folate for cellular health and fiber for digestive wellness, proving that nature's most colorful foods often deliver the most powerful benefits.", 
+    recipes: [
+      "Morrocan beet salad",
+      "Borscht", 
+      "Beet hummus", 
+      "Roasted beets"
+    ],
+    notes: "You make my heart skip a beet ;)"
+  },
+
   blackberry: {
     name: "Blackberry",
     image: "./images/blackberry.png",
@@ -88,6 +130,7 @@ const produceData = {
       "Blueberry banana pancakes", 
       "Blueberry mint matcha latte"
     ],
+    notes: ["Although blueberries seem ubiquitous in California grocery stores, they are mainly grown in the Pacific Northwest and parts of the East Coast like Maine and New Jersey. In the winter blueberries are imported from Mexico and South America."]
   },
 
   butternut_squash: {
@@ -159,12 +202,26 @@ const produceData = {
       "Ratatouille"
     ],
   },
+
+  fava_bean: {
+    name: "Fava Bean",
+    image: "./images/fava_bean.png",
+    season: "Early March through Early June",
+    activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May,Early June",
+    benefits: "Fava beans, also known as broad beans, are loaded with vitamins, minerals, fiber and protein. They’re thought to offer impressive health effects, such as improved motor function and immunity. They are rich in levodopa (L-dopa), a compound that your body converts to the neurotransmitter dopamine.",
+    recipes: [
+      "Sautéed whole fava bean", 
+      "Fava bean dip",
+      "Fava bean soup"
+    ],
+    notes: "Fava beans are distinct from romano beans, which look like fava beans but are flat. Both are excellent choices."
+  },
   
   frisee: {
     name: "Frisée",
     image: "./images/frisee.png",
-    season: "Late December to Late February",
-    activeperiods: "Early January,Late January,Early February,Late February,Late December",
+    season: "Late December to Late March",
+    activeperiods: "Early January,Late January,Early February,Late February,Early Marhc,Late March,Late December",
     benefits: "Frisée's distinctive bitter edge stimulates digestion while its feathery, pale green leaves provide folate and vitamin A that support cellular health and immune function. This elegant chicory adds sophisticated texture and flavor complexity to salads, balancing sweeter ingredients while delivering prebiotic compounds that nourish beneficial gut bacteria, making it the perfect ingredient to elevate ordinary greens into restaurant-quality dishes.",
     recipes: [
       "Warm frisée with mushroom salad", 
@@ -199,6 +256,17 @@ const produceData = {
       "Tuscan bean and kale soup"
     ],
     notes: "Kale is grown year-round in California."
+  },
+
+
+  kiwi: {
+    name: "Kiwi",
+    image: "./images/kiwi.png",
+    season: "Early November to Late April",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early November,Late November,Early December,Late December",
+    benefits: "Kiwis pack more vitamin C than oranges and contain a unique enzyme called actinidin that aids protein digestion, making them both a nutritional powerhouse and digestive ally. Their fuzzy exterior hides a vibrant green interior with tiny black seeds that provide fiber and omega-3 fatty acids, while their sweet-tart flavor profile delivers tropical satisfaction that can brighten any meal or snack.",
+
+
   },
 
   lemon: {
@@ -266,6 +334,22 @@ const produceData = {
     notes: "Pea shoot season is frightening short. If you see them being sold, definitely take advantage of it and get yourself a bag!"
   },
 
+  peach: {
+    name: "Peach",
+    image: "./images/peach.png",
+    season: "Late June through Early September",
+    activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
+    benefits: "Peaches deliver juicy sweetness alongside impressive amounts of vitamin C and potassium that support immune function and heart health, while their fuzzy skin contains additional fiber and antioxidants. Their naturally fragrant flesh provides beta-carotene for healthy skin and eyes, making each bite a perfect balance of indulgent flavor and nutritional benefits that captures the essence of summer in every juicy, satisfying mouthful.", 
+    recipes: [
+      "Grilled peaches with ice cream or in a salad", 
+      "Peach salsa", 
+      "Peach pie",
+      "Peach sorbet"
+    ],
+    notes: "Nectarines are genetically identical to peaches except for one gene that affects the skin's texture."
+  },
+
+
   pear: {
     name: "Pear",
     image: "./images/pear.png",
@@ -331,11 +415,23 @@ const produceData = {
     ],
     notes: "All halloween pumpkins are edible, but the sugar pie pumpkin (pictured) is the tastiest."
   },
-
+  spinach: {
+    name: "Spinach",
+    image: "./images/spinach.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Spinach provides a wide range of vitamins, minerals, and antioxidants. It's particularly known for its high content of vitamins A, C, and K, as well as folate and iron. Spinach has around 12g of protein per 100 calories, one of the highest protein to calorie ratio of plants!! ", 
+    recipes: [
+      "Sautéed spinach with garlic", 
+      "Pasta with spinach and mushroom", 
+      "Omelette with spinach"
+    ],
+   
+  },
   strawberry: {
     name: "Strawberry",
     image: "./images/strawberry.png",
-    season: "Late April throgh Early July",
+    season: "Late April through Early July",
     activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
     benefits: "Strawberries deliver a perfect balance of sweetness and subtle acidity that satisfies cravings naturally. Their abundant antioxidants and polyphenols support skin health, help manage blood sugar, lower inflamation, and delay age-related memory loss. Plus they're delicious and low-calorie!", 
     recipes: [
@@ -343,6 +439,7 @@ const produceData = {
       "Salad with spinach, strawberry, feta cheese, shaved almonds", 
       "Strawberry rhubarb crisp"
     ],
+    notes: "Strawberries are grown year-round in California. In the winter the production occurs in Southern California and in controlled environments such as greenhouses. I think that they are the best in April, May, and June."
   },
   tomato: {
     name: "Tomato",
