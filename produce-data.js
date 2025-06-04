@@ -198,7 +198,7 @@ const produceData = {
       "Eggplant parmesean", 
       "Chinese eggplant with garlic sauce 鱼香茄子", 
       "Baba ganoush", 
-      "Stuffed eggplant",
+      "Stuffed eggplant with tomato, ground beef, minced onions",
       "Ratatouille"
     ],
   },
