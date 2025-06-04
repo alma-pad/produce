@@ -307,7 +307,7 @@ if (document.getElementById("datetime")) {
     if (containerWrapper) {
       containerWrapper.classList.add('fade-in');
     }
-  }, 50);
+  }, 100);
 
 });
 // DOM function ends 
@@ -328,36 +328,45 @@ function filterCardsByPeriod(period) {
       return;
     }
 
+
+
     // Get the seasons data for this card
     const activeperiods = card.dataset.activeperiod.split(',');
     
     // Check if card should be visible for this period
+    // Add fade in and fade out effects for cards
     if (activeperiods.includes(period)) {
       // Card should be visible
       if (card.classList.contains('hidden')) {
         // Card is currently hidden, fade it in
-        card.classList.remove('hidden');
-        card.classList.remove('fade-out');
+        
+        
+        card.classList.add('fade-in');
+        
+ 
         
         // Small delay to ensure the hidden class is removed before adding fade-in
         setTimeout(() => {
-          card.classList.add('visible');
+          card.classList.remove('hidden');
           card.classList.add('fade-in');
-        }, 50);
+          card.classList.remove('fade-out');
+          //card.classList.add('visible');
+          
+        }, 10);
       }
     } else {
       // Card should be hidden
       if (!card.classList.contains('hidden')) {
         // Card is currently visible, fade it out
         card.classList.add('fade-out');
-        card.classList.remove('fade-in');
+        //card.classList.remove('fade-in');
         
         // Wait for fade-out animation to complete before hiding
         setTimeout(() => {
           card.classList.add('hidden');
-          card.classList.remove('visible');
+          //card.classList.remove('visible');
           card.classList.remove('fade-out');
-        }, 50); // Adjust this timing to match your CSS transition duration
+        }, 10); // Adjust this timing to match your CSS transition duration
       }
     }
   });
@@ -382,5 +391,5 @@ function applySeasonTheme(activePeriod) {
     
     // Add the new season class
     document.body.className = season.toLowerCase();
-  }, 50);
+  }, 0);
 }
