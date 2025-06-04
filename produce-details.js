@@ -80,11 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', function(e) {
       e.preventDefault();
       
-      // If there's browser history, go back
-      if (window.history.length > 1) {
+       // If there's browser history, go back
+       if (document.referrer && document.referrer.includes(window.location.hostname)) {
         window.history.back();
       } else {
-        // Fallback to index.html if there's no history
+        // Fallback to index.html if there's no history or came from external site
         window.location.href = 'index.html';
       }
     });
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (produceContent) {
       produceContent.classList.add('fade-in');
     }
-  }, 50);
+  }, 100);
 
 });
 // DOM function ends 
