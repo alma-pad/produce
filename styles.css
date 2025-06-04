@@ -6,13 +6,19 @@
 
 }
 
+#index{
+  transition: 
+  background-color 0.3s ease-out,
+  color 0.3s ease-out;
+
+}
 
 body {
  background-color: var(--color-background);
  color: var(--color-text);
- transition: 
+ /* transition: 
  background-color 0.3s ease-out,
- color 0.3s ease-out;
+ color 0.3s ease-out; */
 }
 
 .dropdown-container {
@@ -37,9 +43,9 @@ body {
   margin: 10px; 
   padding: 50px 50px 120px 50px;
   position: relative; 
-  transition: 
+  /* transition: 
   background-color 0.3s ease-out,
-  color 0.3s ease-out;
+  color 0.3s ease-out; */
 }
 
 .header::after {
@@ -53,9 +59,9 @@ body {
   mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
   -webkit-mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
   z-index: 0; 
-  transition: 
+  /* transition: 
   background-color 0.3s ease-out,
-  color 0.3s ease-out;
+  color 0.3s ease-out; */
 }
 
 .header-details{
@@ -66,9 +72,9 @@ position: relative;
 display:flex; 
 justify-content: center;
 align-items: center;
-transition: 
+/* transition: 
 background-color 0.3s ease-out,
-color 0.3s ease-out;
+color 0.3s ease-out; */
 }
 
 .header-details::after {
@@ -82,9 +88,9 @@ background-color: var(--color-background);
 mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
 -webkit-mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
 z-index: 0; 
-transition: 
+/* transition: 
 background-color 0.3s ease-out,
-color 0.3s ease-out;
+color 0.3s ease-out; */
 }
 
 .header-content{
@@ -162,9 +168,9 @@ white-space: normal;
   margin: 10px; 
   padding: 50px; 
   position: relative; 
-  transition: 
+  /* transition: 
   background-color 0.3s ease-out,
-  color 0.3s ease-out;
+  color 0.3s ease-out; */
 
 }
 
@@ -180,9 +186,9 @@ white-space: normal;
   -webkit-mask: radial-gradient(75px at 50% 0%, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
   z-index: 0;
   transform: translateY(-100%); /* Move it up to position at the top edge */
-  transition: 
+  /* transition: 
   background-color 0.3s ease-out,
-  color 0.3s ease-out;
+  color 0.3s ease-out; */
 }
 
 .footer a {
@@ -192,10 +198,10 @@ white-space: normal;
   font-size: 14px;
   /* text-decoration: underline; */
   color: var(--color-primary);
-  transition: all 0.3s ease; 
-  transition: 
+ 
+  /* transition: 
   background-color 0.3s ease-out,
-  color 0.3s ease-out;
+  color 0.3s ease-out; */
 }
 
 a:hover {
@@ -314,8 +320,9 @@ padding: 0px
   /* flex: 0 0 100px;  */
   text-align: center;
   /* padding: 10px; */
-  transition: opacity .3s ease-out;
+  transition: opacity .1s ease-out;
   display: flex;
+  
   flex-direction: column;
   align-items: center;    
 
@@ -325,26 +332,35 @@ padding: 0px
 
 .card.hidden {
   opacity: 0;
-  transition: opacity .3s ease-out;
+  transform: scale(0);
+
+  transition: opacity .1s ease-out; 
   display: none;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .card.visible {
   opacity: 1;
-  transition: opacity .3s ease-out;
-  display: block;
+  transform: scale(1);
+  transition: opacity .1s ease-out; 
+
+  pointer-events: auto;
 }
 
-card.fade-in {
+.card.fade-in {
   opacity: 1;
-  transition: opacity 0.3s ease-out;
-  transform: translateY(0);
+  /* transition: opacity .9s ease-out;  */
+
 }
 
-card.fade-out {
+.card.fade-out {
   opacity: 0;
-  transition: opacity 0.3s ease-out;
-  transform: translateY(0);
+  /* transition: opacity .9s ease-out; */
+
 }
 
 
@@ -622,6 +638,8 @@ img {
 
 
 }
+
+
 
 
 
