@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'produce-season', property: 'season', label: 'Season' },
     { id: 'produce-benefits', property: 'benefits', label: 'Benefits' },
     { id: 'produce-recipes', property: 'recipes', label: 'Recipes' },
-    { id: 'produce-notes', property: 'notes', label: 'Notes' }
+    { id: 'produce-notes', property: 'notes', label: 'Notes' }, 
+    { id: 'produce-joke', property: 'joke', label: 'Notes' }
   ];
 
   sections.forEach(section => {
