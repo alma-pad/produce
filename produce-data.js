@@ -48,6 +48,7 @@ const produceData = {
       "Sautéed arugula with mushroom and white wine", 
       "Arugula salad with lemon and parmesan "
     ],
+  
   },
 
   artichoke: {
@@ -94,8 +95,8 @@ const produceData = {
   beet: {
     name: "Beet",
     image: "./images/beet.png",
-    season: "All year",
-    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    season: "Early October through Late March",
+    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
     benefits: "Beets contain natural nitrates that improve blood flow and may enhance athletic performance while their vibrant color comes from betalains that support detoxification and reduce inflammation. Their earthy sweetness becomes even more pronounced when roasted, delivering a satisfying depth of flavor alongside folate for cellular health and fiber for digestive wellness, proving that nature's most colorful foods often deliver the most powerful benefits.", 
     recipes: [
       "Morrocan beet salad",
@@ -103,7 +104,8 @@ const produceData = {
       "Beet hummus", 
       "Roasted beets"
     ],
-    notes: "You make my heart skip a beet ;)"
+    notes: "Beets are available all year in California, but their peak harvest season is fall to winter.", 
+    joke: "You make my heart skip a beet ;)"
   },
 
   blackberry: {
@@ -131,6 +133,20 @@ const produceData = {
       "Blueberry mint matcha latte"
     ],
     notes: ["Although blueberries seem ubiquitous in California grocery stores, they are mainly grown in the Pacific Northwest and parts of the East Coast like Maine and New Jersey. In the winter blueberries are imported from Mexico and South America."]
+  },
+
+  brussel_sprout: {
+    name: "Brussel Sprout",
+    image: "./images/brussel_sprout.png",
+    season: "Early October through Late March",
+    activeperiods: "Early March,Late March,Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February",
+    benefits: "Brussels sprouts contain more vitamin K than almost any other vegetable, supporting bone health and blood clotting, while their high fiber content promotes digestive wellness and sustained energy. When roasted or sautéed properly, their natural sugars caramelize to create a nutty, slightly sweet flavor that is unmatched.",
+    recipes: [
+ 
+      "Roasted brussel sprouts with parmesan and red pepper flakes", 
+      "Roasted brussel sprouts with balsamic glaze"
+    ],
+    notes: "To roast them cut them in half longitudinally and roast flat side down. It's a bit more effort but the result is so yummy.", 
   },
 
   butternut_squash: {
@@ -186,6 +202,19 @@ const produceData = {
       "Chive and parsley pesto"
     ],
     notes: "Large chives can be hard to find. The best bet is probably going to Asian grocery stores like Ranch 99 or Hmart."
+  },
+
+  cucumber: {
+    name: "Cucumber",
+    image: "./images/cucumber.png",
+    season: "Late May through Late August",
+    activeperiods: "Late May,Early June,Late June,Early July,Late July,Early August,Late August",
+    benefits: "Cucumbers provide impressive hydration with their 96% water content while delivering a cooling effect that refreshes from the inside out on hot days. Their crisp texture and mild flavor make them the perfect vehicle for healthy dips and dressings, while their silica content supports skin elasticity and their low calorie count makes them the perfect addition to meals when you want substance and satisfaction without excess calories.",
+    recipes: [
+      "Asian cucumber salad", 
+      "Spring rolls with cucumbers and other fresh veggies", 
+      "Bagels and lox with cucumber"
+    ]
   },
 
   eggplant: {
@@ -263,7 +292,7 @@ const produceData = {
     name: "Kiwi",
     image: "./images/kiwi.png",
     season: "Early November to Late April",
-    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early November,Late November,Early December,Late December",
+    activeperiods: "Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
     benefits: "Kiwis pack more vitamin C than oranges and contain a unique enzyme called actinidin that aids protein digestion, making them both a nutritional powerhouse and digestive ally. Their fuzzy exterior hides a vibrant green interior with tiny black seeds that provide fiber and omega-3 fatty acids, while their sweet-tart flavor profile delivers tropical satisfaction that can brighten any meal or snack.",
 
 
@@ -280,6 +309,35 @@ const produceData = {
       "Avgolemono", 
       "Classic lemon tart"
     ],
+  },
+
+  mango: {
+    name: "Mango",
+    image: "./images/mango.png",
+    season: "Late April through Late August",
+    activeperiods: "Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
+    benefits: "Mangoes deliver over 20 different vitamins and minerals including vision-supporting vitamin A, while their natural enzymes aid digestion and their fiber content keeps you satisfied. These fruits truly taste like an indulgence.", 
+    recipes: [
+      "Mango shrimp stir fry", 
+      "Mango with sticky rice", 
+      "Mango with yogurt and granola"
+    ],
+    notes: "California mangoes are primarily imported from Mexico. There is one California variety, the Keitt mango, that grows in Coachella valley. Keitt mangoes are in season around August and September."
+  },
+
+  mushroom: {
+    name: "Mushroom",
+    image: "./images/mushroom.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Mushrooms provide a unique umami flavor that enhances any dish while delivering impressive amounts of selenium, potassium, and B vitamins that support immune function and energy metabolism. Additionally, they are one of the only vegan sources of vitamin D.", 
+    recipes: [
+      "Mushrooms sautéed with garlic", 
+      "Chicken with mushroom purée and chard", 
+      "Stroganoff"
+    ],
+    notes: "Specific mushrooms have different harvesting seasons. Shiitakes and oyster mushrooms are in season all year. Mushroom foraging season is in the fall.",
+    joke: "I have so mushroom for you in my heart ;)"
   },
 
   leek: {
@@ -378,6 +436,20 @@ const produceData = {
     notes: "The most common varities are fuyu and hachiya. The fuyu (pictured) has a flat end and can be eaten when hard or soft. The hachiya has a pointy end and must be eaten when soft and ripe."
   },
 
+  plum: {
+    name: "Plum",
+    image: "./images/plum.png",
+    season: "Early July through Late September",
+    activeperiods:  "Early July,Late July,Early August,Late August,Early September,Late September",
+    benefits: "Plums contain unique antioxidants called anthocyanins that give them their deep purple color while supporting brain health and reducing inflammation throughout the body. They have over 15 different vitamins and minerals, as well as fiber to keep you regular.", 
+    recipes: [
+      "Pistachio plum cardamom crumble", 
+      "Charred plum with cheese", 
+      "Plum jam"
+    ],
+    notes: "Plums come in a variety of colors including black, purple, red, and green. Prunes are typically sold as dried but fresh ones are really delicious too. I hope you get to try all of these varieties :) "
+  },
+
   pomelo: {
     name: "Pomelo",
     image: "./images/pomelo.png",
@@ -415,6 +487,7 @@ const produceData = {
     ],
     notes: "All halloween pumpkins are edible, but the sugar pie pumpkin (pictured) is the tastiest."
   },
+
   spinach: {
     name: "Spinach",
     image: "./images/spinach.png",
@@ -464,7 +537,8 @@ const produceData = {
     recipes: [
       "Watermelon juice with lime", 
       "Watermelon, feta, cucumuber, and mint salad", 
-      "Watermelon sorbet"
+      "Watermelon sorbet", 
+      "Blend watermelon chunks for a smoothie"
     ],
   },
 
