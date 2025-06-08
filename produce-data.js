@@ -40,14 +40,15 @@ const produceData = {
   arugula: {
     name: "Arugula",
     image: "./images/arugula.png",
-    season: "All year",
-    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December", 
+    season: "Early October to Late June",
+    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June", 
     benefits: "Arugula's distinctive peppery flavor brings sophisticated depth to salads and dishes while delivering impressive amounts of calcium, potassium, and folate for bone and heart health. This nutrient-dense green contains cancer-fighting compounds called glucosinolates that help detoxify the body, making its bold flavor profile as beneficial for your health as it is exciting for your palate.",
     recipes: [
       "Cacio e pepe with agrugula and lemon", 
       "Sautéed arugula with mushroom and white wine", 
       "Arugula salad with lemon and parmesan "
     ],
+    notes: "Although arugula is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring. That being said, arugula is still a good choice anytime."
   
   },
 
@@ -217,6 +218,21 @@ const produceData = {
     ]
   },
 
+  corn: {
+    name: "Corn",
+    image: "./images/corn.png",
+    season: "Early June through Late October",
+    activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
+    benefits: "Corn provides lutein and zeaxanthin, powerful antioxidants that specifically protect eye health and may prevent age-related vision decline, while its natural sweetness delivers satisfying energy from complex carbohydrates. Corn is a low-glycemic index food, meaning it's digested slowly and doesn't cause a rapid spike in blood sugar levels.",
+    recipes: [
+      "Grilled corn on the cob", 
+      "Cilantro lime corn", 
+      "Creamed corn", 
+      "Sweet corn soup"
+    ], 
+    notes: "Corn is very healthy! It is processed corn, like corn oil and corn syrup, that is not as healthy."
+  },
+
   eggplant: {
     name: "Eggplant",
     image: "./images/eggplant.png",
@@ -272,19 +288,32 @@ const produceData = {
     ]
   },
 
+  grape: {
+    name: "Grape",
+    image: "./images/grape.png",
+    season: "Early August through Late November",
+    activeperiods: "Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
+    benefits: "Grapes contain resveratrol, a powerful compound that supports heart health and may activate longevity genes, while providing quick, sustainable energy in perfect bite-sized packages. The potential health benefits of grapes include helping boost heart health, managing blood pressure, protecting the eyes, and preventing health conditions such as cancer and constipation. These fruits are very versatile and can appear in charcuterie boards, salads, desserts, or drinks.",
+    recipes: [
+      "Freeze grapes for a quick and easy snack", 
+      "Grape paired with gouda", 
+      "Baked grape with labneh and pistachio"
+    ]
+  },
+
 
   kale: {
     name: "Kale",
     image: "./images/kale.png",
-    season: "All year",
-    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    season: "Early October to Late June",
+    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June",
     benefits: "Kale delivers more nutrients per calorie than almost any other food, providing exceptional amounts of vitamins A, C, and K along with powerful antioxidants that support eye health and may help prevent chronic diseases.",
     recipes: [
       "Kale chips", 
       "Kale slaw with cabbage, carrots, and other seasonal veggies",
       "Tuscan bean and kale soup"
     ],
-    notes: "Kale is grown year-round in California."
+    notes: "Although kale is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring. That being said, kale is still a good choice anytime."
   },
 
 
@@ -426,8 +455,8 @@ const produceData = {
   persimmon: {
     name: "Persimmon",
     image: "./images/persimmon.png",
-    season: "Late September through Early December",
-    activeperiods: "Late September,Early October,Late October,Early November,Late November,Early December",
+    season: "Late September through Late December",
+    activeperiods: "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Persimmons contain exceptional levels of antioxidants and tannins that support heart health while their natural sweetness rivals candy when fully ripened. Rich in beta-carotene that promotes eye health and healthy skin, these golden fruits deliver a unique honey-cinnamon flavor experience that changes throughout the ripening process, making them one of nature's most intriguing seasonal treasures.", 
     recipes: [
       "Persimmon bread", 
@@ -469,9 +498,25 @@ const produceData = {
     benefits: "Bursting with jewel-like seeds, pomegranates deliver potent antioxidants that fight cellular damage while reducing inflammation throughout your body. Their unique combination of sweet-tart flavor and satisfying crunch makes them nature's perfect snack, while studies suggest they may improve heart health and exercise performance.", 
     recipes: [
       "Pomegranate chicken", 
-      "Salad with spinach, kale, pomegranate, blue cheese, walnuts, and sweet potato", 
+      "Salad with spinach, kale, pomegranate, blue cheese, walnuts", 
       "Pomegranate molasses for use in salad dressings or as a marinade for meat or tofu"
     ],
+  },
+
+
+  potato: {
+    name: "Potato",
+    image: "./images/potato.png",
+    season: "Early October through Late March",
+    activeperiods:  "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
+    benefits: "The potato's incredible versatility transforms them from simple boiled comfort food to crispy roasted perfection, and when eaten with the nutrient-rich skin, they become a complete source of essential amino acids and fiber that supports digestive health and stable blood sugar levels. Also, they are commonly considered one of the most satiating foods out there, so you can feel full with minimal calories.", 
+    recipes: [
+      "Roasted potato", 
+      "Mashed potato", 
+      "Potato leek soup", 
+      "Baked potato"
+    ],
+    notes: "Potato peak harvest is fall to winter, but in California they can be grown all year."
   },
 
   pumpkin: {
