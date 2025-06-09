@@ -177,6 +177,21 @@ const produceData = {
     notes: "Carrots are planted in the spring and fall. Due to California's diverse climate, carrot harvest season is effectively year-round."
   },
 
+  cauliflower: {
+    name: "Cauliflower",
+    image: "./images/cauliflower.png",
+    season: "Early December to Late March",
+    activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
+    benefits: "Cauliflower offers numerous health benefits due to its high content of fiber, antioxidants, vitamins, and minerals. It supports digestion, boosts the immune system, and may even reduce the risk of certain cancers. It's incredibly filling and can be used to lose weight.",
+    recipes: [
+      "Curried cauliflower soup", 
+      "Roasted cauliflower with tahini",
+      "Cauliflower pizza crust",
+      "Cauliflower rice as a substitution for rice"
+    ],
+    notes: "Do you ever see a word too many times and it starts to look weird? That's what I'm experiencing with cauliflower."
+  },
+
   cherry: {
     name: "Cherry",
     image: "./images/cherry.png",
