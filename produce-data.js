@@ -93,6 +93,19 @@ const produceData = {
     notes: "Although apples are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques."
   },
 
+  bell_pepper: {
+    name: "Bell Pepper",
+    image: "./images/bell_pepper.png",
+    season: "Early April through Late November",
+    activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
+    benefits: "Bell peppers contain more vitamin C than oranges while their vibrant colors signal different antioxidant profiles that support immune function and skin health. Their sweet, crisp texture adds satisfying crunch and natural sweetness to dishes without any heat, while their versatility shines in everything from raw snacking to roasted applications, making them the perfect gateway vegetable for anyone looking to add more colorful nutrition to their meals.", 
+    recipes: [
+      "Roasted bell peppers",
+      "Stuffed bell pepper", 
+      "Muhammara"
+    ],
+  },
+
   beet: {
     name: "Beet",
     image: "./images/beet.png",
@@ -192,6 +205,19 @@ const produceData = {
     notes: "Do you ever see a word too many times and it starts to look weird? That's what I'm experiencing with cauliflower."
   },
 
+
+  celery: {
+    name: "Celery",
+    image: "./images/celery.png",
+    season: "Early October through Late December",
+    activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
+    benefits: "Celery provides natural compounds that may help lower blood pressure and reduce inflammation throughout the body. Its negative-calorie reputation makes it perfect for guilt-free snacking, while its crisp texture and mild flavor create the ideal vehicle for healthy dips and spreads.",
+    recipes: [
+      "Celery dipped in spreads like hummus, tzatziki, or green goddess yogurt dip", 
+      "Mirepoix as a flavor base to soups"
+    ]
+  },
+
   cherry: {
     name: "Cherry",
     image: "./images/cherry.png",
@@ -204,6 +230,20 @@ const produceData = {
 
     ],
   },
+
+  chestnut: {
+    name: "Chestnut",
+    image: "./images/chestnut.png",
+    season: "Late September through Early November",
+    activeperiods: "Late September,Early October,Late October,Early November",
+    benefits: "Chestnuts offer a unique combination of sweet, nutty flavor with significantly less fat than other nuts while providing complex carbohydrates that deliver sustained energy without the heaviness. Their impressive vitamin C content sets them apart from other nuts, while their natural sweetness and creamy texture when cooked make them perfect for both savory stuffings and dessert applications.",
+    recipes: [
+      "Chicken with chestnut", 
+      "Chestnut soup", 
+      "Pear and chestnut tart"
+    ],
+  },
+
 
 
   chives: {
@@ -248,6 +288,19 @@ const produceData = {
     notes: "Corn is very healthy! It is processed corn, like corn oil and corn syrup, that is not as healthy."
   },
 
+  daikon: {
+    name: "Daikon",
+    image: "./images/daikon.png",
+    season: "Early December through Late February",
+    activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February",
+    benefits: "Daikon radish contains natural enzymes that aid digestion while its crisp, refreshing texture provides vitamin C and fiber that support immune function and digestive health. This mild, versatile root vegetable adds satisfying crunch to salads when raw or becomes tender and sweet when cooked, while its natural compounds may help support liver detoxification.",
+    recipes: [
+      "Braised daikon", 
+      "Daikon soup", 
+      "Pickled daikon and carrot"
+    ], 
+  },
+
   eggplant: {
     name: "Eggplant",
     image: "./images/eggplant.png",
@@ -263,19 +316,20 @@ const produceData = {
     ],
   },
 
-  fava_bean: {
-    name: "Fava Bean",
-    image: "./images/fava_bean.png",
-    season: "Early March through Early June",
-    activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May,Early June",
-    benefits: "Fava beans, also known as broad beans, are loaded with vitamins, minerals, fiber and protein. They’re thought to offer impressive health effects, such as improved motor function and immunity. They are rich in levodopa (L-dopa), a compound that your body converts to the neurotransmitter dopamine.",
-    recipes: [
-      "Sautéed whole fava bean", 
-      "Fava bean dip",
-      "Fava bean soup"
-    ],
-    notes: "Fava beans are distinct from romano beans, which look like fava beans but are flat. Both are excellent choices."
-  },
+  // too much overlap with green bean
+  // fava_bean: {
+  //   name: "Fava Bean",
+  //   image: "./images/fava_bean.png",
+  //   season: "Early March through Early June",
+  //   activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May,Early June",
+  //   benefits: "Fava beans, also known as broad beans, are loaded with vitamins, minerals, fiber and protein. They’re thought to offer impressive health effects, such as improved motor function and immunity. They are rich in levodopa (L-dopa), a compound that your body converts to the neurotransmitter dopamine.",
+  //   recipes: [
+  //     "Sautéed whole fava bean", 
+  //     "Fava bean dip",
+  //     "Fava bean soup"
+  //   ],
+  //   notes: "Fava beans are distinct from romano beans, which look like fava beans but are flat. Both are excellent choices."
+  // },
   
   frisee: {
     name: "Frisée",
@@ -313,6 +367,21 @@ const produceData = {
       "Freeze grapes for a quick and easy snack", 
       "Grape paired with gouda", 
       "Baked grape with labneh and pistachio"
+    ]
+  },
+
+  green_bean: {
+    name: "Green Bean",
+    image: "./images/green_bean.png",
+    season: "Early May through Late November",
+    activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
+    benefits: "The humble green bean delivers impressive amounts of vitamin K for bone health and folate for cellular function while providing satisfying crunch and vibrant color that makes healthy eating visually appealing. Their fiber content supports digestive wellness and blood sugar stability, while their versatility shines in everything from quick sautés to slow-braised casseroles, making them the perfect vegetable to bridge comfort food cravings with nutritional goals.",
+    recipes: [
+      "Pan fried green bean", 
+      "Roasted green bean", 
+      "Crispy green bean with garlic",
+      "Green bean casserole"
+
     ]
   },
 
@@ -368,6 +437,18 @@ const produceData = {
     ],
     notes: "California mangoes are primarily imported from Mexico. There is one California variety, the Keitt mango, that grows in Coachella valley. Keitt mangoes are in season around August and September."
   },
+  melon: {
+    name: "Melon",
+    image: "./images/melon.png",
+    season: "Late June through Late September",
+    activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    benefits: "Melons provide exceptional hydration with their high water content, around 90%, while delivering vitamin A for eye health and potassium for heart function, making them nature's perfect summer refresher. Varieties like cantaloupe offer beta-carotene for skin protection and honeydew provides vitamin C for immune support, proving that the most refreshing foods can also be the most nourishing.", 
+   recipes: [
+    "Melon sorbet", 
+    "Melon banana smoothie"
+   ]
+
+  },
 
   mushroom: {
     name: "Mushroom",
@@ -397,6 +478,20 @@ const produceData = {
     ],
   },
 
+  lettuce: {
+    name: "Lettuce",
+    image: "./images/lettuce.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Lettuce provides essential hydration and folate that supports cellular health while delivering satisfying crunch with minimal calories, making it the perfect base for nutrient-dense meals. Its mild flavor allows other ingredients to shine while contributing vitamin K for bone health and antioxidants that support overall wellness.", 
+    recipes: [
+      "Use lettuce as a base to any salad", 
+      "Lettuce as a low carb alternative to wraps", 
+      "Lettuce in spring rolls",
+      "Stir fried lettuce"
+    ],
+  },
+
 
   lychee: {
     name: "Lychee",
@@ -405,6 +500,35 @@ const produceData = {
     activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
     benefits: "Lychees deliver an impressive amount of vitamin C wrapped in a sweet, floral flavor profile that feels truly indulgent. Their unique combination of antioxidants supports immune function and skin health, while their juicy texture and exotic taste transform ordinary moments into special treats.", 
     notes: "Although some lychee is grown in Southern California, most lychee is imported from China or Mexico."
+  },
+
+  okra: {
+    name: "Okra",
+    image: "./images/okra.png",
+    season: "Early June through Late September",
+    activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    benefits: "Okra's unique mucilaginous texture provides soluble fiber that helps regulate blood sugar and cholesterol levels while supporting digestive health in ways few other vegetables can match. This Southern staple delivers impressive amounts of vitamin C, folate, and antioxidants that support immune function.", 
+    recipes: [
+      "Roasted okra with paprika",
+      "Stir fried okra",
+      "Okra gumbo",
+      "Okra curry (Bhindi Curry)"
+    ],
+    notes: "Most okra is grown in the South."
+  },
+
+
+  onion: {
+    name: "Onion",
+    image: "./images/onion.png",
+    season: "Early April through Late September",
+    activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    benefits: "Onions contain powerful sulfur compounds that support heart health, may help reduce inflammation, and may support bone density, while their natural sugars caramelize beautifully to add depth and sweetness to countless dishes.", 
+    recipes: [
+      "Onions go well in almost every savory dish",
+      "Caramelized onions",
+      "French onion soup"
+    ],
   },
 
 
@@ -421,6 +545,18 @@ const produceData = {
       "Orange creamsicle overnight oats",
       "Orange cardamom olive oil cake"
     ],
+  },
+  pea: {
+    name: "Pea",
+    image: "./images/pea.png",
+    season: "Early December through Early May",
+    activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May",
+    benefits: "Peas pack surprising amounts of plant-based protein and fiber that support muscle health and digestive wellness, while their natural sweetness makes vegetables appealing even to reluctant eaters. These bright green gems contain unique antioxidants that support eye health and blood sugar regulation.", 
+    recipes: [
+      "Split pea soup", 
+      "Pasta with pea sauce", 
+      "Stir fried peas with mushroom"
+    ]
   },
 
   pea_shoot: {
@@ -546,6 +682,19 @@ const produceData = {
       "Savory stuffed pumpkin"
     ],
     notes: "All halloween pumpkins are edible, but the sugar pie pumpkin (pictured) is the tastiest."
+  },
+
+  raspberry: {
+    name: "Raspberry",
+    image: "./images/raspberry.png",
+    season: "Late June through Late September",
+    activeperiods:  "Late June,Early July,Late July,Early August,Late August,Early September,Late September",
+    benefits: "Raspberries pack more fiber than most fruits while delivering powerful antioxidants called ellagitannins that may help fight inflammation and support cellular health. They may have cancer fighting properties, may improve arthritis, and may have anti-aging effects due to their vitamin C content.", 
+    recipes: [
+      "Raspberries with yogurt and granola and nut butter", 
+      "Raspberry galette or tart",
+
+    ]
   },
 
   spinach: {
