@@ -385,6 +385,15 @@ const produceData = {
     ]
   },
 
+  guava: {
+    name: "Guava",
+    image: "./images/guava.png",
+    season: "Early November to Late February",
+    activeperiods: "Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February",
+    benefits: "Guava offers numerous health benefits, including boosting immunity with its high vitamin C content, improving digestion due to its fiber, and managing blood sugar levels. It can also help with stress, heart health, and potentially lower cancer risk. It's a fun tropical fruit to add to your diet! ",
+
+  },
+
 
   kale: {
     name: "Kale",
