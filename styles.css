@@ -285,7 +285,8 @@ p.small {
   flex-direction: column; 
   justify-content: center; 
   position: relative;
-  width: fit-content;
+  /* width: fit-content; */
+  max-width: 1000px;
   margin-right: auto; 
   margin-left: auto;
 }
@@ -649,11 +650,12 @@ nav a:hover {
   .container {
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     grid-gap: 1.4rem 2rem;
-    padding: 30px 10px 60px 10px;
+    padding: 15px 10px 60px 10px;
     max-width: 450px;
     justify-content: center;
     margin: 5px;
   }
+
   
   /* Fix for container-all-items - reduce gaps for small screens */
   #container-all-items {
@@ -664,9 +666,16 @@ nav a:hover {
   }
   
   .button-container {
-    padding: 0px 10px 10px 10px;  
+    padding: 0px 10px 0px 10px;  
     padding-left: 16px;
     padding-right: 16px;
+        display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    max-width: 350px;
+    margin: 5px;
 
 
 
@@ -674,18 +683,16 @@ nav a:hover {
   }
 
   .button-wrapper{
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    max-width: 350px;
-    margin: 5px;
+
     
+  }
+
+  .filter-button{
+    margin: 3px;
   }
   
   .header {
-    padding: 30px 30px 100px 30px;
+    padding: 30px 30px 80px 30px;
     margin: 5px;
   }
 
@@ -697,8 +704,13 @@ nav a:hover {
     right: 0;
     height: 75px;
     background-color: var(--color-background);
-    mask: radial-gradient(43px at 50% 0, #0000 98%, #000) calc(50% - 43px) 0/75px 100%;
+    /* mask: radial-gradient(43px at 50% 0%, #0000 98%, #000) calc(50% - 43px) 0/75px 100%; */
+    mask: radial-gradient(45px at 50% 30%, #0000 100%, #000) calc(50% - 43px) 0/75px 100%;
     z-index: 0; 
+  }
+
+  .footer::before{
+    mask: radial-gradient(45px at 50% 30%, #0000 100%, #000) calc(50% - 43px) 0/75px 100%;
   }
 
   #header-title, #datetime {
