@@ -10,18 +10,35 @@ export {seasonThemes, seasonMapping, produceData};
 // lower case use _ for space for example butternut_squash
 
 const produceData = {
-  asparagus: {
-    name: "Asparagus",
-    image: "./images/asparagus.png",
-    season: "Late February through Late May",
-    activeperiods: "Late February,Early March,Late March,Early April,Late April,Early May,Late May", 
-    benefits: "Asparagus spears deliver a remarkable nutrient density, providing folate for cellular health and prebiotic fiber that nourishes beneficial gut bacteria for improved digestion. Their unique combination of antioxidants and anti-inflammatory compounds supports detoxification while their distinctive flavor adds sophisticated elegance to any meal.",
+    almond: {
+    name: "Almond",
+    image: "./images/almond.png",
+    season: "Late August through Late October",
+    activeperiods: "Late August,Early September,Late September,Early October,Late October",
+    benefits: "Almonds deliver impressive amounts of vitamin E, magnesium, and healthy fats that support heart health and brain function while providing satisfying protein and fiber that help maintain stable blood sugar levels. They contain calcium, magnesium, and phosphorus, which are all important for bone health.", 
     recipes: [
-      "Sheet pan asparagus with salmon and lemon", 
-      "Orzo with asparagus and peas", 
-      "Frittata with leek and asparagus and prosciutto"
+      "Homemade vanilla almond butter",
+      "Sweet and spicy roasted almonds", 
+      "Almond milk"
     ],
+    notes: "Nuts are available year-round due to their shelf life. Although they're tasty and nutrition any time of the year, they are especially tasty and nutritious during harvest season. California produces 80% of the word's crop. Almonds are California's most valuable agricultural export.", 
+    classification: "nut"
   },
+  apple: {
+    name: "Apple",
+    image: "./images/apple.png",
+    season: "Early September through Early November",
+    activeperiods: "Early September,Late September,Early October,Late October,Early November",
+    benefits: "Apples contain pectin, a soluble fiber that lowers cholesterol and feeds beneficial gut bacteria and supports a healthy gut microbiome. They also contain various phytochemicals that benefit the immune system, support bone density, and may reduce the risk of chronic disease.", 
+    recipes: [
+      "Roasted apples with savory companions like chicken or pork",
+      "Apple with yogurt and nut butter", 
+      "Apple pie!!", 
+    ],
+    notes: "Although apples are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques.", 
+    classification: "fruit"
+  },
+
 
   apricot: {
     name: "Apricot",
@@ -35,21 +52,7 @@ const produceData = {
       "Apricot clafoutis", 
       "Apricot jam"
     ],
-  },
-
-  arugula: {
-    name: "Arugula",
-    image: "./images/arugula.png",
-    season: "Early October to Late June",
-    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June", 
-    benefits: "Arugula's distinctive peppery flavor brings sophisticated depth to salads and dishes while delivering impressive amounts of calcium, potassium, and folate for bone and heart health. This nutrient-dense green contains cancer-fighting compounds called glucosinolates that help detoxify the body, making its bold flavor profile as beneficial for your health as it is exciting for your palate.",
-    recipes: [
-      "Cacio e pepe with agrugula and lemon", 
-      "Sautéed arugula with mushroom and white wine", 
-      "Arugula salad with lemon and parmesan "
-    ],
-    notes: "Although arugula is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring. That being said, arugula is still a good choice anytime."
-  
+    classification: "fruit"
   },
 
   artichoke: {
@@ -63,7 +66,36 @@ const produceData = {
       "Spinach artichoke dip", 
       "Baked artichoke hears with white wine, garlic, parmesean, lemon, breadcrumbs"
     ],
-    notes: "Many recipes use artichoke hearts. To extract the heart, first cook the artichoke by roasting, steaming, or boiling. Then cut off the top and remove the outer leaves, then carefully scoop out the fuzzy choke with a spoon. Then discard the fuzzy part and you will be left with the artichoke heart. You can dip the outer leaves in a sauce and scrape off the fleshy part with your teeth. This vegetable can look intimidating. Fear not!! You go for it!"
+    notes: "Many recipes use artichoke hearts. To extract the heart, first cook the artichoke by roasting, steaming, or boiling. Then cut off the top and remove the outer leaves, then carefully scoop out the fuzzy choke with a spoon. Then discard the fuzzy part and you will be left with the artichoke heart. You can dip the outer leaves in a sauce and scrape off the fleshy part with your teeth. This vegetable can look intimidating. Fear not!! You go for it!",
+    classification: "vegetable"
+  },
+  arugula: {
+    name: "Arugula",
+    image: "./images/arugula.png",
+    season: "Early October to Late June",
+    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June", 
+    benefits: "Arugula's distinctive peppery flavor brings sophisticated depth to salads and dishes while delivering impressive amounts of calcium, potassium, and folate for bone and heart health. This nutrient-dense green contains cancer-fighting compounds called glucosinolates that help detoxify the body, making its bold flavor profile as beneficial for your health as it is exciting for your palate.",
+    recipes: [
+      "Cacio e pepe with agrugula and lemon", 
+      "Sautéed arugula with mushroom and white wine", 
+      "Arugula salad with lemon and parmesan "
+    ],
+    notes: "Although arugula is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring. That being said, arugula is still a good choice anytime.",
+    classification: "vegetable"
+  },
+
+  asparagus: {
+    name: "Asparagus",
+    image: "./images/asparagus.png",
+    season: "Late February through Late May",
+    activeperiods: "Late February,Early March,Late March,Early April,Late April,Early May,Late May", 
+    benefits: "Asparagus spears deliver a remarkable nutrient density, providing folate for cellular health and prebiotic fiber that nourishes beneficial gut bacteria for improved digestion. Their unique combination of antioxidants and anti-inflammatory compounds supports detoxification while their distinctive flavor adds sophisticated elegance to any meal.",
+    recipes: [
+      "Sheet pan asparagus with salmon and lemon", 
+      "Orzo with asparagus and peas", 
+      "Frittata with leek and asparagus and prosciutto"
+    ],
+    classification: "vegetable"
   },
 
   avocado: {
@@ -77,33 +109,8 @@ const produceData = {
       "Guacamole", 
       "Avocado salad with cucumber, tomato, red onion, and lime", 
       "Avocado brownies"
-    ]
-  },
-  apple: {
-    name: "Apple",
-    image: "./images/apple.png",
-    season: "Early September through Early November",
-    activeperiods: "Early September,Late September,Early October,Late October,Early November",
-    benefits: "Apples contain pectin, a soluble fiber that lowers cholesterol and feeds beneficial gut bacteria and supports a healthy gut microbiome. They also contain various phytochemicals that benefit the immune system, support bone density, and may reduce the risk of chronic disease.", 
-    recipes: [
-      "Roasted apples with savory companions like chicken or pork",
-      "Apple with yogurt and nut butter", 
-      "Apple pie!!", 
-    ],
-    notes: "Although apples are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques."
-  },
-
-  bell_pepper: {
-    name: "Bell Pepper",
-    image: "./images/bell_pepper.png",
-    season: "Early April through Late November",
-    activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
-    benefits: "Bell peppers contain more vitamin C than oranges while their vibrant colors signal different antioxidant profiles that support immune function and skin health. Their sweet, crisp texture adds satisfying crunch and natural sweetness to dishes without any heat, while their versatility shines in everything from raw snacking to roasted applications, making them the perfect gateway vegetable for anyone looking to add more colorful nutrition to their meals.", 
-    recipes: [
-      "Roasted bell peppers",
-      "Stuffed bell pepper", 
-      "Muhammara"
-    ],
+    ], 
+    classification: "vegetable"
   },
 
   beet: {
@@ -119,8 +126,25 @@ const produceData = {
       "Roasted beets"
     ],
     notes: "Beets are available all year in California, but their peak harvest season is fall to winter.", 
-    joke: "You make my heart skip a beet ;)"
+    joke: "You make my heart skip a beet ;)", 
+    classification: "vegetable"
   },
+
+  bell_pepper: {
+    name: "Bell Pepper",
+    image: "./images/bell_pepper.png",
+    season: "Early April through Late November",
+    activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
+    benefits: "Bell peppers contain more vitamin C than oranges while their vibrant colors signal different antioxidant profiles that support immune function and skin health. Their sweet, crisp texture adds satisfying crunch and natural sweetness to dishes without any heat, while their versatility shines in everything from raw snacking to roasted applications, making them the perfect gateway vegetable for anyone looking to add more colorful nutrition to their meals.", 
+    recipes: [
+      "Roasted bell peppers",
+      "Stuffed bell pepper", 
+      "Muhammara"
+    ],
+    classification: "vegetable"
+  },
+
+
 
   blackberry: {
     name: "Blackberry",
@@ -133,6 +157,7 @@ const produceData = {
       "Blackberry jam (eat with yogurt or in PB&J)", 
       "Blackberry grilled cheese"
     ],
+    classification: "fruit"
   },
 
   blueberry: {
@@ -146,7 +171,8 @@ const produceData = {
       "Blueberry banana pancakes", 
       "Blueberry mint matcha latte"
     ],
-    notes: ["Although blueberries seem ubiquitous in California grocery stores, they are mainly grown in the Pacific Northwest and parts of the East Coast like Maine and New Jersey. In the winter blueberries are imported from Mexico and South America."]
+    notes: ["Although blueberries seem ubiquitous in California grocery stores, they are mainly grown in the Pacific Northwest and parts of the East Coast like Maine and New Jersey. In the winter blueberries are imported from Mexico and South America."],
+    classification: "fruit"
   },
 
   brussel_sprout: {
@@ -161,6 +187,7 @@ const produceData = {
       "Roasted brussel sprouts with balsamic glaze"
     ],
     notes: "To roast them cut them in half longitudinally and roast flat side down. It's a bit more effort but the result is so yummy.", 
+    classification: "vegetable"
   },
 
   butternut_squash: {
@@ -174,6 +201,8 @@ const produceData = {
       "Butternut squash soup with sage and rosemary", 
       "Mashed butternut squash"
     ],
+
+    classification: "vegetable"
   },
 
   carrot: {
@@ -187,7 +216,8 @@ const produceData = {
       "Roasted carrot with maple syrup, olive oil, sea salt",
       "Pickled carrot and daikon"
     ],
-    notes: "Carrots are planted in the spring and fall. Due to California's diverse climate, carrot harvest season is effectively year-round."
+    notes: "Carrots are planted in the spring and fall. Due to California's diverse climate, carrot harvest season is effectively year-round.", 
+    classification: "vegetable"
   },
 
   cauliflower: {
@@ -202,7 +232,8 @@ const produceData = {
       "Cauliflower pizza crust",
       "Cauliflower rice as a substitution for rice"
     ],
-    notes: "Do you ever see a word too many times and it starts to look weird? That's what I'm experiencing with cauliflower."
+    notes: "Do you ever see a word too many times and it starts to look weird? That's what I'm experiencing with cauliflower.", 
+    classification: "vegetable"
   },
 
 
@@ -215,7 +246,8 @@ const produceData = {
     recipes: [
       "Celery dipped in spreads like hummus, tzatziki, or green goddess yogurt dip", 
       "Mirepoix as a flavor base to soups"
-    ]
+    ], 
+    classification: "vegetable"
   },
 
   cherry: {
@@ -229,6 +261,7 @@ const produceData = {
       "Cherry, banana, and almond butter smoothie", 
 
     ],
+    classification: "fruit"
   },
 
   chestnut: {
@@ -242,6 +275,7 @@ const produceData = {
       "Chestnut soup", 
       "Pear and chestnut tart"
     ],
+    classification: "nut"
   },
 
 
@@ -257,20 +291,8 @@ const produceData = {
       "Chive pancakes", 
       "Chive and parsley pesto"
     ],
-    notes: "Large chives can be hard to find. The best bet is probably going to Asian grocery stores like Ranch 99 or Hmart."
-  },
-
-  cucumber: {
-    name: "Cucumber",
-    image: "./images/cucumber.png",
-    season: "Late May through Late August",
-    activeperiods: "Late May,Early June,Late June,Early July,Late July,Early August,Late August",
-    benefits: "Cucumbers provide impressive hydration with their 96% water content while delivering a cooling effect that refreshes from the inside out on hot days. Their crisp texture and mild flavor make them the perfect vehicle for healthy dips and dressings, while their silica content supports skin elasticity and their low calorie count makes them the perfect addition to meals when you want substance and satisfaction without excess calories.",
-    recipes: [
-      "Asian cucumber salad", 
-      "Spring rolls with cucumbers and other fresh veggies", 
-      "Bagels and lox with cucumber"
-    ]
+    notes: "Large chives can be hard to find. The best bet is probably going to Asian grocery stores like Ranch 99 or Hmart.", 
+    classification: "vegetable"
   },
 
   corn: {
@@ -285,8 +307,25 @@ const produceData = {
       "Creamed corn", 
       "Sweet corn soup"
     ], 
-    notes: "Corn is very healthy! It is processed corn, like corn oil and corn syrup, that is not as healthy."
+    notes: "Corn is very healthy! It is processed corn, like corn oil and corn syrup, that is not as healthy.", 
+    classification: "vegetable"
   },
+
+  cucumber: {
+    name: "Cucumber",
+    image: "./images/cucumber.png",
+    season: "Late May through Late August",
+    activeperiods: "Late May,Early June,Late June,Early July,Late July,Early August,Late August",
+    benefits: "Cucumbers provide impressive hydration with their 96% water content while delivering a cooling effect that refreshes from the inside out on hot days. Their crisp texture and mild flavor make them the perfect vehicle for healthy dips and dressings, while their silica content supports skin elasticity and their low calorie count makes them the perfect addition to meals when you want substance and satisfaction without excess calories.",
+    recipes: [
+      "Asian cucumber salad", 
+      "Spring rolls with cucumbers and other fresh veggies", 
+      "Bagels and lox with cucumber"
+    ], 
+    classification: "vegetable"
+  },
+
+
 
   daikon: {
     name: "Daikon",
@@ -299,6 +338,7 @@ const produceData = {
       "Daikon soup", 
       "Pickled daikon and carrot"
     ], 
+    classification: "vegetable"
   },
 
   eggplant: {
@@ -314,6 +354,7 @@ const produceData = {
       "Stuffed eggplant with tomato, ground beef, minced onions",
       "Ratatouille"
     ],
+    classification: "vegetable"
   },
 
   // too much overlap with green bean
@@ -330,20 +371,6 @@ const produceData = {
   //   ],
   //   notes: "Fava beans are distinct from romano beans, which look like fava beans but are flat. Both are excellent choices."
   // },
-  
-  frisee: {
-    name: "Frisée",
-    image: "./images/frisee.png",
-    season: "Late December to Late March",
-    activeperiods: "Early January,Late January,Early February,Late February,Early Marhc,Late March,Late December",
-    benefits: "Frisée's distinctive bitter edge stimulates digestion while its feathery, pale green leaves provide folate and vitamin A that support cellular health and immune function. This elegant chicory adds sophisticated texture and flavor complexity to salads, balancing sweeter ingredients while delivering prebiotic compounds that nourish beneficial gut bacteria, making it the perfect ingredient to elevate ordinary greens into restaurant-quality dishes.",
-    recipes: [
-      "Warm frisée with mushroom salad", 
-      "Frisée and citrus salad "
-    ],
-    notes: "Frisée is grown year-round in California. Shown is the peak harvest season."
-  },
-
   fig: {
     name: "Fig",
     image: "./images/fig.png",
@@ -354,8 +381,37 @@ const produceData = {
       "Fig ricotta toast", 
       "Baguette sandwich with brie, fig (or fig jam), arugula, and prosciutto", 
       "Fig frangipane tart"
-    ]
+    ], 
+    classification: "fruit"
   },
+  frisee: {
+    name: "Frisée",
+    image: "./images/frisee.png",
+    season: "Late December to Late March",
+    activeperiods: "Early January,Late January,Early February,Late February,Early Marhc,Late March,Late December",
+    benefits: "Frisée's distinctive bitter edge stimulates digestion while its feathery, pale green leaves provide folate and vitamin A that support cellular health and immune function. This elegant chicory adds sophisticated texture and flavor complexity to salads, balancing sweeter ingredients while delivering prebiotic compounds that nourish beneficial gut bacteria, making it the perfect ingredient to elevate ordinary greens into restaurant-quality dishes.",
+    recipes: [
+      "Warm frisée with mushroom salad", 
+      "Frisée and citrus salad "
+    ],
+    notes: "Frisée is grown year-round in California. Shown is the peak harvest season.", 
+    classification: "vegetable"
+  },
+
+
+  garlic: {
+    name: "Garlic",
+    image: "./images/garlic.png",
+    season: "Early May through Late July",
+    activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July",
+    benefits: "Garlic is low in calories but packed with nutrients, including vitamins C, B6, and manganese, as well as minerals like calcium, iron, potassium, and magnesium. It also contains beneficial sulfur compounds like allicin, which contribute to its health benefits. ",
+    recipes: [
+       "Roasted garlic"
+    ], 
+    classification: "vegetable"
+  },
+
+
 
   grape: {
     name: "Grape",
@@ -367,7 +423,8 @@ const produceData = {
       "Freeze grapes for a quick and easy snack", 
       "Grape paired with gouda", 
       "Baked grape with labneh and pistachio"
-    ]
+    ], 
+    classification: "fruit"
   },
 
   green_bean: {
@@ -381,8 +438,8 @@ const produceData = {
       "Roasted green bean", 
       "Crispy green bean with garlic",
       "Green bean casserole"
-
-    ]
+    ], 
+    classification: "vegetable"
   },
 
   guava: {
@@ -391,6 +448,7 @@ const produceData = {
     season: "Early November to Late February",
     activeperiods: "Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February",
     benefits: "Guava offers numerous health benefits, including boosting immunity with its high vitamin C content, improving digestion due to its fiber, and managing blood sugar levels. It can also help with stress, heart health, and potentially lower cancer risk. It's a fun tropical fruit to add to your diet! ",
+    classification: "fruit"
 
   },
 
@@ -406,7 +464,8 @@ const produceData = {
       "Kale slaw with cabbage, carrots, and other seasonal veggies",
       "Tuscan bean and kale soup"
     ],
-    notes: "Although kale is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring. That being said, kale is still a good choice anytime."
+    notes: "Although kale is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring. That being said, kale is still a good choice anytime.",
+    classification: "vegetable"
   },
 
 
@@ -416,8 +475,23 @@ const produceData = {
     season: "Early November to Late April",
     activeperiods: "Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
     benefits: "Kiwis pack more vitamin C than oranges and contain a unique enzyme called actinidin that aids protein digestion, making them both a nutritional powerhouse and digestive ally. Their fuzzy exterior hides a vibrant green interior with tiny black seeds that provide fiber and omega-3 fatty acids, while their sweet-tart flavor profile delivers tropical satisfaction that can brighten any meal or snack.",
+    classification: "fruit"
 
 
+  },
+
+  leek: {
+    name: "Leek",
+    image: "./images/leek.png",
+    season: "Early January through Late May",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May",
+    benefits: "Leeks offer a range of health benefits due to their rich nutrient profile. They are a good source of vitamins A, C, and K, and minerals like iron and magnesium. Leeks also contain dietary fiber, which supports digestive health and helps prevent constipation. Furthermore, they are rich in antioxidants like lutein and zeaxanthin, which are beneficial for eye health.", 
+    recipes: [
+      "Potato leek soup", 
+      "Frittata with leek and asparagus and prosciutto", 
+      "Caramelized leek pasta"
+    ],
+    classification: "vegetable"
   },
 
   lemon: {
@@ -431,7 +505,36 @@ const produceData = {
       "Avgolemono", 
       "Classic lemon tart"
     ],
+    classification: "fruit"
   },
+
+
+  lettuce: {
+    name: "Lettuce",
+    image: "./images/lettuce.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Lettuce provides essential hydration and folate that supports cellular health while delivering satisfying crunch with minimal calories, making it the perfect base for nutrient-dense meals. Its mild flavor allows other ingredients to shine while contributing vitamin K for bone health and antioxidants that support overall wellness.", 
+    recipes: [
+      "Use lettuce as a base to any salad", 
+      "Lettuce as a low carb alternative to wraps", 
+      "Lettuce in spring rolls",
+      "Stir fried lettuce"
+    ],
+    classification: "vegetable"
+  },
+
+
+  lychee: {
+    name: "Lychee",
+    image: "./images/lychee.png",
+    season: "Late June through Early September",
+    activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
+    benefits: "Lychees deliver an impressive amount of vitamin C wrapped in a sweet, floral flavor profile that feels truly indulgent. Their unique combination of antioxidants supports immune function and skin health, while their juicy texture and exotic taste transform ordinary moments into special treats.", 
+    notes: "Although some lychee is grown in Southern California, most lychee is imported from China or Mexico.", 
+    classification: "fruit"
+  },
+
 
   mango: {
     name: "Mango",
@@ -444,7 +547,8 @@ const produceData = {
       "Mango with sticky rice", 
       "Mango with yogurt and granola"
     ],
-    notes: "California mangoes are primarily imported from Mexico. There is one California variety, the Keitt mango, that grows in Coachella valley. Keitt mangoes are in season around August and September."
+    notes: "California mangoes are primarily imported from Mexico. There is one California variety, the Keitt mango, that grows in Coachella valley. Keitt mangoes are in season around August and September.", 
+    classification: "fruit"
   },
   melon: {
     name: "Melon",
@@ -455,7 +559,8 @@ const produceData = {
    recipes: [
     "Melon sorbet", 
     "Melon banana smoothie"
-   ]
+   ], 
+   classification: "fruit"
 
   },
 
@@ -471,45 +576,11 @@ const produceData = {
       "Stroganoff"
     ],
     notes: "Specific mushrooms have different harvesting seasons. Shiitakes and oyster mushrooms are in season all year. Mushroom foraging season is in the fall.",
-    joke: "I have so mushroom for you in my heart ;)"
-  },
-
-  leek: {
-    name: "Leek",
-    image: "./images/leek.png",
-    season: "Early January through Late May",
-    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May",
-    benefits: "Leeks offer a range of health benefits due to their rich nutrient profile. They are a good source of vitamins A, C, and K, and minerals like iron and magnesium. Leeks also contain dietary fiber, which supports digestive health and helps prevent constipation. Furthermore, they are rich in antioxidants like lutein and zeaxanthin, which are beneficial for eye health.", 
-    recipes: [
-      "Potato leek soup", 
-      "Frittata with leek and asparagus and prosciutto", 
-      "Caramelized leek pasta"
-    ],
-  },
-
-  lettuce: {
-    name: "Lettuce",
-    image: "./images/lettuce.png",
-    season: "All year",
-    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
-    benefits: "Lettuce provides essential hydration and folate that supports cellular health while delivering satisfying crunch with minimal calories, making it the perfect base for nutrient-dense meals. Its mild flavor allows other ingredients to shine while contributing vitamin K for bone health and antioxidants that support overall wellness.", 
-    recipes: [
-      "Use lettuce as a base to any salad", 
-      "Lettuce as a low carb alternative to wraps", 
-      "Lettuce in spring rolls",
-      "Stir fried lettuce"
-    ],
+    joke: "I have so mushroom for you in my heart ;)", 
+    classification: "vegetable"
   },
 
 
-  lychee: {
-    name: "Lychee",
-    image: "./images/lychee.png",
-    season: "Late June through Early September",
-    activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
-    benefits: "Lychees deliver an impressive amount of vitamin C wrapped in a sweet, floral flavor profile that feels truly indulgent. Their unique combination of antioxidants supports immune function and skin health, while their juicy texture and exotic taste transform ordinary moments into special treats.", 
-    notes: "Although some lychee is grown in Southern California, most lychee is imported from China or Mexico."
-  },
 
   okra: {
     name: "Okra",
@@ -523,7 +594,8 @@ const produceData = {
       "Okra gumbo",
       "Okra curry (Bhindi Curry)"
     ],
-    notes: "Most okra is grown in the South."
+    notes: "Most okra is grown in the South.", 
+    classification: "vegetable"
   },
 
 
@@ -538,6 +610,8 @@ const produceData = {
       "Caramelized onions",
       "French onion soup"
     ],
+
+    classification: "vegetable"
   },
 
 
@@ -554,6 +628,8 @@ const produceData = {
       "Orange creamsicle overnight oats",
       "Orange cardamom olive oil cake"
     ],
+
+    classification: "fruit"
   },
   pea: {
     name: "Pea",
@@ -565,7 +641,8 @@ const produceData = {
       "Split pea soup", 
       "Pasta with pea sauce", 
       "Stir fried peas with mushroom"
-    ]
+    ], 
+    classification: "vegetable"
   },
 
   pea_shoot: {
@@ -578,7 +655,8 @@ const produceData = {
       "Sir fry pea shoots with garlic", 
       "Pea shoot lemon pasta"
     ],
-    notes: "Pea shoot season is frightening short. If you see them being sold, definitely take advantage of it and get yourself a bag!"
+    notes: "Pea shoot season is frightening short. If you see them being sold, definitely take advantage of it and get yourself a bag!", 
+    classification: "vegetable"
   },
 
   peach: {
@@ -593,7 +671,8 @@ const produceData = {
       "Peach pie",
       "Peach sorbet"
     ],
-    notes: "Nectarines are genetically identical to peaches except for one gene that affects the skin's texture."
+    notes: "Nectarines are genetically identical to peaches except for one gene that affects the skin's texture.", 
+    classification: "fruit"
   },
 
 
@@ -609,7 +688,8 @@ const produceData = {
       "Goat cheese and pear pizza with caramelized onion",
       "Grilled brie and pear sandwich"
     ],
-    notes: "Although pears are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques."
+    notes: "Although pears are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques.", 
+    classification: "fruit"
   },
 
   persimmon: {
@@ -622,7 +702,22 @@ const produceData = {
       "Persimmon bread", 
       "Salad with leafy greens, pomegranate, persimmon, and almonds"
     ],
-    notes: "The most common varities are fuyu and hachiya. The fuyu (pictured) has a flat end and can be eaten when hard or soft. The hachiya has a pointy end and must be eaten when soft and ripe."
+    notes: "The most common varities are fuyu and hachiya. The fuyu (pictured) has a flat end and can be eaten when hard or soft. The hachiya has a pointy end and must be eaten when soft and ripe.", 
+    classification: "fruit"
+  },
+
+   pistachio: {
+    name: "Pistachio",
+    image: "./images/pistachio.png",
+    season: "Early September through Late November",
+    activeperiods: "Early September,Late September,Early October,Late October,Early November,Late November",
+    benefits: "Pistachios provide more protein per serving than most nuts while delivering heart-healthy monounsaturated fats and fiber that support cardiovascular wellness and sustained energy. They also have a lot of vitamins and minerals and antioxidants.", 
+    recipes: [
+      "Pistachio nut butter", 
+      "Pistachio milk, especially with cold brew or used in matcha latte"
+    ],
+    notes: "Nuts are available year-round due to their shelf life. Although they're tasty and nutrition any time of the year, they are especially tasty and nutritious during harvest season. California is the leading producer of pistachios in the US, growing over 98% the nation's crop.", 
+    classification: "nut"
   },
 
   plum: {
@@ -636,18 +731,8 @@ const produceData = {
       "Charred plum with cheese", 
       "Plum jam"
     ],
-    notes: "Plums come in a variety of colors including black, purple, red, and green. Prunes are typically sold as dried but fresh ones are really delicious too. I hope you get to try all of these varieties :) "
-  },
-
-  pomelo: {
-    name: "Pomelo",
-    image: "./images/pomelo.png",
-    season: "Early January through Early April",
-    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April",
-    benefits: "This giant citrus fruit delivers an explosion of sweet-tart flavor while providing vitamin C, boosting immunity and collagen production for healthier skin. Pomelos contain powerful antioxidants that fight inflammation and may help reduce blood pressure, all while promoting feelings of fullness. It is very fun hold a large, round fruit and to peel off each segment and eat the juicy contents!", 
-    notes: [
-      "Try an oro blanco, which is a hybrid of a pomelo and grapefruit." 
-    ]
+    notes: "Plums come in a variety of colors including black, purple, red, and green. Prunes are typically sold as dried but fresh ones are really delicious too. I hope you get to try all of these varieties :) ", 
+    classification: "fruit"
   },
 
   pomegranate: {
@@ -661,7 +746,22 @@ const produceData = {
       "Salad with spinach, kale, pomegranate, blue cheese, walnuts", 
       "Pomegranate molasses for use in salad dressings or as a marinade for meat or tofu"
     ],
+
+    classification: "fruit"
   },
+
+  pomelo: {
+    name: "Pomelo",
+    image: "./images/pomelo.png",
+    season: "Early January through Early April",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April",
+    benefits: "This giant citrus fruit delivers an explosion of sweet-tart flavor while providing vitamin C, boosting immunity and collagen production for healthier skin. Pomelos contain powerful antioxidants that fight inflammation and may help reduce blood pressure, all while promoting feelings of fullness. It is very fun hold a large, round fruit and to peel off each segment and eat the juicy contents!", 
+    notes: [
+      "Try an oro blanco, which is a hybrid of a pomelo and grapefruit." 
+    ], 
+    classification: "fruit"
+  },
+
 
 
   potato: {
@@ -676,7 +776,8 @@ const produceData = {
       "Potato leek soup", 
       "Baked potato"
     ],
-    notes: "Potato peak harvest is fall to winter, but in California they can be grown all year."
+    notes: "Potato peak harvest is fall to winter, but in California they can be grown all year.", 
+    classification: "vegetable"
   },
 
   pumpkin: {
@@ -690,7 +791,8 @@ const produceData = {
       "Roasted pumpkin with cinnamon and spices", 
       "Savory stuffed pumpkin"
     ],
-    notes: "All halloween pumpkins are edible, but the sugar pie pumpkin (pictured) is the tastiest."
+    notes: "All halloween pumpkins are edible, but the sugar pie pumpkin (pictured) is the tastiest.", 
+    classification: "vegetable"
   },
 
   raspberry: {
@@ -703,7 +805,8 @@ const produceData = {
       "Raspberries with yogurt and granola and nut butter", 
       "Raspberry galette or tart",
 
-    ]
+    ], 
+    classification: "fruit"
   },
 
   spinach: {
@@ -717,6 +820,7 @@ const produceData = {
       "Pasta with spinach and mushroom", 
       "Omelette with spinach"
     ],
+    classification: "vegetable"
    
   },
   strawberry: {
@@ -730,7 +834,8 @@ const produceData = {
       "Salad with spinach, strawberry, feta cheese, shaved almonds", 
       "Strawberry rhubarb crisp"
     ],
-    notes: "Strawberries are grown year-round in California. In the winter the production occurs in Southern California and in controlled environments such as greenhouses. I think that they are the best in April, May, and June."
+    notes: "Strawberries are grown year-round in California. In the winter the production occurs in Southern California and in controlled environments such as greenhouses. I think that they are the best in April, May, and June.", 
+    classification: "fruit"
   },
   tomato: {
     name: "Tomato",
@@ -744,6 +849,7 @@ const produceData = {
       "Chinese tomato egg stir-fry 番茄炒鸡蛋",
       "Hierloom tomato galette"
     ],
+    classification: "vegetable"
   },
 
   watermelon: {
@@ -758,6 +864,7 @@ const produceData = {
       "Watermelon sorbet", 
       "Blend watermelon chunks for a smoothie"
     ],
+    classification: "fruit"
   },
 
   yam_leaf: {
@@ -769,7 +876,8 @@ const produceData = {
     recipes: [
       "Stir fry yam leaves with garlic"
     ],
-    notes: "Try going to farmers markets, specialty grocery stores, or Asian grocery stores to find yam leaves."
+    notes: "Try going to farmers markets, specialty grocery stores, or Asian grocery stores to find yam leaves.", 
+    classification: "vegetable"
   },
 
 
@@ -784,17 +892,8 @@ const produceData = {
        "Ratatouille", 
        "Zucchini noodles"
     ],
-  },
-
-
-
-  placeholder: {
-    name: "Placeholder",
-    image: "./images/placeholder.png",
-    season: "Season information will be added soon",
-    benefits: "Benefits information will be added soon."
+    classification: "vegetable"
   }
-
 
 
   
