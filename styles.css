@@ -76,7 +76,7 @@ body {
 }
 
 .nav {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto; /* Centers the nav bar */
   display: flex;
   justify-content: space-between;
@@ -310,13 +310,13 @@ p.small {
 .container {
   display: flex; 
   flex-wrap: wrap; 
-  column-gap: 120px; 
+  column-gap: 100px; 
   row-gap: 75px;
   padding: 50px 0px 125px 0px; 
   margin: auto; /* Auto margins for horizontal centering */
   justify-content: flex-start; /* Keep items left-aligned within rows */
   width: fit-content; /* Make container only as wide as needed */
-  max-width: 1000px;
+  max-width: 900px;
 }
 
 .container-wrapper {
@@ -338,7 +338,7 @@ p.small {
   justify-content: center; 
   position: relative;
   /* width: fit-content; */
-  max-width: 1000px;
+  max-width: 900px;
   margin-right: auto; 
   margin-left: auto;
   overflow: hidden; 
@@ -403,9 +403,9 @@ p.small {
 #container-all-items {
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   padding: 10px 10px 60px 10px;
-  column-gap: 70px;
+  column-gap: 80px;
   row-gap: 25px;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 5px;
 }
 
