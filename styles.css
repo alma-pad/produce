@@ -75,6 +75,54 @@ body {
   z-index: 0; 
 }
 
+.nav {
+  max-width: 1000px;
+  margin: 0 auto; /* Centers the nav bar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 20px 20px; /* Optional: adds some padding on the sides */
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.nav h3 {
+  margin: 0; /* Removes default margin from h2 elements */
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 700; 
+  font-style: normal;
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--color-secondary);
+    transition: color 0.3s ease;
+}
+
+/* nav h2:hover {
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+} */
+
+.nav a:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+/* Style for the Home link (left side) */
+.nav h3:first-child {
+  margin-right: auto;
+}
+
+/* Container for the right-side links */
+.nav h3:nth-child(2),
+.nav h3:nth-child(3) {
+  margin-left: 20px; /* Adds space between About and All Items */
+}
+
 .header-content {
   display: grid; 
   grid-template-columns: 1fr auto 1fr; 
@@ -144,6 +192,10 @@ body {
   font-weight: 500;
   transition: all 0.3s ease;
   min-width: fit-content;
+}
+
+.filter-button:hover{
+  background-color: var(--color-secondary);
 }
 
 .filter-button.button-active,
@@ -260,7 +312,7 @@ p.small {
   flex-wrap: wrap; 
   column-gap: 120px; 
   row-gap: 75px;
-  padding: 25px 0px 125px 0px; 
+  padding: 50px 0px 125px 0px; 
   margin: auto; /* Auto margins for horizontal centering */
   justify-content: flex-start; /* Keep items left-aligned within rows */
   width: fit-content; /* Make container only as wide as needed */
@@ -289,6 +341,7 @@ p.small {
   max-width: 1000px;
   margin-right: auto; 
   margin-left: auto;
+  overflow: hidden; 
 }
 
 .button-wrapper::-webkit-scrollbar {
@@ -560,7 +613,7 @@ img {
 
 .produce-content h2 {
   color: var(--color-primary);
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .produce-content h3 {
@@ -616,45 +669,115 @@ nav {
   padding: 0.5rem 1rem;
 }
 
-nav a {
-  color: var(--color-background);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
+/* Mobile menu toggle button */
+        .mobile-menu-toggle {
+            display: none;
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            background: none;
+            color: var(--color-background);
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
 
-nav a:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
-}
+        /* Mobile Navigation Overlay */
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden; 
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto; 
+        }
+
+        /* Mobile Navigation Menu */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: -100vw;
+            width: 80vw;
+            min-width: 300px;
+            height: 100%;
+            background-color: var(--color-background);
+            /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); */
+            z-index: 1000;
+            transition: left 0.3s ease;
+            padding: 20px;
+        }
+
+        .mobile-nav.active {
+            left: 0;
+        }
+
+        /* Close button in mobile nav */
+        .mobile-nav-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--color-primary);
+        }
+
+        /* Mobile nav links */
+        .mobile-nav-links {
+            margin-top: 60px;
+        }
+
+        .mobile-nav-links h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-size: 18px;
+        }
+
+
+
+
+
 
 /* MEDIA QUERIES */
 
-/* Tablet styles */
-@media screen and (min-width: 768px) and (max-width: 1025px) {
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    grid-gap: 100px;
-    padding: 100px 50px;
-    max-width: 700px; 
-  }
-}
+
+
+
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    grid-gap: 1.4rem 2rem;
-    padding: 15px 10px 60px 10px;
-    max-width: 450px;
-    justify-content: center;
-    margin: 5px;
+
+
+  .nav {
+    display: none;
   }
+
+  /* Show mobile elements */
+  .mobile-menu-toggle,
+   .mobile-nav-overlay,
+   .mobile-nav {
+    display: block;
+    }
 
   
   /* Fix for container-all-items - reduce gaps for small screens */
@@ -674,7 +797,7 @@ nav a:hover {
     overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
-    max-width: 350px;
+  
     margin: 5px;
 
 
@@ -684,7 +807,11 @@ nav a:hover {
 
   .button-wrapper{
 
-    
+    justify-content: center;
+    margin-left: auto; 
+    margin-right: auto;
+    position: relative; 
+    width: fit-content; 
   }
 
   .filter-button{
@@ -748,12 +875,10 @@ nav a:hover {
     flex: 0 0 22%; /* Slightly smaller to ensure fit */
     width: 22%;
     max-width: 70px; /* Reduced from 75px */
-    min-width: 45px; /* Reduced from 50px */
+    min-width: 50px; /* Reduced from 50px */
   }
 
-  #all-items {
-    max-width: 45px; /* Reduced from 50px to match .card min-width */
-  }
+ 
   
   .card p {
     font-size: 14px; 
@@ -902,10 +1027,135 @@ nav a:hover {
 }
 
 /* Additional fix for very small screens */
-@media screen and (max-width: 450px) {
-  #container-all-items {
-    column-gap: 25px; /* Even smaller gap for very small screens */
-    row-gap: 15px;
-    padding: 10px 2px 60px 2px;
+
+
+/* Mobile styles */
+@media screen and (max-width: 349px) {
+ /* very small screens  */
+
+    .container {
+    /* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); */
+    grid-gap: 1.5rem 1.5rem;
+    padding: 15px 10px 60px 10px;
+    width: 306px;
+    justify-content: center;
+    margin: 5px;
   }
+
+
+}
+
+@media screen and (min-width: 350px) and (max-width: 439px) {
+   .container {
+    /* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); */
+    grid-gap: 36px 48px;
+    padding: 20px 10px 60px 10px;
+    width: 306px;
+    justify-content: left;
+    margin: 5px;
+  }
+
+  #container-all-items {
+    column-gap: 36px; 
+    row-gap: 15px;
+    width: 306px;
+    padding: 10px 2px 60px 2px;
+    justify-content: center;
+  }
+
+  #all-items.card{
+    min-width: 10px; 
+    max-width: 50px;
+    flex: 0 0 15%;
+  }
+
+  .button-container{
+    width: 306px; 
+  }
+
+
+}
+
+@media screen and (min-width: 440px) and (max-width: 767px) {
+   .container {
+    grid-gap: 36px 48px;
+    padding: 20px 10px 60px 10px;
+    width: 424px;
+    justify-content: left;
+    margin: 5px;
+  }
+
+   .button-container{
+    width: 424px; 
+  }
+
+
+  #container-all-items {
+    column-gap: 36px; 
+    row-gap: 15px;
+    width: 424px;
+    padding: 10px 2px 60px 2px;
+    justify-content: center;
+  }
+
+
+
+
+  #all-items.card{
+    min-width: 10px; 
+    max-width: 75px;
+    flex: 0 0 10%;
+  }
+
+
+}
+
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-gap: 50px;
+    padding: 50px  0px 125px 0px;
+    justify-content: left;
+    width: 600px;
+  }
+
+
+  .header-container {
+    margin: 0px 25px 0px 25px;
+  }
+
+  h1{
+    font-size: 36px;
+  }
+
+
+  .button-container {
+    padding: 0px 10px 0px 10px;  
+    padding-left: 16px;
+    padding-right: 16px;
+        display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  
+    margin: 5px;
+    width: 600px;
+
+
+
+  
+  }
+
+  .button-wrapper{
+
+    justify-content: center;
+    margin-left: auto; 
+    margin-right: auto;
+    position: relative; 
+    width: fit-content; 
+  }
+
 }
