@@ -42,6 +42,39 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  // Mobile nav stuff
+  // Close nav menu when clicking outside or pressing escape
+   document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileNav();
+            }
+        });
+
+  // Add click event to mobile menu toggle button
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileNav);
+    }
+    
+    // Add click event to close button
+    const mobileClose = document.querySelector('.mobile-nav-close');
+    if (mobileClose) {
+        mobileClose.addEventListener('click', closeMobileNav);
+    }
+    
+    // Add click event to overlay
+    const overlay = document.querySelector('.mobile-nav-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeMobileNav);
+    }
+    
+    // Add click events to mobile nav links to close menu
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMobileNav);
+    });
+
+    
 
   // Only execute the following code if we're not on the about page
   if (!isAboutPage) {
@@ -403,7 +436,27 @@ function filterCardsByPeriod(period) {
   });
 }
 
+function toggleMobileNav() {
+   const overlay = document.querySelector('.mobile-nav-overlay');
+   const nav = document.querySelector('.mobile-nav');
+            
+   overlay.classList.add('active');
+   nav.classList.add('active');
+            
+   // Prevent body scrolling when menu is open
+  document.body.style.overflow = 'hidden';
+}
 
+function closeMobileNav() {
+    const overlay = document.querySelector('.mobile-nav-overlay');
+    const nav = document.querySelector('.mobile-nav');
+            
+    overlay.classList.remove('active');
+    nav.classList.remove('active');
+            
+  // Restore body scrolling
+  document.body.style.overflow = '';
+}
 
 function applyFilters() {
   const filterButtons = document.querySelectorAll('.filter-button');
