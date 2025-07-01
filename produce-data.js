@@ -580,6 +580,20 @@ const produceData = {
     classification: "vegetable"
   },
 
+  
+  olive: {
+    name: "Olive",
+    image: "./images/olive.png",
+    season: "Late September through Late December",
+    activeperiods: "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "The olive appears in many classics and is often used as a symbol for power, peace, and wisdom. They deliver heart-healthy monounsaturated fats and powerful antioxidants like vitamin E that support cardiovascular health while providing satisfying richness that enhances the flavor of countless dishes.", 
+    recipes: [
+      "Rosemary olive sourdough",
+      "Olive tapenade"
+    ],
+    classification: "vegetable", 
+    joke: "Olive you ♥"
+  },
 
 
   okra: {
