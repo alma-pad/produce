@@ -785,13 +785,13 @@ nav {
     column-gap: 20px; /* Reduced from 40px */
     row-gap: 20px;    /* Reduced from 25px */
     padding: 10px 5px 60px 5px; /* Reduced side padding */
-    margin: 2px; /* Reduced margin */
+    margin: 0px; /* Reduced margin */
   }
   
   .button-container {
     padding: 0px 10px 0px 10px;  
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 3px;
+    padding-right: 0px;
         display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -1033,7 +1033,7 @@ nav {
     .container {
     /* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); */
     grid-gap: 1.5rem 1.5rem;
-    padding: 15px 10px 60px 10px;
+    padding: 3px 10px 60px 10px;
     width: 306px;
     justify-content: center;
     margin: 5px;
@@ -1109,7 +1109,7 @@ nav {
 @media screen and (min-width: 768px) and (max-width: 1025px) {
   .container {
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    grid-gap: 87px;
+    grid-gap: 66px;
     padding: 50px  0px 125px 0px;
     justify-content: left;
     width: 600px;
@@ -1134,8 +1134,8 @@ nav {
 
 
   .button-container {
-    padding: 0px 10px 0px 10px;  
-    padding-left: 16px;
+    padding: 20px 10px 20px 10px;  
+    padding-left: 7px;
     padding-right: 16px;
         display: flex;
     overflow-x: auto;
@@ -1143,7 +1143,7 @@ nav {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   
-    margin: 5px;
+    margin: 0px;
     width: 600px;
 
 
