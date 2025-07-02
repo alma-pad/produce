@@ -875,7 +875,9 @@ nav {
     width: 65px;
   }
 
- 
+ .active {
+  margin: 5px;
+ }
   
   .card p {
     font-size: 14px; 
