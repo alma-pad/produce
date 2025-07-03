@@ -83,6 +83,11 @@ body {
   align-items: center;
   padding: 0 20px 20px 20px; /* Optional: adds some padding on the sides */
 }
+.nav-left {
+  display: flex;
+  align-items: center;
+  margin-right: auto; 
+}
 
 .nav a {
   text-decoration: none;
@@ -118,8 +123,8 @@ body {
 }
 
 /* Container for the right-side links */
-.nav h3:nth-child(2),
-.nav h3:nth-child(3) {
+.nav h3:nth-child(3),
+.nav h3:nth-child(4) {
   margin-left: 20px; /* Adds space between About and All Items */
 }
 
@@ -405,8 +410,9 @@ p.small {
   padding: 10px 10px 60px 10px;
   column-gap: 80px;
   row-gap: 25px;
-  max-width: 900px;
+  width: 900px;
   margin: 5px;
+
 }
 
 img {
@@ -572,6 +578,14 @@ img {
   opacity: 1;
 }
 
+#favicon {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  margin-right: 10px;
+}
+
 .produce-about-image {
   text-align: center;
   margin: 0;
@@ -670,7 +684,7 @@ nav {
 }
 
 /* Mobile menu toggle button */
-        .mobile-menu-toggle {
+        /* .mobile-menu-toggle {
             display: none;
             position: absolute;
             top: 15px;
@@ -681,7 +695,23 @@ nav {
             font-size: 24px;
             cursor: pointer;
             z-index: 1001;
+        } */
+
+        .mobile-menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum touch target size */
+            height: 44px;
+            z-index: 1001;
+             color: var(--color-background);
         }
+
 
         /* Mobile Navigation Overlay */
         .mobile-nav-overlay {
@@ -753,6 +783,10 @@ nav {
             font-size: 18px;
         }
 
+        .mobile-nav-bar{
+          display: none;
+        }
+
 
 
 
@@ -772,12 +806,36 @@ nav {
     display: none;
   }
 
+  .mobile-nav-bar{ 
+    display: flex;
+    align-items: center;
+    position: relative;
+ 
+  }
+
+  
+/* 
+  .mobile-menu-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  } */
+
   /* Show mobile elements */
   .mobile-menu-toggle,
    .mobile-nav-overlay,
    .mobile-nav {
     display: block;
     }
+
+  #header-title-mobile{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
 
   
   /* Fix for container-all-items - reduce gaps for small screens */
@@ -819,8 +877,10 @@ nav {
   }
   
   .header {
-    padding: 30px 30px 80px 30px;
+    padding: 30px 15px 80px 15px;
     margin: 5px;
+    justify-content: center;
+    
   }
 
   .header::after {
@@ -840,13 +900,23 @@ nav {
     mask: radial-gradient(45px at 50% 30%, #0000 100%, #000) calc(50% - 43px) 0/75px 100%;
   }
 
-  #header-title, #datetime {
+  #header-title {
+    margin: 10px 0;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    white-space: normal;
+    display: none;
+  }
+
+  #datetime {
     margin: 10px 0;
     text-align: center;
     z-index: 1;
     position: relative;
     white-space: normal;
   }
+  
   
   h1 {
     font-size: 24px;
@@ -1072,6 +1142,8 @@ nav {
   }
 
 
+
+
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
@@ -1102,6 +1174,11 @@ nav {
   #all-items.card{
    width: 50px; 
   }
+
+    .dropdown{
+    max-width: 424px;
+  }
+
 
 
 }
