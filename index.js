@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add card to container
         cardsContainer.appendChild(card);
+    
       }
 
       // Get the stored period or use the active period
@@ -175,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
      
       applySeasonTheme(periodToUse);
       filterCardsByPeriod(periodToUse);
+     
 
       //toggle drop down when the user clicks on it 
       select.addEventListener('click', () => {
@@ -348,6 +350,8 @@ if (document.getElementById("datetime")) {
     }
   }, 100);
 
+
+
 });
 // DOM function ends 
 
@@ -436,31 +440,11 @@ function filterCardsByPeriod(period) {
   });
 }
 
-function toggleMobileNav() {
-   const overlay = document.querySelector('.mobile-nav-overlay');
-   const nav = document.querySelector('.mobile-nav');
-            
-   overlay.classList.add('active');
-   nav.classList.add('active');
-            
-   // Prevent body scrolling when menu is open
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMobileNav() {
-    const overlay = document.querySelector('.mobile-nav-overlay');
-    const nav = document.querySelector('.mobile-nav');
-            
-    overlay.classList.remove('active');
-    nav.classList.remove('active');
-            
-  // Restore body scrolling
-  document.body.style.overflow = '';
-}
-
 function applyFilters() {
   const filterButtons = document.querySelectorAll('.filter-button');
   const cards = document.querySelectorAll('.card');
+  const emptyState = document.getElementById('empty-state');
+  const cardsContainer = document.getElementById('cards-container');
   
   // Get which filter is active (only one can be active at a time)
   const activeFilter = {
@@ -484,6 +468,8 @@ function applyFilters() {
   // Get current selected period for period filtering
   const selectedElement = document.querySelector('.selected');
   const currentPeriod = selectedElement ? selectedElement.textContent.trim() : null;
+  
+  let visibleCardCount = 0;
   
   cards.forEach(card => {
     const classification = card.dataset.classification;
@@ -536,6 +522,7 @@ function applyFilters() {
           card.classList.remove('fade-out');
         }, 10);
       }
+      visibleCardCount++;
     } else {
       // Card should be hidden
       if (!card.classList.contains('hidden')) {
@@ -550,7 +537,21 @@ function applyFilters() {
       }
     }
   });
+  
+  // Show/hide empty state based on visible cards
+  if (visibleCardCount === 0) {
+    // No cards visible, remove padding and show empty state
+    emptyState.classList.remove('hidden');
+    cardsContainer.classList.add('no-padding');
+    } else {
+    // Cards visible, restore padding and hide empty state
+    emptyState.classList.add('hidden');
+    cardsContainer.classList.remove('no-padding');
+  }
 }
+
+
+
 
 function applySeasonTheme(activePeriod) {
   const season = seasonMapping[activePeriod] || "Summer";
@@ -572,4 +573,29 @@ function applySeasonTheme(activePeriod) {
     // Add the new season class
     document.body.className = season.toLowerCase();
   }, 0);
+}
+
+
+// mobile nav functions 
+
+function toggleMobileNav() {
+   const overlay = document.querySelector('.mobile-nav-overlay');
+   const nav = document.querySelector('.mobile-nav');
+            
+   overlay.classList.add('active');
+   nav.classList.add('active');
+            
+   // Prevent body scrolling when menu is open
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+    const overlay = document.querySelector('.mobile-nav-overlay');
+    const nav = document.querySelector('.mobile-nav');
+            
+    overlay.classList.remove('active');
+    nav.classList.remove('active');
+            
+  // Restore body scrolling
+  document.body.style.overflow = '';
 }
