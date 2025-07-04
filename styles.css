@@ -14,7 +14,9 @@
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-}
+  padding: 0px; 
+  margin: 0px;
+} 
 
 .dropdown-container {
   display: flex;
@@ -30,13 +32,13 @@ body {
 }
 
 .header {
-  text-align: center;
+  padding: 10px 50px 120px 50px; 
+  margin: 0px 10px 10px 10px;
   background-color: var(--color-primary);
   justify-content: center;
-  align-items: center; 
-  margin: 10px; 
-  padding: 50px 50px 120px 50px;
-  position: relative; 
+  align-items: center;
+  position: relative;
+  text-align: center;
 }
 
 .header::after {
@@ -75,14 +77,70 @@ body {
   z-index: 0; 
 }
 
+.nav-container{
+  margin: 10px 10px 0px 10px; 
+  background-color: var(--color-primary);
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+
+
+}
+
+.nav-container::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Negative margin height */
+  left: -10px; /* Match left margin */
+  right: -10px; /* Match right margin */
+  height: 10px;
+  background-color: var(--color-background); /* Same as nav background */
+  z-index: -1; /* Behind the nav content but still blocks page content */
+}
+
+/* .nav-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background-color: var(--color-background);
+  mask: radial-gradient(90px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
+  z-index: 0; 
+} */
+
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-primary);
+  padding: 20px 20px 20px 20px; /* Remove bottom padding */
   max-width: 900px;
-  margin: 0 auto; /* Centers the nav bar */
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 20px 20px; /* Optional: adds some padding on the sides */
 }
+
+
+
+#header-title-mobile {
+  margin: 0;
+}
+
+.nav h3 {
+  margin: 0;
+}
+
+
+
+.nav,
+.mobile-nav-bar {
+  transition: all 0.3s ease;
+}
+
+
 .nav-left {
   display: flex;
   align-items: center;
@@ -319,9 +377,13 @@ p.small {
   row-gap: 75px;
   padding: 50px 0px 125px 0px; 
   margin: auto; /* Auto margins for horizontal centering */
-  justify-content: flex-start; /* Keep items left-aligned within rows */
+  justify-content: left; 
   width: fit-content; /* Make container only as wide as needed */
-  max-width: 900px;
+  width: 900px;
+}
+
+.container.no-padding {
+    padding: 0;
 }
 
 .container-wrapper {
@@ -418,6 +480,50 @@ p.small {
 img {
   object-fit: contain;
 }
+
+.container-empty-state {
+  display: flex; 
+  flex-wrap: wrap; 
+  column-gap: 100px; 
+  row-gap: 75px;
+  padding: 0px;
+  margin: auto; /* Auto margins for horizontal centering */
+  justify-content: left;
+  width: fit-content; /* Make container only as wide as needed */
+  width: 900px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 20px 20px 120px 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.empty-state.hidden {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+}
+
+.empty-state-image {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.empty-state-text {
+    color: var(--color-primary);
+    margin: 0;
+    text-align: center;
+   
+}
+
 
 .select {
   background: var(--color-background); 
@@ -700,14 +806,14 @@ nav {
         .mobile-menu-toggle {
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             cursor: pointer;
             padding: 0.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             min-width: 44px; /* Minimum touch target size */
-            height: 44px;
+            height: 54px;
             z-index: 1001;
              color: var(--color-background);
         }
@@ -783,10 +889,31 @@ nav {
             font-size: 18px;
         }
 
-        .mobile-nav-bar{
-          display: none;
-        }
+  .mobile-nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-primary);
+  padding: 20px 20px 0px 20px; /* Remove bottom padding */
+  margin: 5px 5px 0px 5px;
+  display: none;
+  align-items: center;
+}
 
+
+/* .mobile-nav-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -75px; 
+  left: 0;
+  right: 0;
+  height: 75px;
+  background-color: var(--color-primary);
+  mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
+  -webkit-mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
+  z-index: -1;
+  pointer-events: none;
+} */
 
 
 
@@ -806,12 +933,39 @@ nav {
     display: none;
   }
 
+  .nav-container{
+    display: none;
+  }
+
   .mobile-nav-bar{ 
     display: flex;
     align-items: center;
-    position: relative;
+    position: sticky;
+    top: 5px;
+    z-index: 100;
+    background-color: var(--color-primary);
+    padding: 15px 15px 0px 15px;
  
   }
+
+  .mobile-nav-bar::before {
+  content: '';
+  position: absolute;
+  top: -5px; /* Negative margin height */
+  left: -5px; /* Match left margin */
+  right: -5px; /* Match right margin */
+  height: 5px;
+  background-color: var(--color-background); /* Same as nav background */
+  z-index: -1; /* Behind the nav content but still blocks page content */
+}
+
+  /* .mobile-nav-bar::after {
+    height: 65px;
+    bottom: -65px;
+    mask: radial-gradient(45px at 50% 0%, #0000 98%, #000) calc(50% - 43px) 0/75px 100%;
+    -webkit-mask: radial-gradient(45px at 50% 0%, #0000 98%, #000) calc(50% - 43px) 0/75px 100%;
+  } */
+
 
   
 /* 
@@ -829,12 +983,31 @@ nav {
     display: block;
     }
 
+
+  .mobile-menu-toggle{
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    z-index: 1001;
+    color: var(--color-background);
+    margin-bottom: 10px; /* Add bottom spacing */
+  }
+
   #header-title-mobile{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
     pointer-events: none;
+    margin: 0;
+    padding-bottom: 10px; /* Add bottom spacing */
   }
 
   
@@ -877,9 +1050,8 @@ nav {
   }
   
   .header {
-    padding: 30px 15px 80px 15px;
-    margin: 5px;
-    justify-content: center;
+    padding: 0px 15px 80px 15px; /* Remove top padding */
+    margin: 0px 5px 5px 5px;
     
   }
 
@@ -891,7 +1063,7 @@ nav {
     right: 0;
     height: 75px;
     background-color: var(--color-background);
-    /* mask: radial-gradient(43px at 50% 0%, #0000 98%, #000) calc(50% - 43px) 0/75px 100%; */
+    mask: radial-gradient(43px at 50% 0%, #0000 98%, #000) calc(50% - 43px) 0/75px 100%;
     mask: radial-gradient(45px at 50% 30%, #0000 100%, #000) calc(50% - 43px) 0/75px 100%;
     z-index: 0; 
   }
@@ -910,7 +1082,7 @@ nav {
   }
 
   #datetime {
-    margin: 10px 0;
+    margin: 0px 10px 10px 10px;
     text-align: center;
     z-index: 1;
     position: relative;
@@ -1109,6 +1281,10 @@ nav {
     width: 306px;
     justify-content: center;
     margin: 5px;
+
+    .container-empty-state{
+        width: 306px;
+     }
   }
 
 
@@ -1122,6 +1298,15 @@ nav {
     width: 315px;
     justify-content: left;
     margin: 5px;
+  }
+
+  .container-empty-state{
+        width: 315px;
+  }
+
+  .empty-state-image{
+    height: 250px; 
+    width: 250px;
   }
 
   #container-all-items {
@@ -1153,6 +1338,10 @@ nav {
     width: 440px;
     justify-content: left;
     margin: 5px;
+  }
+
+    .container-empty-state{
+        width: 440px;
   }
 
    .button-container{
@@ -1192,6 +1381,10 @@ nav {
     padding: 50px  0px 125px 0px;
     justify-content: left;
     width: 600px;
+  }
+
+  .container-empty-state{
+        width: 600px;
   }
 
   #container-all-items{
