@@ -54,6 +54,21 @@ body {
   z-index: 0; 
 }
 
+.scalloped-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -130px;
+  left: 0;
+  right: 0;
+  background: 
+  radial-gradient(circle at 50% 0%, var(--color-primary) 25%, var(--color-primary) 26%, rgba(255, 0, 0, 0) 0%);
+  background-color: rgba(255, 0, 0, 0);
+  background-size: 125px 280px;
+  height:150px;
+  background-repeat: repeat-x;
+
+}
+
 .header-details {
   background-color: var(--color-primary);
   margin: 10px;
@@ -72,7 +87,7 @@ body {
   right: 0;
   height: 75px; /* Height of scallop */
   background-color: var(--color-background);
-  mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
+  mask: radial-gradient(75px at 50% 0, #0000 25%, #000) calc(50% - 69.375px) 0/130px 100%;
   -webkit-mask: radial-gradient(75px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
   z-index: 0; 
 }
@@ -83,6 +98,7 @@ body {
   position: sticky;
   top: 10px;
   z-index: 100;
+  overflow: visible;
 
 
 }
@@ -98,24 +114,16 @@ body {
   z-index: -1; /* Behind the nav content but still blocks page content */
 }
 
-/* .nav-container::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 75px;
-  background-color: var(--color-background);
-  mask: radial-gradient(90px at 50% 0, #0000 98%, #000) calc(50% - 69.375px) 0/130px 100%;
-  z-index: 0; 
-} */
+.nav-container::after {
+
+}
 
 .nav {
   position: sticky;
   top: 0;
   z-index: 100;
   background-color: var(--color-primary);
-  padding: 20px 20px 20px 20px; /* Remove bottom padding */
+  padding: 40px 20px 20px 20px; /* Remove bottom padding */
   max-width: 900px;
   margin: 0 auto;
   display: flex;
@@ -171,6 +179,12 @@ body {
 
 .nav a:hover {
   background-color: var(--color-secondary);
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.nav-left:hover{
+   background-color: var(--color-secondary);
   color: var(--color-primary);
   transition: color 0.3s ease;
 }
@@ -887,18 +901,15 @@ nav {
             text-decoration: none;
             color: var(--color-primary);
             font-size: 18px;
+       
         }
 
-  .mobile-nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: var(--color-primary);
-  padding: 20px 20px 0px 20px; /* Remove bottom padding */
-  margin: 5px 5px 0px 5px;
-  display: none;
-  align-items: center;
-}
+        .nav-container-mobile{
+          display: none;
+        }
+       
+
+
 
 
 /* .mobile-nav-bar::after {
@@ -932,23 +943,49 @@ nav {
   .nav {
     display: none;
   }
-
   .nav-container{
     display: none;
   }
+ 
+
+  .nav-container-mobile{
+    margin: 0px 5px 0px 5px;
+    background-color: var(--color-primary);
+    position: sticky;
+    top: 5px;
+    z-index: 100;
+    overflow: visible;
+    display: block;
+  
+  }
+
+  .scalloped-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  background: 
+  radial-gradient(circle at 50% 0%, var(--color-primary) 25%, var(--color-primary) 26%, rgba(255, 0, 0, 0) 0%);
+  background-color: rgba(255, 0, 0, 0);
+  background-size: 75px 180px;
+  height:75px;
+  background-repeat: repeat-x;
+
+}
 
   .mobile-nav-bar{ 
     display: flex;
     align-items: center;
     position: sticky;
-    top: 5px;
+    top: 0px;
     z-index: 100;
     background-color: var(--color-primary);
-    padding: 15px 15px 0px 15px;
+    padding: 20px 20px 10px 20px;
  
   }
 
-  .mobile-nav-bar::before {
+  .nav-container-mobile::before {
   content: '';
   position: absolute;
   top: -5px; /* Negative margin height */
@@ -997,7 +1034,7 @@ nav {
     height: 44px;
     z-index: 1001;
     color: var(--color-background);
-    margin-bottom: 10px; /* Add bottom spacing */
+    
   }
 
   #header-title-mobile{
@@ -1007,7 +1044,7 @@ nav {
     white-space: nowrap;
     pointer-events: none;
     margin: 0;
-    padding-bottom: 10px; /* Add bottom spacing */
+   
   }
 
   
@@ -1050,7 +1087,7 @@ nav {
   }
   
   .header {
-    padding: 0px 15px 80px 15px; /* Remove top padding */
+    padding: 10px 15px 80px 15px; /* Remove top padding */
     margin: 0px 5px 5px 5px;
     
   }
@@ -1385,6 +1422,10 @@ nav {
 
   .container-empty-state{
         width: 600px;
+  }
+
+  .nav{
+    width: 600px;
   }
 
   #container-all-items{
