@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+
   // Mobile nav stuff
   // Close nav menu when clicking outside or pressing escape
    document.addEventListener('keydown', function(e) {
@@ -72,6 +74,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', closeMobileNav);
+    });
+
+    const nav = document.querySelector(".nav-container");
+    const navMobile = document.querySelector(".nav-container-mobile");
+    const header = document.querySelector(".header");
+
+    window.addEventListener("scroll", () => {
+      const headerBottom = header.getBoundingClientRect().bottom;
+
+      if (headerBottom <= 0) {
+        nav.classList.add("scalloped-bottom");
+        navMobile.classList.add("scalloped-bottom");
+      } else {
+        nav.classList.remove("scalloped-bottom");
+        navMobile.classList.remove("scalloped-bottom");
+      }
     });
 
     
