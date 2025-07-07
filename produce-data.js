@@ -126,7 +126,7 @@ const produceData = {
       "Roasted beets"
     ],
     notes: "Beets are available all year in California, but their peak harvest season is fall to winter.", 
-    joke: "You make my heart skip a beet ;)", 
+    joke: "You make my heart skip a beet ♥", 
     classification: "vegetable"
   },
 
@@ -149,8 +149,8 @@ const produceData = {
   blackberry: {
     name: "Blackberry",
     image: "./images/blackberry.png",
-    season: "Early June through Late August",
-    activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August",
+    season: "Early July through Late August",
+    activeperiods: "Early July,Late July,Early August,Late August",
     benefits: "Blackberries contain one of the highest antioxidant contents of any fruit, with their deep purple-black color signaling powerful compounds that fight inflammation and support brain health. Their unique balance of sweetness and tartness comes with impressive fiber content that supports digestive health and blood sugar regulation, making these juicy berries as beneficial for your body as they are delightful to your taste buds.",
     recipes: [
       "Blackberry pie", 
@@ -173,6 +173,22 @@ const produceData = {
     ],
     notes: ["Although blueberries seem ubiquitous in California grocery stores, they are mainly grown in the Pacific Northwest and parts of the East Coast like Maine and New Jersey. In the winter blueberries are imported from Mexico and South America."],
     classification: "fruit"
+  },
+
+
+  broccoli: {
+    name: "Broccoli",
+    image: "./images/broccoli.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Broccoli is a highly nutritious vegetable, rich in vitamins, minerals, and antioxidants. A single cup of raw broccoli provides a significant amount of Vitamin C, Vitamin K, folate, and fiber, along with smaller amounts of Vitamin A, phosphorus, potassium, and other nutrients. The sulforaphane in broccoli may also have potential benefits for osteoarthritis and schizophrenia.",
+    recipes: [
+      "Roasted broccoli", 
+      "Mac and cheese with broccoli and peas", 
+      "Pesto pasta with broccoli"
+    ],
+ 
+    classification: "vegetable"
   },
 
   brussel_sprout: {
@@ -205,6 +221,21 @@ const produceData = {
     classification: "vegetable"
   },
 
+   cabbage: {
+    name: "Cabbage",
+    image: "./images/cabbage.png",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Cabbage offers numerous health benefits due to its rich nutritional profile. It's a good source of vitamins C and K, fiber, and various antioxidants. These components contribute to improved digestion, heart health, and potentially reduced risk of certain diseases. Its satisfying crunch and mild flavor make it incredibly versatile, transforming from crisp raw slaws to tender braised comfort foods, while its budget-friendly price and long storage life make it one of the most practical vegetables for adding consistent nutrition and substance to meals year-round.",
+    recipes: [
+      "Sautéed cabbage", 
+      "Braised cabbage",
+      "Cole slaw"
+    ],
+
+    classification: "vegetable"
+  },
+
   carrot: {
     name: "Carrot",
     image: "./images/carrot.png",
@@ -223,8 +254,8 @@ const produceData = {
   cauliflower: {
     name: "Cauliflower",
     image: "./images/cauliflower.png",
-    season: "Early December to Late March",
-    activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Cauliflower offers numerous health benefits due to its high content of fiber, antioxidants, vitamins, and minerals. It supports digestion, boosts the immune system, and may even reduce the risk of certain cancers. It's incredibly filling and can be used to lose weight.",
     recipes: [
       "Curried cauliflower soup", 
@@ -249,6 +280,19 @@ const produceData = {
     ], 
     classification: "vegetable"
   },
+
+   chard: {
+    name: "Chard",
+    image: "./images/chard.png",
+    season: "Early January through Late April",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
+    benefits: "Chard's vibrant stems and dark leafy greens provide exceptional amounts of vitamin K, magnesium, and potassium that support bone health and muscle function, while its colorful varieties add stunning visual appeal to any plate. This nutrient-dense green contains unique antioxidants called betalains that support detoxification and may help regulate blood sugar, while both the tender leaves and crunchy stems can be used in cooking, making chard both a nutritional powerhouse and a beautiful, versatile ingredient that transforms ordinary meals into colorful, health-boosting experiences.",
+    recipes: [
+      "Sautéed chard with garlic and lemon" 
+    ], 
+    classification: "vegetable"
+  },
+
 
   cherry: {
     name: "Cherry",
@@ -311,6 +355,22 @@ const produceData = {
     classification: "vegetable"
   },
 
+
+  cranberry: {
+    name: "Cranberry",
+    image: "./images/cranberry.png",
+    season: "Late September through Late November",
+    activeperiods: "Late September,Early October,Late October,Early November,Late November",
+    benefits: "Cranberries are low in calories and offer a good source of vitamins and fiber. They are particularly rich in vitamin C, vitamin E, and vitamin K, as well as manganese. They contain carotenoids, including beta-carotene, which the body converts to vitamin A for healthy skin, eyes and a strong immune system. They also provide lycopene, which may help protect the skin from UV damage.",
+    recipes: [
+      "Cranberry sauce to put on turkey or in turkey sandwiches", 
+      "Cranberry lemon tart", 
+      "Cranberry walnut bread"
+    ], 
+
+    classification: "fruit"
+  },
+
   cucumber: {
     name: "Cucumber",
     image: "./images/cucumber.png",
@@ -339,6 +399,21 @@ const produceData = {
       "Pickled daikon and carrot"
     ], 
     classification: "vegetable"
+  },
+
+   date: {
+    name: "Date",
+    image: "./images/date.png",
+    season: "Late August through Late December",
+    activeperiods: "Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Dates are naturally sweet fruits that can improve digestion, boost energy levels, support heart health, and potentially help regulate blood sugar levels. They contain fiber, antioxidants, and essential minerals like calcium, magnesium, and potassium. They are a great alternative to refined sugars in recipes.",
+    recipes: [
+     "Dates stuffed with peanut butter for a pre-workout snack", 
+     "Date bark with chocolate and nuts", 
+     "Dates in smoothies or nut milk for a natural sweetness"
+    ], 
+    notes: "Dates are usually sold dried, but fresh dates are good too. Jujube and Bahari dates are often sold fresh in markets.",
+    classification: "fruit"
   },
 
   eggplant: {
@@ -406,7 +481,8 @@ const produceData = {
     activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July",
     benefits: "Garlic is low in calories but packed with nutrients, including vitamins C, B6, and manganese, as well as minerals like calcium, iron, potassium, and magnesium. It also contains beneficial sulfur compounds like allicin, which contribute to its health benefits. ",
     recipes: [
-       "Roasted garlic"
+       "Roasted garlic rosemary sourdough", 
+       "Roasted garlic lemon pasta"
     ], 
     classification: "vegetable"
   },
@@ -456,15 +532,15 @@ const produceData = {
   kale: {
     name: "Kale",
     image: "./images/kale.png",
-    season: "Early October to Late June",
-    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June",
-    benefits: "Kale delivers more nutrients per calorie than almost any other food, providing exceptional amounts of vitamins A, C, and K along with powerful antioxidants that support eye health and may help prevent chronic diseases.",
+    season: "All year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Kale delivers more nutrients per calorie than almost any other food, providing exceptional amounts of vitamins A, C, and K along with powerful antioxidants that support eye health and may help prevent chronic diseases. Kale contains glucosinolates, which are compounds that help the liver neutralize and eliminate toxins. It has a satisfying bite and is very filling!",
     recipes: [
       "Kale chips", 
       "Kale slaw with cabbage, carrots, and other seasonal veggies",
       "Tuscan bean and kale soup"
     ],
-    notes: "Although kale is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring. That being said, kale is still a good choice anytime.",
+    notes: "Although kale is grown year-round in California, it is a cool season crop and the peak harvest is usually during the fall, winter, and spring.",
     classification: "vegetable"
   },
 
@@ -576,8 +652,21 @@ const produceData = {
       "Stroganoff"
     ],
     notes: "Specific mushrooms have different harvesting seasons. Shiitakes and oyster mushrooms are in season all year. Mushroom foraging season is in the fall.",
-    joke: "I have so mushroom for you in my heart ;)", 
+    joke: "I have so mushroom for you in my heart ♥", 
     classification: "vegetable"
+  },
+
+    mulberry: {
+    name: "Mulberry",
+    image: "./images/mulberry.png",
+    season: "Late May through Late June",
+    activeperiods: "Late May,Early June,Late June",
+    benefits: "Mulberries are a wild berry with a wonderfully sweet flavor and are packed with antioxidants including anthocyanins, cyanidin, chlorogenic acid, rutin, and myricetin. Mulberry trees hold rich cultural significance worldwide, symbolizing various concepts like patience, expediency, wisdom, abundance, and longevity. Their primary cultural importance stems from their link to the silk industry, with mulberry leaves being the staple food for silkworms.",
+
+    notes: "Mulberry season is quite short so get them while you can! They can sometimes be found at farmers markets.",
+
+   classification: "fruit"
+
   },
 
   
@@ -616,9 +705,9 @@ const produceData = {
   onion: {
     name: "Onion",
     image: "./images/onion.png",
-    season: "Early April through Late September",
-    activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
-    benefits: "Onions contain powerful sulfur compounds that support heart health, may help reduce inflammation, and may support bone density, while their natural sugars caramelize beautifully to add depth and sweetness to countless dishes.", 
+    season: "All Year",
+    activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
+    benefits: "Onions contain powerful sulfur compounds that support heart health, may help reduce inflammation, and may support bone density, while their natural sugars caramelize beautifully to add depth and sweetness to countless dishes. They are one of the oldest vegetables and eaten in almost every part of the world.", 
     recipes: [
       "Onions go well in almost every savory dish",
       "Caramelized onions",
