@@ -1,9 +1,9 @@
-
 import { seasonThemes, seasonMapping, produceData } from "./produce-data.js";
 
 document.addEventListener('DOMContentLoaded', function() {
   // Get the current page based on document title or URL
-  const isAboutPage = document.title === 'Seasonal Produce - About';
+  const isAboutPage = document.title === 'Seasonal Produce - About' || 
+   document.title === 'Seasonal Produce - Mission';
   
   // Insert date and time into HTML for all pages
   var now = new Date(); 
@@ -78,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const nav = document.querySelector(".nav-container");
     const navMobile = document.querySelector(".nav-container-mobile");
-    const header = document.querySelector(".header");
+    const header = document.querySelector(".header") ||
+    document.querySelector(".header-details");
 
     window.addEventListener("scroll", () => {
       const headerBottom = header.getBoundingClientRect().bottom;
