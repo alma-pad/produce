@@ -54,6 +54,8 @@ body {
   z-index: 0; 
 }
 
+
+
 .scalloped-bottom::after {
   content: '';
   position: absolute;
@@ -66,13 +68,14 @@ body {
   background-size: 125px 280px;
   height:150px;
   background-repeat: repeat-x;
+  transition: transform 1s ease-in-out; 
 
 }
 
 .header-details {
   background-color: var(--color-primary);
-  margin: 10px;
-  padding: 50px 150px 100px 150px;
+  margin: 0px 10px 10px 10px;
+  padding: 10px 150px 100px 150px;
   position: relative;
   display: flex; 
   justify-content: center;
@@ -99,6 +102,8 @@ body {
   top: 10px;
   z-index: 100;
   overflow: visible;
+
+
 
 
 }
@@ -197,7 +202,7 @@ body {
 /* Container for the right-side links */
 .nav h3:nth-child(3),
 .nav h3:nth-child(4) {
-  margin-left: 20px; /* Adds space between About and All Items */
+  margin-left: 40px; /* Adds space between About and All Items */
 }
 
 .header-content {
@@ -659,6 +664,19 @@ img {
   justify-content: center;
 }
 
+.mission-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+  gap: 2rem; 
+  /* justify-items: center; */
+}
+
+.mission-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .about-section {
   padding: 0px;
   max-width: 600px;
@@ -695,6 +713,16 @@ img {
   margin: 0;
   width: 400px;
   height: 400px;
+  opacity: 1;
+}
+
+#mission-image {
+  text-align: center;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
   opacity: 1;
 }
 
@@ -765,7 +793,7 @@ img {
 .about-content {
   display: flex;
   margin: auto; 
-  padding: 75px 100px; 
+  padding: 75px 100px 100px 100px; 
   max-width: 1000px; 
   flex-wrap: wrap; 
   justify-content: center;
@@ -865,7 +893,6 @@ nav {
             min-width: 300px;
             height: 100%;
             background-color: var(--color-background);
-            /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); */
             z-index: 1000;
             transition: left 0.3s ease;
             padding: 20px;
@@ -889,12 +916,17 @@ nav {
 
         /* Mobile nav links */
         .mobile-nav-links {
-            margin-top: 60px;
+           margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .mobile-nav-links h2 {
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-left: 0px;
+            margin-top: 20px; 
+            padding-bottom: 0px;
         }
 
         .mobile-nav-links a {
@@ -939,12 +971,19 @@ nav {
 /* Mobile styles */
 @media screen and (max-width: 767px) {
 
+    .mission-container {
+    grid-template-columns: 1fr;
+  }
 
   .nav {
     display: none;
   }
   .nav-container{
     display: none;
+  }
+
+  .nav-left{
+    margin-bottom: 20px;
   }
  
 
@@ -959,10 +998,12 @@ nav {
   
   }
 
+
+
   .scalloped-bottom::after {
   content: '';
   position: absolute;
-  bottom: -50px;
+  bottom: -60px;
   left: 0;
   right: 0;
   background: 
@@ -971,6 +1012,7 @@ nav {
   background-size: 75px 180px;
   height:75px;
   background-repeat: repeat-x;
+  transition: all 1s ease-in-out; 
 
 }
 
@@ -981,7 +1023,7 @@ nav {
     top: 0px;
     z-index: 100;
     background-color: var(--color-primary);
-    padding: 20px 20px 10px 20px;
+    padding: 20px 20px 0px 20px;
  
   }
 
@@ -1155,7 +1197,8 @@ nav {
   }
 
  .active {
-  margin: 5px;
+  margin: 0px;
+  padding-left: 50px;
  }
   
   .card p {
@@ -1208,7 +1251,7 @@ nav {
   /* Produce Details page  */
   .header-details {
     grid-gap: 15px; /* Add some spacing between elements */
-    padding: 30px 20px 80px 20px;
+    padding: 10px 20px 70px 20px;
     margin: 5px;
   }
 
@@ -1227,6 +1270,7 @@ nav {
   .header-details nav {
     grid-column: 1;
     grid-row: 1;
+    display: none;
   }
 
   .header-container {
@@ -1423,6 +1467,9 @@ nav {
   .container-empty-state{
         width: 600px;
   }
+   #container-all-items{
+     width: 600px;
+   }
 
   .nav{
     width: 600px;
@@ -1472,5 +1519,12 @@ nav {
     position: relative; 
     width: fit-content; 
   }
+
+  /* Container for the right-side links */
+.nav h3:nth-child(3),
+.nav h3:nth-child(4) {
+  margin-left: 20px; /* Adds space between About and All Items */
+}
+
 
 }
