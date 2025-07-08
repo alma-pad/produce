@@ -80,6 +80,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    const delayedLinks = document.querySelectorAll('.mobile-nav-links a.delayed-nav');
+
+    delayedLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // prevent immediate navigation
+
+        const href = this.getAttribute('href'); // get target URL
+
+        closeMobileNav(); // trigger slide-out
+
+        // Wait for animation to finish, then navigate
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300); // match your transition duration
+      });
+    });
+
   // touch screen tracking
   // adjust touch sensitivity here 
   let touchStartY = 0;
