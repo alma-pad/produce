@@ -654,7 +654,7 @@ img {
   width: 100%; 
   box-sizing: border-box; 
   margin: 0; 
-  padding: 0.7em; 
+  padding: 0.73m;
   border-radius: 0.7em;
 }
 
@@ -881,11 +881,12 @@ nav {
             opacity: 1;
             visibility: visible;
             pointer-events: auto; 
+       
         }
 
         /* Mobile Navigation Menu */
         .mobile-nav {
-            display: none;
+     
             position: fixed;
             top: 0;
             left: -100vw;
@@ -894,12 +895,20 @@ nav {
             height: 100%;
             background-color: var(--color-background);
             z-index: 1000;
-            transition: left 0.3s ease;
+            transition: left .3s ease;
             padding: 20px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 1rem;   
+            border-bottom-right-radius: 1rem;
         }
 
         .mobile-nav.active {
             left: 0;
+            width: 80vw;
+             min-width: 300px;
+             padding: 20px;
+             height: 100%; 
         }
 
         /* Close button in mobile nav */
@@ -970,6 +979,7 @@ nav {
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
+ 
 
     .mission-container {
     grid-template-columns: 1fr;
@@ -1059,7 +1069,8 @@ nav {
   .mobile-menu-toggle,
    .mobile-nav-overlay,
    .mobile-nav {
-    display: block;
+      display: block;
+   
     }
 
 
@@ -1196,10 +1207,13 @@ nav {
     width: 65px;
   }
 
+  /* for the dropdown */
  .active {
   margin: 5px;
   padding-left: 50px;
  }
+
+
   
   .card p {
     font-size: 14px; 
@@ -1251,8 +1265,8 @@ nav {
   /* Produce Details page  */
   .header-details {
     grid-gap: 15px; /* Add some spacing between elements */
-    padding: 10px 20px 70px 20px;
-    margin: 5px;
+    padding: 15px 20px 70px 20px;
+    margin: 0px 5px 5px 5px;
   }
 
   .header-details::after {
