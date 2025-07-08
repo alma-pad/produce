@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', closeMobileNav);
+      
     });
 
     const nav = document.querySelector(".nav-container");
@@ -93,7 +94,24 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    
+    const delayedLinks = document.querySelectorAll('.mobile-nav-links a.delayed-nav');
+
+    delayedLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // prevent immediate navigation
+
+        const href = this.getAttribute('href'); // get target URL
+
+        closeMobileNav(); // trigger slide-out
+
+        // Wait for animation to finish, then navigate
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300); // match your transition duration
+      });
+    });
+
+  
 
   // Only execute the following code if we're not on the about page
   if (!isAboutPage) {
@@ -611,10 +629,19 @@ function toggleMobileNav() {
 function closeMobileNav() {
     const overlay = document.querySelector('.mobile-nav-overlay');
     const nav = document.querySelector('.mobile-nav');
-            
+    
+    // Start fade-out transition
     overlay.classList.remove('active');
-    nav.classList.remove('active');
-            
-  // Restore body scrolling
-  document.body.style.overflow = '';
+
+    // Start slide-out transition
+    nav.style.left = '-100vw';
+
+    // Restore body scroll
+    document.body.style.overflow = '';
+
+    // Wait for transition to finish, then remove 'active' class
+    setTimeout(() => {
+        nav.classList.remove('active');
+        nav.style.left = ''; // clear inline style
+    }, 300); // match your CSS transition duration (0.3s = 300ms)
 }
