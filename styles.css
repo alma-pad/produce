@@ -1006,6 +1006,7 @@ nav {
   .nav-left{
     margin-bottom: 20px;
   }
+
   .nav a:hover {
      display: none;
    }
