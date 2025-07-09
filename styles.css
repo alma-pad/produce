@@ -151,7 +151,7 @@ body {
 
 .nav,
 .mobile-nav-bar {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
 }
 
 
@@ -164,7 +164,7 @@ body {
 .nav a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-out;
 }
 
 .nav h3 {
@@ -175,7 +175,7 @@ body {
   font-size: 18px;
   text-decoration: none;
   color: var(--color-secondary);
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-out;
 }
 
 /* nav h2:hover {
@@ -186,7 +186,7 @@ body {
 .nav a:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-out;
 }
 
 .nav-left:hover{
@@ -309,11 +309,31 @@ body {
 .footer {
   background-color: var(--color-secondary); 
   color: var(--color-text); 
-  height: 100px; 
-  text-align: center; 
+
+  text-align: left; 
   margin: 10px; 
   padding: 50px; 
   position: relative; 
+
+}
+
+.footer-container {
+  margin: 0 auto;
+  display: flex;
+  gap: 5rem; 
+  flex-wrap: wrap;
+  width: 900px;
+ 
+}
+
+.footer-left {
+  flex: 2;
+
+}
+
+.footer-right {
+  flex: 1.5;
+
 }
 
 .footer::before {
@@ -336,10 +356,13 @@ body {
   font-style: normal; 
   font-size: 14px;
   color: var(--color-primary);
+  transition: color 0.3s ease-out;
 }
 
 a:hover {
-  background-color: var(--color-background);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  transition: color 0.3s ease-out;
 }
 
 h1 {
@@ -364,9 +387,9 @@ h2 {
   position: relative;
 }
 
-.date-link:hover {
+/* .date-link:hover {
   color: var(--color-primary);
-}
+} */
 
 p {
   font-family: "Libre Caslon Text", serif;
@@ -383,11 +406,32 @@ ul li {
   font-size: 16px 
 }
 
+
+  li {
+    font-size: 14px; 
+    margin: 5px
+  }
+  
+  li a {
+    color: var(--color-primary);
+
+  }
+
+  li a:hover{
+    background-color: var(--color-secondary);
+  }
+
 p.small {
   font-family: "Libre Caslon Text", serif;
   font-weight: 400;
   font-style: normal; 
-  font-size: 14px 
+  font-size: 14px;
+}
+p.small-link {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: normal; 
+  margin: 5px 10px;
 }
 
 .container {
@@ -561,9 +605,9 @@ img {
   box-sizing: border-box;
   transform: translateY(20%);
   transition: 
-    background-color 0.3s ease-out,
-    border 0.3s ease-out,
-    color 0.3s ease-out;
+    background-color 0.3s ease-in,
+    border 0.3s ease-in,
+    color 0.3s ease-in;
 }
 
 .select:hover {
@@ -632,7 +676,7 @@ img {
 
 .list li {
   color: var(--color-primary);
-  margin: 5px; 
+  margin: 10px; 
 }
 
 .recipe-list li {
@@ -804,7 +848,7 @@ img {
 .about-content {
   display: flex;
   margin: auto; 
-  padding: 75px 100px 100px 100px; 
+  padding: 25px 100px 100px 100px; 
   max-width: 1000px; 
   flex-wrap: wrap; 
   justify-content: center;
@@ -990,6 +1034,17 @@ nav {
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
+
+   .footer-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: unset; /* remove flex ratios */
+    width: 100%; /* full width when stacked */
+  }
  
 
     .mission-container {
@@ -1225,9 +1280,9 @@ nav {
       font-size: 16px;
   }
 
-  li {
-    font-size: 14px; 
-    margin: 5px
+  
+  li a:hover{
+    background-color: var(--color-secondary);
   }
   
   .card {
@@ -1409,11 +1464,17 @@ nav {
         width: 306px;
      }
   }
+  .footer-container{
+    width: 306px;
+  }
 
 
 }
 
 @media screen and (min-width: 350px) and (max-width: 499px) {
+  .footer-container{
+    width: 315px;
+  }
    .container {
     /* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); */
     grid-gap: 36px 60px;
@@ -1455,6 +1516,9 @@ nav {
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
+  .footer-container{
+    width: 440px;
+  }
    .container {
     grid-gap: 36px 60px;
     padding: 20px 10px 60px 10px;
@@ -1502,6 +1566,9 @@ nav {
 
 /* Tablet styles */
 @media screen and (min-width: 768px) and (max-width: 1025px) {
+  .footer-container{
+    width: 600px;
+  }
   .container {
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     grid-gap: 66px;
