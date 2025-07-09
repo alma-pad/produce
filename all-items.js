@@ -160,6 +160,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Set up filter button functionality
   setupFilterButtons();
+  const storedFilter = sessionStorage.getItem('selectedFilter');
+   console.log("Applying Filter:", storedFilter);
+
+      if (storedFilter) {
+          const matchingButton = document.querySelector(`.filter-button[data-filter="${storedFilter}"]`);
+          if (matchingButton) {
+            // Remove active from all first
+            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('button-active'));
+            matchingButton.classList.add('button-active');
+            applyFilters();
+          }
+        }
 
   applySeasonTheme(activePeriod);
 
@@ -233,29 +245,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // DOM function ends 
 
+
 function setupFilterButtons() {
   const filterButtons = document.querySelectorAll('.filter-button');
-  
+
   filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // Check if this button is already active
+    button.addEventListener('click', function () {
+      const filterType = this.dataset.filter;
+
+      // Save selected filter type in sessionStorage
+      sessionStorage.setItem('selectedFilter', filterType);
+    
+
       const isCurrentlyActive = this.classList.contains('button-active');
-      
-      // Remove active class from all buttons first
-      filterButtons.forEach(btn => {
-        btn.classList.remove('button-active');
-      });
-      
-      // If the button wasn't active, make it active
-      // If it was active, leave it inactive (deselect)
-      if (!isCurrentlyActive) {
+
+      if (isCurrentlyActive) {
+        this.classList.remove('button-active');
+        sessionStorage.removeItem('selectedFilter'); // Optionally clear
+      } else {
+        filterButtons.forEach(btn => btn.classList.remove('button-active'));
         this.classList.add('button-active');
       }
-      
-      // Apply filters based on current button states
+
       applyFilters();
+  
     });
   });
+   
 }
 
 
@@ -263,28 +279,36 @@ function applyFilters() {
   const filterButtons = document.querySelectorAll('.filter-button');
   const cards = document.querySelectorAll('.card');
   
+  
+  let activeFilter = 'all';
   // Get which filter is active (only one can be active at a time)
-  const activeFilter = {
-    all: document.querySelector('.filter-button:nth-child(1)').classList.contains('button-active'),
-    fruits: document.querySelector('.filter-button:nth-child(2)').classList.contains('button-active'),
-    vegetables: document.querySelector('.filter-button:nth-child(3)').classList.contains('button-active'),
-    nuts: document.querySelector('.filter-button:nth-child(4)').classList.contains('button-active'),
-    yearRound: document.querySelector('.filter-button:nth-child(5)').classList.contains('button-active')
-  };
+  filterButtons.forEach(button => {
+  if (button.classList.contains('button-active')) {
+    activeFilter = button.dataset.filter;
+  }
+});
   
   // Check if any specific filter (not "all") is active
-  const anySpecificFilterActive = activeFilter.fruits || activeFilter.vegetables || activeFilter.nuts || activeFilter.yearRound;
+  const anySpecificFilterActive =
+  activeFilter === 'fruits' ||
+  activeFilter === 'vegetables' ||
+  activeFilter === 'nuts' ||
+  activeFilter === 'yearRound';
   
-  // If no specific filters are active and "all" is not active, activate "all" by default
-  if (!anySpecificFilterActive && !activeFilter.all) {
-    const allButton = document.querySelector('.filter-button:nth-child(1)');
-    allButton.classList.add('button-active');
-    activeFilter.all = true;
+// If no specific filters are active and "all" is not active, activate "all" by default
+  if (!anySpecificFilterActive && activeFilter !== 'all') {
+    const allButton = document.querySelector('.filter-button[data-filter="all"]');
+    if (allButton) {
+      allButton.classList.add('button-active');
+      activeFilter = 'all';
+    }
   }
   
   // Get current selected period for period filtering
   const selectedElement = document.querySelector('.selected');
   const currentPeriod = selectedElement ? selectedElement.textContent.trim() : null;
+  
+  let visibleCardCount = 0;
   
   cards.forEach(card => {
     const classification = card.dataset.classification;
@@ -294,25 +318,21 @@ function applyFilters() {
     let shouldShowByPeriod = true;
     
     // Check filter criteria
-    if (activeFilter.all) {
-      // If "all" filter is active, show all cards (regardless of classification)
-      shouldShowByFilter = true;
-    } else {
-      // Check which specific filter is active
-      if (classification === 'fruit' && activeFilter.fruits) {
+      if (activeFilter === 'all') {
         shouldShowByFilter = true;
-      } else if (classification === 'vegetable' && activeFilter.vegetables) {
+    } else if (classification === 'fruit' && activeFilter === 'fruits') {
         shouldShowByFilter = true;
-      } else if (classification === 'nut' && activeFilter.nuts) {
+    } else if (classification === 'vegetable' && activeFilter === 'vegetables') {
+       shouldShowByFilter = true;
+    } else if (classification === 'nut' && activeFilter === 'nuts') {
+       shouldShowByFilter = true;
+    } else if (activeFilter === 'yearRound' && activeperiods) {
+      const periods = activeperiods.split(',');
+      if (periods.length >= 24) {
         shouldShowByFilter = true;
-      } else if (activeFilter.yearRound && activeperiods) {
-        // Check if item is available year-round
-        const periods = activeperiods.split(',');
-        if (periods.length >= 24) {
-          shouldShowByFilter = true;
-        }
       }
     }
+
     
     // Check period criteria if a period is selected
     if (currentPeriod && activeperiods) {
@@ -337,6 +357,7 @@ function applyFilters() {
           card.classList.remove('fade-out');
         }, 10);
       }
+      visibleCardCount++;
     } else {
       // Card should be hidden
       if (!card.classList.contains('hidden')) {
@@ -351,7 +372,10 @@ function applyFilters() {
       }
     }
   });
+  
+
 }
+
 
 function applySeasonTheme(activePeriod) {
   const season = seasonMapping[activePeriod] || "Summer";
