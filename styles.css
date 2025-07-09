@@ -102,6 +102,7 @@ body {
   top: 10px;
   z-index: 100;
   overflow: visible;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
 
 
 
@@ -399,6 +400,7 @@ p.small {
   justify-content: left; 
   width: fit-content; /* Make container only as wide as needed */
   width: 900px;
+
 }
 
 .container.no-padding {
@@ -408,7 +410,7 @@ p.small {
 .container-wrapper {
   display: flex;
   flex-direction: column; 
-  justify-content: center; 
+  justify-content: start; 
   position: relative;
   width: fit-content;
   margin-right: auto; 
@@ -416,6 +418,8 @@ p.small {
   padding: 0px;
   opacity: 0;
   transition: opacity .3s ease-out;
+  min-height: 400px;
+  
 }
 
 .button-wrapper{
@@ -715,8 +719,15 @@ img {
   height: 400px;
   opacity: 1;
 }
-
 #mission-image {
+  text-align: center;
+  margin: 0;
+  width: 500px;
+  height: 500px;
+  opacity: 1;
+}
+
+#mission-bullet {
   text-align: center;
   margin: 0;
   width: 50px;
@@ -1108,6 +1119,10 @@ nav {
     padding: 10px 5px 60px 5px; /* Reduced side padding */
     margin: 0px; /* Reduced margin */
   }
+
+  .container-wrapper{
+    min-height: 0px;
+  }
   
   .button-container {
     padding: 0px 10px 0px 10px;  
@@ -1196,6 +1211,10 @@ nav {
 
   p {
     font-size: 14px; 
+  }
+
+  .mission-section p{
+      font-size: 16px;
   }
 
   li {
@@ -1327,6 +1346,7 @@ nav {
     width: 350px;
     height: 350px
   }
+
 
   .about-text {
     margin: 0px 0px
@@ -1461,6 +1481,10 @@ nav {
 
     .dropdown{
     max-width: 424px;
+  }
+
+  .footer {
+    padding: 30px 60px;
   }
 
 
