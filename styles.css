@@ -1008,11 +1008,11 @@ nav {
   }
 
   .nav a:hover {
-     display: none;
+     background-color: var(--color-background);
    }
 
   .nav-left:hover{
-   display: none;
+   background-color: var(--color-background);
   }
  
 
