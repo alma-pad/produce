@@ -97,11 +97,15 @@
 
   <!-- footer section         --->  
 
-  <div class = "footer" id = "index"> 
-    <p class = "small">Seasonality and selection based on Alma's experience in Northern California. Not all items shown are local.</p>
-    <p class="small"> Copyright © <script>document.write(new Date().getFullYear());</script>, Made by Alma </p>
- 
-  </div>
+  <div class = "footer"> </div>
+  
+      <script>
+        fetch('footer.html')
+          .then(response => response.text())
+          .then(html => {
+            document.querySelector('.footer').innerHTML = html;
+          });
+     </script>
 
     <script type = "module" src="all-items.js" charset = "utf-8"></script>
 
