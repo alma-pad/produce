@@ -1069,6 +1069,11 @@ nav {
   .nav-left:hover{
    background-color: var(--color-background);
   }
+
+  .mobile-nav-links a:hover{
+    background-color: var(--color-background);
+
+  }
  
 
   .nav-container-mobile{
