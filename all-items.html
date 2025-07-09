@@ -60,11 +60,7 @@
     </div>
         <div class = "header-content">
       
-            <nav>
-                <a href="javascript:void(0)" class="back-button">
-                    <span class="material-symbols-outlined">arrow_back</span>
-                </a>
-            </nav>
+
             <div class = "header-container">
                 <h1 id="header-title">All Produce Items</h1>
                 <h2 id="datetime"></h2>
@@ -76,12 +72,12 @@
 
   <!-- middle section         --->  
 <div class = "button-wrapper">
-    <div class = "button-container">
-      <button class = "filter-button button-active">All</button>
-        <button class = "filter-button">Fruits</button>
-        <button class = "filter-button">Vegetables</button>
-        <button class = "filter-button">Nuts</button>
-        <button class = "filter-button">Year Round</button>
+     <div class = "button-container">
+      <button class="filter-button button-active" data-filter="all">All</button>
+      <button class="filter-button" data-filter="fruits">Fruits</button>
+      <button class="filter-button" data-filter="vegetables">Vegetables</button>
+      <button class="filter-button" data-filter="nuts">Nuts</button>
+      <button class="filter-button" data-filter="yearRound">Year Round</button>
     </div>
   </div>
   <div class="container-wrapper">
@@ -102,9 +98,9 @@
   <!-- footer section         --->  
 
   <div class = "footer" id = "index"> 
-    <a href="about.html"> About this Website </a>
-    <p class = "small">Seasonality based on Alma's experience in Northern California</p>
+    <p class = "small">Seasonality and selection based on Alma's experience in Northern California. Not all items shown are local.</p>
     <p class="small"> Copyright © <script>document.write(new Date().getFullYear());</script>, Made by Alma </p>
+ 
   </div>
 
     <script type = "module" src="all-items.js" charset = "utf-8"></script>
