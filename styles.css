@@ -1087,6 +1087,8 @@ nav {
   
   }
 
+ 
+
 
 
   .scalloped-bottom::after {
@@ -1515,6 +1517,10 @@ nav {
     width: 306px; 
   }
 
+   #mission-image {
+    max-height: 350px;
+  }
+
 
 
 
@@ -1562,6 +1568,10 @@ nav {
 
   .footer {
     padding: 30px 60px;
+  }
+
+    #mission-image {
+    max-height: 450px;
   }
 
 
