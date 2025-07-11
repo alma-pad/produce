@@ -190,8 +190,8 @@ body {
 }
 
 .nav-left:hover{
-   background-color: var(--color-secondary);
-  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  color: black;
   transition: color 0.3s ease;
 }
 
@@ -1311,7 +1311,7 @@ nav {
   img {
     width: 100%; 
     height: auto;
-    max-height: 250px;
+    max-height: 450px;
     object-fit: contain;
     display: block;
   }
@@ -1508,6 +1508,10 @@ nav {
  
   }
 
+  #about-image{
+    width: 315px; 
+  }
+
   #all-items.card{
     width: 50px; 
    
@@ -1572,6 +1576,10 @@ nav {
 
     #mission-image {
     max-height: 450px;
+  }
+
+    #about-image{
+    width: 424px; 
   }
 
 
