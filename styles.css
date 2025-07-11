@@ -191,8 +191,12 @@ body {
 
 .nav-left:hover{
   background-color: var(--color-secondary);
-  color: black;
+  color: var(--color-primary);
   transition: color 0.3s ease;
+}
+
+.nav-left:hover a {
+  color: var(--color-primary);
 }
 
 /* Style for the Home link (left side) */
