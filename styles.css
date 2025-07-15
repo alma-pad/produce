@@ -1679,3 +1679,13 @@ nav {
 
 
 }
+
+/* For screens that are not long */
+@media only screen and (max-height: 600px) {
+    .menu {
+    top: 3em;
+    max-height: 250px;
+  }
+  
+  
+}
