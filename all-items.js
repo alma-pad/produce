@@ -251,6 +251,7 @@ function setupFilterButtons() {
 
   filterButtons.forEach(button => {
     button.addEventListener('click', function () {
+      this.blur(); 
       const filterType = this.dataset.filter;
 
       // Save selected filter type in sessionStorage
@@ -259,13 +260,21 @@ function setupFilterButtons() {
 
       const isCurrentlyActive = this.classList.contains('button-active');
 
-      if (isCurrentlyActive) {
-        this.classList.remove('button-active');
-        sessionStorage.removeItem('selectedFilter'); // Optionally clear
-      } else {
-        filterButtons.forEach(btn => btn.classList.remove('button-active'));
-        this.classList.add('button-active');
+     if (isCurrentlyActive) {
+      // Deactivate the button
+      this.classList.remove('button-active');
+      sessionStorage.removeItem('selectedFilter');
+
+      // Set all filter active by default
+      const allButton = document.querySelector('.filter-button[data-filter="all"]');
+      if (allButton) {
+        allButton.classList.add('button-active');
       }
+    } else {
+      // Deactivate all, then activate this one
+      filterButtons.forEach(btn => btn.classList.remove('button-active'));
+      this.classList.add('button-active');
+    }
 
       applyFilters();
   
