@@ -1040,6 +1040,12 @@ nav {
 /* Mobile styles */
 @media screen and (max-width: 767px) {
 
+  #header-title-h2{
+    padding: 0px;
+    padding-bottom: 20px;
+    margin: 0px;
+  }
+
    .footer-container {
     flex-direction: column;
     gap: 1rem;
@@ -1099,14 +1105,14 @@ nav {
   .scalloped-bottom::after {
   content: '';
   position: absolute;
-  bottom: -60px;
+  bottom: -40px;
   left: 0;
   right: 0;
   background: 
   radial-gradient(circle at 50% 0%, var(--color-primary) 25%, var(--color-primary) 26%, rgba(255, 0, 0, 0) 0%);
   background-color: rgba(255, 0, 0, 0);
   background-size: 75px 180px;
-  height:75px;
+  height:50px;
   background-repeat: repeat-x;
   transition: all 1s ease-in-out; 
 
@@ -1165,7 +1171,8 @@ nav {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.5rem 0rem;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1216,6 +1223,7 @@ nav {
   
   }
 
+  
   .button-wrapper{
 
     justify-content: center;
@@ -1252,6 +1260,19 @@ nav {
     mask: radial-gradient(45px at 50% 30%, #0000 100%, #000) calc(50% - 43px) 0/75px 100%;
   }
 
+  .filter-button:hover {
+    
+    background-color: var(--color-background);
+    color: var(--color-primary);
+
+
+  }
+
+  .filter-button.button-active, .button-active {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+  }
+
   #header-title {
     margin: 10px 0;
     text-align: center;
@@ -1259,6 +1280,12 @@ nav {
     position: relative;
     white-space: normal;
     display: none;
+  }
+
+  #mobile-nav-h2{
+    padding-bottom: 12px; 
+    z-index: 99; 
+    margin: 0px;
   }
 
   #datetime {
@@ -1359,7 +1386,7 @@ nav {
   /* Produce Details page  */
   .header-details {
     grid-gap: 15px; /* Add some spacing between elements */
-    padding: 15px 20px 70px 20px;
+    padding: 5px 20px 50px 20px;
     margin: 0px 5px 5px 5px;
   }
 
@@ -1384,7 +1411,7 @@ nav {
   .header-container {
     width: 100%; /* Ensure full width */
     margin: 0px;
-    padding: 0px 5px 0px 5px;
+    padding: 5px 5px 0px 5px;
     box-sizing: border-box;
   }
   
@@ -1392,6 +1419,7 @@ nav {
     margin: 0px; 
     padding: 0px;
     box-sizing: border-box;
+
   }
 
   .produce-detail {
@@ -1651,6 +1679,20 @@ nav {
 
 
   
+  }
+
+
+  .filter-button:hover {
+    
+    background-color: var(--color-background);
+    color: var(--color-primary);
+
+
+  }
+
+  .filter-button.button-active, .button-active {
+    background-color: var(--color-primary);
+    color: var(--color-background);
   }
 
   .button-wrapper{
