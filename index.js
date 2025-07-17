@@ -111,6 +111,65 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
+    // make home link 
+    document.querySelectorAll('a.home-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Determine current period
+        const now = new Date();
+        const currentPeriod = (now.getDate() < 16 ? 'Early ' : 'Late ') +
+          now.toLocaleDateString('en-US', { month: 'long' });
+
+        // Store the period
+        sessionStorage.setItem('selectedPeriod', currentPeriod);
+
+        // Apply season theme
+        applySeasonTheme(currentPeriod);
+
+
+        // make sure appropriate activePeriod is selected 
+         const selected = document.querySelector('.selected');
+        const options = document.querySelectorAll('.menu li');
+
+          if (selected && options.length) {
+            selected.textContent = currentPeriod;
+
+            options.forEach(option => {
+              option.classList.remove('active');
+              if (option.textContent.trim() === currentPeriod) {
+                option.classList.add('active');
+              }
+            });
+          }
+
+        // Reset filter buttons to "all"
+        const filterButtons = document.querySelectorAll('.filter-button');
+        filterButtons.forEach(btn => btn.classList.remove('button-active'));
+
+        const allButton = document.querySelector('.filter-button[data-filter="all"]');
+        if (allButton) {
+          allButton.classList.add('button-active');
+        }
+
+        // Clear stored filter
+        sessionStorage.removeItem('selectedFilter');
+
+        // Apply filters
+        applyFilters();
+
+
+        // Redirect if needed
+        if (!window.location.href.includes('index.html')) {
+          window.location.href = 'index.html';
+        } else {
+          // Optional: scroll to top and refresh UI if already on index
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+
+
   
 
   // Only execute the following code if we're not on the about page
@@ -190,6 +249,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Get the stored period or use the active period
       const storedPeriod = sessionStorage.getItem('selectedPeriod');
       const periodToUse = storedPeriod || activePeriod;
+ 
+     
+
 
       // Set active class on the appropriate menu item
       options.forEach(option => {
@@ -208,13 +270,25 @@ document.addEventListener('DOMContentLoaded', function() {
       });  
 
      
-      setupFilterButtons();
-  
-     
       applySeasonTheme(periodToUse);
       filterCardsByPeriod(periodToUse);
-     
 
+       // Set up filter buttons and used the stored filter if any
+      setupFilterButtons();
+      const storedFilter = sessionStorage.getItem('selectedFilter');
+      console.log("Applying Filter:", storedFilter);
+
+      if (storedFilter) {
+          const matchingButton = document.querySelector(`.filter-button[data-filter="${storedFilter}"]`);
+          if (matchingButton) {
+            // Remove active from all first
+            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('button-active'));
+            matchingButton.classList.add('button-active');
+            applyFilters();
+          }
+        }
+        
+      
       //toggle drop down when the user clicks on it 
       select.addEventListener('click', () => {
         select.classList.toggle('select-clicked'); 
@@ -266,12 +340,11 @@ document.addEventListener('DOMContentLoaded', function() {
           // Get the selected period
           const selectedPeriod = option.textContent.trim();
           sessionStorage.setItem('selectedPeriod', selectedPeriod);
-            
-          // Filter cards
-          filterCardsByPeriod(selectedPeriod);
 
-          // Change the season theme 
           applySeasonTheme(selectedPeriod);
+          applyFilters(); // this also filters cards by activePeriod
+          
+
         });
 
         // for mobile 
@@ -344,6 +417,7 @@ if (document.getElementById("datetime")) {
     // Apply the season theme when clicked
     applySeasonTheme(selectedPeriod);
     
+    
     // Update dropdown selection if we're on a page with the dropdown
     const selected = document.querySelector('.selected');
     const options = document.querySelectorAll('.menu li');
@@ -360,18 +434,31 @@ if (document.getElementById("datetime")) {
         }
       });
     }
+
+     //reset filters 
+      const filterButtons = document.querySelectorAll('.filter-button');
+      filterButtons.forEach(btn => btn.classList.remove('button-active'));
+
+      const allButton = document.querySelector('.filter-button[data-filter="all"]');
+      if (allButton) {
+        allButton.classList.add('button-active');
+      }
+
+     
+      sessionStorage.removeItem('selectedFilter');
+      applyFilters();
     
-    // Filter cards if on the main page
-    if (document.getElementById('cards-container')) {
-      filterCardsByPeriod(selectedPeriod);
-    }
-    
+ 
     // Optionally redirect to index.html if not already there
     if (!window.location.href.includes('index.html')) {
       window.location.href = 'index.html';
     }
+
+    // scroll to top of page 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
 
   // Trigger fade-in animation after content is loaded
   // Small delay ensures all content is rendered before animation starts
@@ -395,29 +482,30 @@ if (document.getElementById("datetime")) {
 
 function setupFilterButtons() {
   const filterButtons = document.querySelectorAll('.filter-button');
-  
+
   filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // Check if this button is already active
+    button.addEventListener('click', function () {
+      const filterType = this.dataset.filter;
+
+      // Save selected filter type in sessionStorage
+      sessionStorage.setItem('selectedFilter', filterType);
+    
+
       const isCurrentlyActive = this.classList.contains('button-active');
-      
+
       if (isCurrentlyActive) {
-        // If clicked button is active, deactivate it (toggle off)
         this.classList.remove('button-active');
+        sessionStorage.removeItem('selectedFilter'); // Optionally clear
       } else {
-        // Remove active class from all buttons first (only one can be active)
-        filterButtons.forEach(btn => {
-          btn.classList.remove('button-active');
-        });
-        
-        // Add active class to clicked button
+        filterButtons.forEach(btn => btn.classList.remove('button-active'));
         this.classList.add('button-active');
       }
-      
-      // Apply filters based on current button states
+
       applyFilters();
+  
     });
   });
+   
 }
 
 function filterCardsByPeriod(period) {
@@ -480,26 +568,32 @@ function filterCardsByPeriod(period) {
 function applyFilters() {
   const filterButtons = document.querySelectorAll('.filter-button');
   const cards = document.querySelectorAll('.card');
+  
   const emptyState = document.getElementById('empty-state');
   const cardsContainer = document.getElementById('cards-container');
   
+  let activeFilter = 'all';
   // Get which filter is active (only one can be active at a time)
-  const activeFilter = {
-    all: document.querySelector('.filter-button:nth-child(1)').classList.contains('button-active'),
-    fruits: document.querySelector('.filter-button:nth-child(2)').classList.contains('button-active'),
-    vegetables: document.querySelector('.filter-button:nth-child(3)').classList.contains('button-active'),
-    nuts: document.querySelector('.filter-button:nth-child(4)').classList.contains('button-active'),
-    yearRound: document.querySelector('.filter-button:nth-child(5)').classList.contains('button-active')
-  };
+  filterButtons.forEach(button => {
+  if (button.classList.contains('button-active')) {
+    activeFilter = button.dataset.filter;
+  }
+});
   
   // Check if any specific filter (not "all") is active
-  const anySpecificFilterActive = activeFilter.fruits || activeFilter.vegetables || activeFilter.nuts || activeFilter.yearRound;
+  const anySpecificFilterActive =
+  activeFilter === 'fruits' ||
+  activeFilter === 'vegetables' ||
+  activeFilter === 'nuts' ||
+  activeFilter === 'yearRound';
   
-  // If no specific filters are active and "all" is not active, activate "all" by default
-  if (!anySpecificFilterActive && !activeFilter.all) {
-    const allButton = document.querySelector('.filter-button:nth-child(1)');
-    allButton.classList.add('button-active');
-    activeFilter.all = true;
+// If no specific filters are active and "all" is not active, activate "all" by default
+  if (!anySpecificFilterActive && activeFilter !== 'all') {
+    const allButton = document.querySelector('.filter-button[data-filter="all"]');
+    if (allButton) {
+      allButton.classList.add('button-active');
+      activeFilter = 'all';
+    }
   }
   
   // Get current selected period for period filtering
@@ -516,25 +610,21 @@ function applyFilters() {
     let shouldShowByPeriod = true;
     
     // Check filter criteria
-    if (activeFilter.all) {
-      // If "all" filter is active, show all cards (regardless of classification)
-      shouldShowByFilter = true;
-    } else {
-      // Check which specific filter is active
-      if (classification === 'fruit' && activeFilter.fruits) {
+      if (activeFilter === 'all') {
         shouldShowByFilter = true;
-      } else if (classification === 'vegetable' && activeFilter.vegetables) {
+    } else if (classification === 'fruit' && activeFilter === 'fruits') {
         shouldShowByFilter = true;
-      } else if (classification === 'nut' && activeFilter.nuts) {
+    } else if (classification === 'vegetable' && activeFilter === 'vegetables') {
+       shouldShowByFilter = true;
+    } else if (classification === 'nut' && activeFilter === 'nuts') {
+       shouldShowByFilter = true;
+    } else if (activeFilter === 'yearRound' && activeperiods) {
+      const periods = activeperiods.split(',');
+      if (periods.length >= 24) {
         shouldShowByFilter = true;
-      } else if (activeFilter.yearRound && activeperiods) {
-        // Check if item is available year-round
-        const periods = activeperiods.split(',');
-        if (periods.length >= 24) {
-          shouldShowByFilter = true;
-        }
       }
     }
+
     
     // Check period criteria if a period is selected
     if (currentPeriod && activeperiods) {
