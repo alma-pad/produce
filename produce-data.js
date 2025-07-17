@@ -950,7 +950,7 @@ const produceData = {
       "Gazpacho", 
       "Shakshuka", 
       "Chinese tomato egg stir-fry 番茄炒鸡蛋",
-      "Hierloom tomato galette"
+      "Heirloom tomato galette"
     ],
     classification: "vegetable"
   },
