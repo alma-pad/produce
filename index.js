@@ -316,7 +316,24 @@ document.addEventListener('DOMContentLoaded', function() {
         select.classList.toggle('select-clicked'); 
         caret.classList.toggle('caret-rotate'); 
         menu.classList.toggle('menu-open');
+
+        if (menu.classList.contains('menu-open')) {
+          const selectedItem = menu.querySelector('li.active');
+          if (selectedItem) {
+            const menuHeight = menu.clientHeight;
+            const itemOffsetTop = selectedItem.offsetTop;
+            const itemHeight = selectedItem.offsetHeight;
+            const scrollTarget = itemOffsetTop - (menuHeight / 2) + (itemHeight / 2);
+
+            // Clamp the scroll value between 0 and max scroll
+            const maxScroll = menu.scrollHeight - menu.clientHeight;
+            menu.scrollTop = Math.max(0, Math.min(scrollTarget, maxScroll));
+          }
+        }
+
       });
+
+
 
       // Close dropdown when clicking outside
       document.addEventListener('click', (e) => {
