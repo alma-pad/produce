@@ -192,8 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Store the period
         sessionStorage.setItem('selectedPeriod', currentPeriod);
 
-        // Apply season theme
-        applySeasonTheme(currentPeriod);
+        // Apply season theme after a delay
+          setTimeout(() => {
+             applySeasonTheme(currentPeriod);
+          }, 300);
 
 
         // make sure appropriate activePeriod is selected 
