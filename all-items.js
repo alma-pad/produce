@@ -80,6 +80,27 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+     // create active state for mobile nav links
+    const links = document.querySelectorAll('.mobile-nav-links a, .nav a');
+
+    const currentPage = window.location.pathname.split('/').pop();
+    //highlight nav-left if on the home page
+      if (currentPage === 'index.html') {
+       const navLeft = document.querySelector('.mobile-nav .nav-left');
+      if (navLeft) {
+        navLeft.classList.add('nav-active');
+      }
+    }
+
+    //highlight other links
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href');
+
+      if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        link.classList.add('nav-active');
+      }
+    });
+
     const delayedLinks = document.querySelectorAll('.mobile-nav-links a.delayed-nav');
 
     delayedLinks.forEach(link => {
@@ -96,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300); // match your transition duration
       });
     });
+
+     
 
   // touch screen tracking
   // adjust touch sensitivity here 
@@ -241,6 +264,64 @@ document.addEventListener('DOMContentLoaded', function() {
       containerWrapper.classList.add('fade-in');
     }
   }, 100);
+
+  // make home link 
+  document.querySelectorAll('a.home-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Determine current period
+        const now = new Date();
+        const currentPeriod = (now.getDate() < 16 ? 'Early ' : 'Late ') +
+          now.toLocaleDateString('en-US', { month: 'long' });
+
+        // Store the period
+        sessionStorage.setItem('selectedPeriod', currentPeriod);
+
+        // Apply season theme
+        applySeasonTheme(currentPeriod);
+
+
+        // make sure appropriate activePeriod is selected 
+         const selected = document.querySelector('.selected');
+        const options = document.querySelectorAll('.menu li');
+
+          if (selected && options.length) {
+            selected.textContent = currentPeriod;
+
+            options.forEach(option => {
+              option.classList.remove('active');
+              if (option.textContent.trim() === currentPeriod) {
+                option.classList.add('active');
+              }
+            });
+          }
+
+        // Reset filter buttons to "all"
+        const filterButtons = document.querySelectorAll('.filter-button');
+        filterButtons.forEach(btn => btn.classList.remove('button-active'));
+
+        const allButton = document.querySelector('.filter-button[data-filter="all"]');
+        if (allButton) {
+          allButton.classList.add('button-active');
+        }
+
+        // Clear stored filter
+        sessionStorage.removeItem('selectedFilter');
+
+        // Apply filters
+        applyFilters();
+
+
+        // Redirect if needed
+        if (!window.location.href.includes('index.html')) {
+          window.location.href = 'index.html';
+        } else {
+          // Optional: scroll to top and refresh UI if already on index
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
 
 });
 // DOM function ends 
