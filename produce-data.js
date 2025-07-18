@@ -172,7 +172,8 @@ const produceData = {
       "Blueberry mint matcha latte"
     ],
     notes: ["Although blueberries seem ubiquitous in California grocery stores, they are mainly grown in the Pacific Northwest and parts of the East Coast like Maine and New Jersey. In the winter blueberries are imported from Mexico and South America."],
-    classification: "fruit"
+    classification: "fruit", 
+    joke: "I like you berry much ♥"
   },
 
 
@@ -305,7 +306,8 @@ const produceData = {
       "Cherry, banana, and almond butter smoothie", 
 
     ],
-    classification: "fruit"
+    classification: "fruit", 
+    joke: "I'm cherry-ing you on! ♥"
   },
 
   chestnut: {
@@ -382,7 +384,8 @@ const produceData = {
       "Spring rolls with cucumbers and other fresh veggies", 
       "Bagels and lox with cucumber"
     ], 
-    classification: "vegetable"
+    classification: "vegetable", 
+    joke: "You're a cute-cumber ♥"
   },
 
 
@@ -745,7 +748,8 @@ const produceData = {
       "Pasta with pea sauce", 
       "Stir fried peas with mushroom"
     ], 
-    classification: "vegetable"
+    classification: "vegetable", 
+    joke: "With you I'm so hap-pea ♥"
   },
 
   pea_shoot: {
@@ -792,7 +796,8 @@ const produceData = {
       "Grilled brie and pear sandwich"
     ],
     notes: "Although pears are harvested in the fall, they are available year-round due to controlled atmosphere storage techniques.", 
-    classification: "fruit"
+    classification: "fruit", 
+    joke: "We make the perfect pear ♥"
   },
 
   persimmon: {
