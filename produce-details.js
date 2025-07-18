@@ -140,6 +140,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+
+     // create active state for mobile nav links
+    const links = document.querySelectorAll('.mobile-nav-links a, .nav a');
+
+    const currentPage = window.location.pathname.split('/').pop();
+    //highlight nav-left if on the home page
+      if (currentPage === 'index.html') {
+       const navLeft = document.querySelector('.mobile-nav .nav-left');
+      if (navLeft) {
+        navLeft.classList.add('nav-active');
+      }
+    }
+
+    //highlight other links
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href');
+
+      if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        link.classList.add('nav-active');
+      }
+    });
+
     const delayedLinks = document.querySelectorAll('.mobile-nav-links a.delayed-nav');
 
     delayedLinks.forEach(link => {
@@ -156,6 +178,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300); // match your transition duration
       });
     });
+
+    // make home link 
+    document.querySelectorAll('a.home-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Determine current period
+        const now = new Date();
+        const currentPeriod = (now.getDate() < 16 ? 'Early ' : 'Late ') +
+          now.toLocaleDateString('en-US', { month: 'long' });
+
+        // Store the period
+        sessionStorage.setItem('selectedPeriod', currentPeriod);
+
+        // Apply season theme
+        applySeasonTheme(currentPeriod);
+
+
+        // make sure appropriate activePeriod is selected 
+         const selected = document.querySelector('.selected');
+        const options = document.querySelectorAll('.menu li');
+
+          if (selected && options.length) {
+            selected.textContent = currentPeriod;
+
+            options.forEach(option => {
+              option.classList.remove('active');
+              if (option.textContent.trim() === currentPeriod) {
+                option.classList.add('active');
+              }
+            });
+          }
+
+        // Reset filter buttons to "all"
+        const filterButtons = document.querySelectorAll('.filter-button');
+        filterButtons.forEach(btn => btn.classList.remove('button-active'));
+
+        const allButton = document.querySelector('.filter-button[data-filter="all"]');
+        if (allButton) {
+          allButton.classList.add('button-active');
+        }
+
+        // Clear stored filter
+        sessionStorage.removeItem('selectedFilter');
+
+        // Apply filters
+        applyFilters();
+
+
+        // Redirect if needed
+        if (!window.location.href.includes('index.html')) {
+          window.location.href = 'index.html';
+        } else {
+          // Optional: scroll to top and refresh UI if already on index
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+     });
+
 
   // Trigger fade-in animation after content is loaded
   // Small delay ensures all content is rendered before animation starts
@@ -231,4 +312,159 @@ function closeMobileNav() {
             
   // Restore body scrolling
   document.body.style.overflow = '';
+}
+
+
+function applyFilters() {
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const cards = document.querySelectorAll('.card');
+  
+  const emptyState = document.getElementById('empty-state');
+  const cardsContainer = document.getElementById('cards-container');
+
+  if (!cardsContainer) {
+    return;
+  }
+  
+  let activeFilter = 'all';
+  // Get which filter is active (only one can be active at a time)
+  filterButtons.forEach(button => {
+  if (button.classList.contains('button-active')) {
+    activeFilter = button.dataset.filter;
+  }
+});
+  
+  // Check if any specific filter (not "all") is active
+  const anySpecificFilterActive =
+  activeFilter === 'fruits' ||
+  activeFilter === 'vegetables' ||
+  activeFilter === 'nuts' ||
+  activeFilter === 'yearRound';
+  
+// If no specific filters are active and "all" is not active, activate "all" by default
+  if (!anySpecificFilterActive && activeFilter !== 'all') {
+    const allButton = document.querySelector('.filter-button[data-filter="all"]');
+    if (allButton) {
+      allButton.classList.add('button-active');
+      activeFilter = 'all';
+    }
+  }
+  
+  // Get current selected period for period filtering
+  const selectedElement = document.querySelector('.selected');
+  const currentPeriod = selectedElement ? selectedElement.textContent.trim() : null;
+  
+  let visibleCardCount = 0;
+  
+  cards.forEach(card => {
+    const classification = card.dataset.classification;
+    const activeperiods = card.dataset.activeperiod;
+    
+    let shouldShowByFilter = false;
+    let shouldShowByPeriod = true;
+    
+    // Check filter criteria
+      if (activeFilter === 'all') {
+        shouldShowByFilter = true;
+    } else if (classification === 'fruit' && activeFilter === 'fruits') {
+        shouldShowByFilter = true;
+    } else if (classification === 'vegetable' && activeFilter === 'vegetables') {
+       shouldShowByFilter = true;
+    } else if (classification === 'nut' && activeFilter === 'nuts') {
+       shouldShowByFilter = true;
+    } else if (activeFilter === 'yearRound' && activeperiods) {
+      const periods = activeperiods.split(',');
+      if (periods.length >= 24) {
+        shouldShowByFilter = true;
+      }
+    }
+
+    
+    // Check period criteria if a period is selected
+    if (currentPeriod && activeperiods) {
+      const periods = activeperiods.split(',');
+      shouldShowByPeriod = periods.includes(currentPeriod);
+    }
+    
+    // Card should be visible if it passes both filter and period checks
+    const shouldShow = shouldShowByFilter && shouldShowByPeriod;
+    
+    // Show or hide the card using the same method as filterCardsByPeriod
+    if (shouldShow) {
+      // Card should be visible
+      if (card.classList.contains('hidden')) {
+        // Card is currently hidden, fade it in
+        card.classList.add('fade-in');
+        
+        // Small delay to ensure the hidden class is removed before adding fade-in
+        setTimeout(() => {
+          card.classList.remove('hidden');
+          card.classList.add('fade-in');
+          card.classList.remove('fade-out');
+        }, 10);
+      }
+      visibleCardCount++;
+    } else {
+      // Card should be hidden
+      if (!card.classList.contains('hidden')) {
+        // Card is currently visible, fade it out
+        card.classList.add('fade-out');
+        
+        // Wait for fade-out animation to complete before hiding
+        setTimeout(() => {
+          card.classList.add('hidden');
+          card.classList.remove('fade-out');
+        }, 10);
+      }
+    }
+  });
+  
+  // Show/hide empty state based on visible cards
+  if (visibleCardCount === 0) {
+    // No cards visible, remove padding and show empty state
+    emptyState.classList.remove('hidden');
+    cardsContainer.classList.add('no-padding');
+    } else {
+    // Cards visible, restore padding and hide empty state
+    emptyState.classList.add('hidden');
+    cardsContainer.classList.remove('no-padding');
+  }
+}
+
+
+function setupFilterButtons() {
+  const filterButtons = document.querySelectorAll('.filter-button');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      this.blur(); 
+      const filterType = this.dataset.filter;
+
+      // Save selected filter type in sessionStorage
+      sessionStorage.setItem('selectedFilter', filterType);
+    
+
+      const isCurrentlyActive = this.classList.contains('button-active');
+      if (isCurrentlyActive) {
+      // Deactivate the button
+      this.classList.remove('button-active');
+      sessionStorage.removeItem('selectedFilter');
+
+      // Set all filter active by default
+      const allButton = document.querySelector('.filter-button[data-filter="all"]');
+      if (allButton) {
+        allButton.classList.add('button-active');
+      }
+    } else {
+      // Deactivate all, then activate this one
+      filterButtons.forEach(btn => btn.classList.remove('button-active'));
+      this.classList.add('button-active');
+    }
+
+
+      applyFilters();
+  
+    });
+  });
+   
 }
