@@ -111,6 +111,28 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
+    // create active state for mobile nav links
+    const links = document.querySelectorAll('.mobile-nav-links a, .nav a');
+
+    const currentPage = window.location.pathname.split('/').pop();
+
+    //highlight nav-left if on the home page
+      if (currentPage === 'index.html') {
+       const navLeft = document.querySelector('.mobile-nav .nav-left');
+      if (navLeft) {
+        navLeft.classList.add('nav-active');
+      }
+    }
+
+    //highlight other links
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href');
+
+      if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        link.classList.add('nav-active');
+      }
+    });
+
     // make home link 
     document.querySelectorAll('a.home-link').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -580,6 +602,10 @@ function applyFilters() {
   
   const emptyState = document.getElementById('empty-state');
   const cardsContainer = document.getElementById('cards-container');
+
+  if (!cardsContainer) {
+    return;
+  }
   
   let activeFilter = 'all';
   // Get which filter is active (only one can be active at a time)
