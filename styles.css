@@ -105,9 +105,23 @@ body {
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
 
 
-
-
 }
+
+.nav-active {
+  background-color: var(--color-primary);
+  color: var(--color-background) !important;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: inline-block; 
+ 
+}
+
+.nav-left .nav-active{
+  padding: 0px;
+}
+
+
+
 
 .nav-container::before {
   content: '';
@@ -962,6 +976,7 @@ nav {
             border-top-right-radius: 1rem;   
             border-bottom-right-radius: 1rem;
         }
+         
 
         .mobile-nav.active {
             left: 0;
@@ -994,9 +1009,13 @@ nav {
         .mobile-nav-links h2 {
             margin-bottom: 20px;
             margin-left: 0px;
+         
             margin-top: 20px; 
             padding-bottom: 0px;
+    
         }
+
+      
 
         .mobile-nav-links a {
             text-decoration: none;
@@ -1004,6 +1023,15 @@ nav {
             font-size: 18px;
        
         }
+
+
+        .mobile-nav-links a  {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-size: 18px;
+       
+        }
+
 
         .nav-container-mobile{
           display: none;
