@@ -666,7 +666,7 @@ const produceData = {
     activeperiods: "Late May,Early June,Late June",
     benefits: "Mulberries are a wild berry with a wonderfully sweet flavor and are packed with antioxidants including anthocyanins, cyanidin, chlorogenic acid, rutin, and myricetin. Mulberry trees hold rich cultural significance worldwide, symbolizing various concepts like patience, expediency, wisdom, abundance, and longevity. Their primary cultural importance stems from their link to the silk industry, with mulberry leaves being the staple food for silkworms.",
 
-    notes: "Mulberry season is quite short so get them while you can! They can sometimes be found at farmers markets.",
+    notes: "Mulberry season is quite short so get them while you can! They can sometimes be found at farmers markets. If you're down for an adventure you could go mulberry picking in Brentwood.",
 
    classification: "fruit"
 
