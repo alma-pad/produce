@@ -181,64 +181,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // make home link 
     document.querySelectorAll('a.home-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
 
-        // Determine current period
-        const now = new Date();
-        const currentPeriod = (now.getDate() < 16 ? 'Early ' : 'Late ') +
-          now.toLocaleDateString('en-US', { month: 'long' });
+    const href = this.getAttribute('href') || 'index.html';
 
-        // Store the period
-        sessionStorage.setItem('selectedPeriod', currentPeriod);
+    const now = new Date();
+    const currentPeriod = (now.getDate() < 16 ? 'Early ' : 'Late ') +
+      now.toLocaleDateString('en-US', { month: 'long' });
 
-        // Apply season theme after a delay
-          setTimeout(() => {
-             applySeasonTheme(currentPeriod);
-          }, 300);
+    sessionStorage.setItem('selectedPeriod', currentPeriod);
 
-
-        // make sure appropriate activePeriod is selected 
-         const selected = document.querySelector('.selected');
-        const options = document.querySelectorAll('.menu li');
-
-          if (selected && options.length) {
-            selected.textContent = currentPeriod;
-
-            options.forEach(option => {
-              option.classList.remove('active');
-              if (option.textContent.trim() === currentPeriod) {
-                option.classList.add('active');
-              }
-            });
-          }
-
-        // Reset filter buttons to "all"
-        const filterButtons = document.querySelectorAll('.filter-button');
-        filterButtons.forEach(btn => btn.classList.remove('button-active'));
-
-        const allButton = document.querySelector('.filter-button[data-filter="all"]');
-        if (allButton) {
-          allButton.classList.add('button-active');
-        }
-
-        // Clear stored filter
-        sessionStorage.removeItem('selectedFilter');
-
-        // Apply filters
-        applyFilters();
-
-
-        // Redirect if needed
-        if (!window.location.href.includes('index.html')) {
-          window.location.href = 'index.html';
-        } else {
-          // Optional: scroll to top and refresh UI if already on index
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+    const selected = document.querySelector('.selected');
+    const options = document.querySelectorAll('.menu li');
+    if (selected && options.length) {
+      selected.textContent = currentPeriod;
+      options.forEach(option => {
+        option.classList.remove('active');
+        if (option.textContent.trim() === currentPeriod) {
+          option.classList.add('active');
         }
       });
-     });
+    }
 
+    const filterButtons = document.querySelectorAll('.filter-button');
+    filterButtons.forEach(btn => btn.classList.remove('button-active'));
+    const allButton = document.querySelector('.filter-button[data-filter="all"]');
+    if (allButton) {
+      allButton.classList.add('button-active');
+    }
+
+    sessionStorage.removeItem('selectedFilter');
+    applyFilters();
+
+    closeMobileNav();
+
+    // Delay navigation if it has the .delayed-nav class
+    if (link.classList.contains('delayed-nav')) {
+      setTimeout(() => {
+        window.location.href = href;
+      }, 300);
+    } else {
+      if (!window.location.href.includes('index.html')) {
+        window.location.href = href;
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  });
+});
 
   // Trigger fade-in animation after content is loaded
   // Small delay ensures all content is rendered before animation starts
