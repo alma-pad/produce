@@ -159,12 +159,24 @@ body {
   display: flex;
   align-items: center;
   margin-right: auto; 
+  border-radius: 8px;
+  padding: 8px 12px;
 }
 
 .nav a {
   text-decoration: none;
   color: var(--color-background);
   transition: color 0.3s ease-out;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.nav-left h3 a {
+  padding-left: 0px;
+}
+
+.nav-left h3 a:hover {
+  padding-left: 0px;
 }
 
 .nav h3 {
@@ -187,12 +199,16 @@ body {
   background-color: var(--color-secondary);
   color: var(--color-primary);
   transition: color 0.3s ease-out;
+  border-radius: 8px;
+  padding: 8px 12px;
 }
 
 .nav-left:hover{
   background-color: var(--color-secondary);
   color: var(--color-primary);
   transition: color 0.3s ease;
+  border-radius: 8px;
+  padding: 8px 12px;
 }
 
 .nav-left:hover a {
@@ -207,8 +223,9 @@ body {
 /* Container for the right-side links */
 .nav h3:nth-child(3),
 .nav h3:nth-child(4) {
-  margin-left: 40px; /* Adds space between About and All Items */
+  margin-left: 32px; /* Adds space between About and All Items */
 }
+
 
 .header-content {
   display: grid; 
@@ -1006,18 +1023,14 @@ nav {
 
       
 
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--color-primary);
-            font-size: 18px;
-       
-        }
 
 
         .mobile-nav-links a  {
             text-decoration: none;
             color: var(--color-primary);
             font-size: 18px;
+            padding: 8px 8px;
+
        
         }
 
@@ -1087,7 +1100,18 @@ nav {
   }
 
   .nav-left{
-    margin-bottom: 20px;
+    margin-bottom: 48px;
+    margin-left: 8px;
+
+  }
+
+  .nav-left h2{
+    margin: 0px;
+    padding-left: 0px;
+  }
+
+  .nav-left a{
+    padding-left: 0px;
   }
 
   .nav a:hover {
@@ -1744,7 +1768,7 @@ nav {
   /* Container for the right-side links */
 .nav h3:nth-child(3),
 .nav h3:nth-child(4) {
-  margin-left: 20px; /* Adds space between About and All Items */
+  margin-left: 12px; /* Adds space between About and All Items */
 }
 
 
