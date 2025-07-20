@@ -697,7 +697,7 @@ const produceData = {
 
     notes: "Nectarines are genetically identical to peaches except for one gene that affects the skin's texture. Although these two fruits can be used interchangeably, some say that nectarines are more tangy and tart than peaches.",
 
-    recipes: ["Lemon bars with caramelized nectarine", "Iced white nectarine champagne cocktail", "Grilled Nectarines"],
+    recipes: ["Lemon bars with caramelized nectarine", "Iced white nectarine champagne cocktail", "Grilled nectarines"],
 
    classification: "fruit"
 
