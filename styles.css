@@ -622,7 +622,7 @@ img {
   align-items: center; 
   border: 2px var(--color-primary) solid; 
   border-radius: 0.7em; 
-  padding: 1em; 
+  padding: 1em 1.5em; 
   width: 100%; 
   box-sizing: border-box;
   transform: translateY(20%);
@@ -1420,7 +1420,7 @@ nav {
   }
   
   .select {
-    padding: 0.8em;
+    padding: 0.8em 1.5em;
   }
   
   .menu li {
