@@ -237,6 +237,22 @@ const produceData = {
     classification: "vegetable"
   },
 
+    catus_pad: {
+    name: "Cactus Pad",
+    image: "./images/cactus_pad.png",
+    season: "Early May through Late October",
+    activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
+    benefits: "Cactus pads, or nopales, or prickly pear cactus, are a good source of fiber, beta carotene, iron, vitamin C, other antioxidants, and calcium. The use of nopal as a food extends back to around 9000 years ago.",
+    recipes: [
+       "Nopales con huevo", 
+       "Nopales tacos", 
+       "Black bean and nopales tostadas"
+    ],
+    notes: "Cactus pads are found natively in the southwestern regions of the United States and in Mexico. The flat cactus pads can be eaten when the plant is young. To prepare them, first trim off the perimeter and any blemished areas. Then use a peeler or knife to peel of the bumps and thorns the same way you'd peel another vegetable. Then grill or roast or sear!",
+
+    classification: "vegetable"
+  },
+
   carrot: {
     name: "Carrot",
     image: "./images/carrot.png",
@@ -672,6 +688,22 @@ const produceData = {
 
   },
 
+    nectarine: {
+    name: "Nectarine",
+    image: "./images/nectarine.png",
+    season: "Late June through Early September",
+    activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
+    benefits: "Nectarines deliver all the nutritional benefits of peaches with their smooth, vibrant skin that contains additional antioxidants and fiber for enhanced health benefits. Their juicy sweetness provides vitamin C for immune support and potassium for heart health, while their firm texture makes them perfect for both fresh eating and cooking applications, offering a sophisticated stone fruit experience that captures summer's peak flavors in every bite.",
+
+    notes: "Nectarines are genetically identical to peaches except for one gene that affects the skin's texture. Although these two fruits can be used interchangeably, some say that nectarines are more tangy and tart than peaches.",
+
+    recipes: ["Lemon bars with caramelized nectarine", "Iced white nectarine champagne cocktail", "Grilled Nectarines"],
+
+   classification: "fruit"
+
+  },
+
+
   
   olive: {
     name: "Olive",
@@ -778,7 +810,7 @@ const produceData = {
       "Peach pie",
       "Peach sorbet"
     ],
-    notes: "Nectarines are genetically identical to peaches except for one gene that affects the skin's texture.", 
+    notes: "Nectarines are genetically identical to peaches except for one gene that affects the skin's texture. Although these two fruits can be used interchangeably, some say that nectarines are more tangy and tart than peaches.", 
     classification: "fruit"
   },
 
@@ -903,6 +935,21 @@ const produceData = {
     classification: "vegetable"
   },
 
+    radish: {
+    name: "Radish",
+    image: "./images/radish.png",
+    season: "Early October through Late March",
+    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
+    benefits: "Radishes provide a satisfying peppery crunch that stimulates digestion while delivering vitamin C and natural compounds called glucosinolates that support detoxification and may help fight inflammation. Their crisp texture and bold flavor add excitement to salads and dishes with minimal calories, while their quick-cooking versatility transforms them from sharp and spicy when raw to mild and sweet when roasted", 
+    recipes: [
+      "Roasted radish with herbs", 
+      "Pickled radish", 
+      "Salad with radish", 
+      "Grain bowl with radish"
+    ], 
+    classification: "vegetable"
+  },
+
   raspberry: {
     name: "Raspberry",
     image: "./images/raspberry.png",
@@ -915,6 +962,20 @@ const produceData = {
 
     ], 
     classification: "fruit"
+  },
+
+    spaghetti_squash: {
+    name: "Spaghetti Squash",
+    image: "./images/spaghetti_squash.png",
+    season: "Early October through Late January",
+    activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January",
+    benefits: "Spaghetti squash naturally separates into pasta-like strands when cooked, providing a satisfying low-carb alternative to traditional noodles while delivering vitamin C, potassium, and fiber that support immune function and digestive health. Its mild flavor absorbs sauces beautifully while offering a fraction of the calories and carbohydrates of regular pasta, making it the perfect ingredient for those seeking comfort food satisfaction without compromising their health goals or leaving them feeling heavy and sluggish.", 
+    recipes: [
+      "Spaghetti squash as a substitute for pasta, like spaghetti squash marinara or spaghetti squash carbonara",
+      "Baked feta spaghetti squash"
+    ],
+    classification: "vegetable"
+   
   },
 
   spinach: {
