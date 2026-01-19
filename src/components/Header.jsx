@@ -54,48 +54,57 @@ const Header = ({ title, subtitle, showDate = false, showDropdown = false, child
   }, [isDropdownOpen]);
 
   return (
-    <div className={showDropdown ? 'header' : 'header-details'}>
-      {title && (
-        <div className="header-content">
-          <div className="header-container">
-            <h1 id="header-title">{title}</h1>
-            {subtitle && <h2 id="header-title-h2">{subtitle}</h2>}
-            {showDate && (
-              <h2 id="datetime">
-                <a href="#" className="date-link" onClick={handleDateClick}>
-                  Today's date: {formatDate()}
-                </a>
-              </h2>
-            )}
-            {showDropdown && (
-              <div className="dropdown-container">
-                <div className="dropdown">
-                  <div
-                    className={`select ${isDropdownOpen ? 'select-clicked' : ''}`}
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  >
-                    <span className="selected">{selectedPeriod}</span>
-                    <div className={`caret ${isDropdownOpen ? 'caret-rotate' : ''}`} />
+    <>
+      <div className={showDropdown ? 'header' : 'header-details'}>
+        {title && (
+          <div className="header-content">
+            {/* Render children (nav) first when it's header-details, so it appears in grid column 1 */}
+            {!showDropdown && children}
+            <div className="header-container">
+              <h1 id="header-title">{title}</h1>
+              {subtitle && <h2 id="header-title-h2">{subtitle}</h2>}
+              {showDate && (
+                <h2 id="datetime">
+                  <a href="#" className="date-link" onClick={handleDateClick}>
+                    Today's date: {formatDate()}
+                  </a>
+                </h2>
+              )}
+              {showDropdown && (
+                <div className="dropdown-container">
+                  <div className="dropdown">
+                    <div
+                      className={`select ${isDropdownOpen ? 'select-clicked' : ''}`}
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    >
+                      <span className="selected">{selectedPeriod}</span>
+                      <div className={`caret ${isDropdownOpen ? 'caret-rotate' : ''}`} />
+                    </div>
+                    <ul className={`menu ${isDropdownOpen ? 'menu-open' : ''}`}>
+                      {periods.map((period) => (
+                        <li
+                          key={period}
+                          className={period === selectedPeriod ? 'active' : ''}
+                          onClick={() => handlePeriodSelect(period)}
+                        >
+                          {period}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className={`menu ${isDropdownOpen ? 'menu-open' : ''}`}>
-                    {periods.map((period) => (
-                      <li
-                        key={period}
-                        className={period === selectedPeriod ? 'active' : ''}
-                        onClick={() => handlePeriodSelect(period)}
-                      >
-                        {period}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
-            )}
-            {children}
+              )}
+              {/* Render children inside header-container for header (with dropdown) */}
+              {showDropdown && children}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+      {/* Scallop container that sits underneath the header */}
+      <div className="scallop-container">
+        <div className="scallop-svg"></div>
+      </div>
+    </>
   );
 };
 

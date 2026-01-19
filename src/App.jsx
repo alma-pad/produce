@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SeasonProvider } from './contexts/SeasonContext';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import AllItems from './pages/AllItems';
 import ProduceDetails from './pages/ProduceDetails';
@@ -13,6 +14,7 @@ function App() {
   return (
     <SeasonProvider>
       <Router>
+        <ScrollToTop />
         <div className="app">
           <NavBar />
           <main className="main-content">

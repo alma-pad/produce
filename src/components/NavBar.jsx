@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSeason } from '../contexts/SeasonContext';
 import '../styles/NavBar.css';
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { setSelectedPeriod, getCurrentPeriod } = useSeason();
 
   const currentPath = location.pathname;
@@ -15,7 +16,7 @@ const NavBar = () => {
     const currentPeriod = getCurrentPeriod();
     setSelectedPeriod(currentPeriod);
     setIsMobileMenuOpen(false);
-    window.location.href = '/';
+    navigate('/');
   };
 
   const handleLinkClick = () => {
@@ -49,48 +50,75 @@ const NavBar = () => {
   }, [isMobileMenuOpen]);
 
   useEffect(() => {
-    const nav = document.querySelector('.nav-container');
-    const navMobile = document.querySelector('.nav-container-mobile');
-    const header = document.querySelector('.header') || document.querySelector('.header-details');
+    let scrollHandler = null;
+    let timeoutId = null;
 
-    if (!header) return;
+    // Wait a bit for Header to render, then set up scroll handler
+    const setupScrollHandler = () => {
+      const nav = document.querySelector('.nav-container');
+      const navMobile = document.querySelector('.nav-container-mobile');
+      const scallopContainer = document.querySelector('.scallop-container');
 
-    const handleScroll = () => {
-      const headerBottom = header.getBoundingClientRect().bottom;
-      
-      if (!nav && !navMobile) return;
-      
-      // Get nav bar's bottom position directly from getBoundingClientRect
-      // This gives us the actual bottom edge of the nav bar container
-      const navRect = nav?.getBoundingClientRect();
-      const navBottom = navRect?.bottom;
-      
-      const navMobileRect = navMobile?.getBoundingClientRect();
-      const navMobileBottom = navMobileRect?.bottom;
-      
-      // Show scallop when header's bottom reaches nav bar's bottom
-      // This freezes the scallop at the bottom of the nav bar
-      if (navBottom !== undefined) {
-        if (headerBottom <= navBottom) {
-          nav?.classList.add('scalloped-bottom');
-        } else {
-          nav?.classList.remove('scalloped-bottom');
-        }
+      if (!scallopContainer) {
+        // If scallop-container doesn't exist yet, try again after a short delay
+        timeoutId = setTimeout(setupScrollHandler, 100);
+        return;
       }
-      
-      if (navMobileBottom !== undefined) {
-        if (headerBottom <= navMobileBottom) {
-          navMobile?.classList.add('scalloped-bottom');
+
+      const handleScroll = () => {
+        // Re-query elements in case they were re-rendered
+        const currentNav = document.querySelector('.nav-container');
+        const currentNavMobile = document.querySelector('.nav-container-mobile');
+        const currentScallopContainer = document.querySelector('.scallop-container');
+        
+        if (!currentScallopContainer) return;
+        
+        // Get positions
+        const navRect = currentNav?.getBoundingClientRect();
+        const navMobileRect = currentNavMobile?.getBoundingClientRect();
+        const scallopRect = currentScallopContainer.getBoundingClientRect();
+        
+        // Determine if we're on mobile
+        const isMobile = window.innerWidth <= 767;
+        
+        // Use desktop nav if available, otherwise mobile nav
+        const activeNav = isMobile ? currentNavMobile : currentNav;
+        const activeNavRect = isMobile ? navMobileRect : navRect;
+        
+        if (!activeNavRect) return;
+        
+        // Get the actual bottom position of the nav in the viewport
+        // When sticky, getBoundingClientRect() gives us the actual viewport position
+        const navBottom = activeNavRect.bottom;
+        const scallopTop = scallopRect.top;
+        
+        // Freeze when the top of scallop-container reaches the bottom of nav-container
+        if (scallopTop <= navBottom) {
+          currentScallopContainer.classList.add('frozen');
+          // Set the top position to be right below the nav-container
+          // Use the actual bottom position from getBoundingClientRect()
+          currentScallopContainer.style.top = `${navBottom}px`;
         } else {
-          navMobile?.classList.remove('scalloped-bottom');
+          currentScallopContainer.classList.remove('frozen');
+          currentScallopContainer.style.top = '';
         }
-      }
+      };
+
+      scrollHandler = handleScroll;
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Check on mount
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on mount
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // Set up handler after a short delay to ensure Header is rendered
+    timeoutId = setTimeout(setupScrollHandler, 100);
+    
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+      }
+    };
+  }, [location]); // Re-run when route changes
 
   return (
     <>
