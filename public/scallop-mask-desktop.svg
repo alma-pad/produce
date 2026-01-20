@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="75">
-  <!-- White rectangle: areas that will show the nav bar color -->
-  <rect width="130" height="75" fill="white"/>
-  <!-- Black circle: areas that will be transparent (scalloped cutout) -->
-  <circle cx="65" cy="0" r="75" fill="black"/>
-</svg>
-

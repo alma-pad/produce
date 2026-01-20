@@ -13,7 +13,7 @@ import './styles/App.css';
 function App() {
   return (
     <SeasonProvider>
-      <Router>
+      <Router basename="/produce">
         <ScrollToTop />
         <div className="app">
           <NavBar />
