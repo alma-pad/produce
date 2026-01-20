@@ -74,11 +74,5 @@ The `SeasonContext` manages the selected period and applies theme colors via CSS
 
 Themes are applied via CSS custom properties (`--color-primary`, `--color-secondary`, etc.) which are updated in the `SeasonContext` when the period changes. This ensures smooth transitions across all components.
 
-## Migration Notes
 
-The original HTML/JS files are preserved. The React version uses:
-- Vite for build tooling
-- React Router for navigation
-- Context API for state management
-- All original CSS preserved with transitions added
 
