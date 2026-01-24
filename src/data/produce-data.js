@@ -1,5 +1,8 @@
-// add all the data about produce and seasons here   
+// add all the data about produce and seasons   
+import { getImagePath } from '../utils/imagePath.js';
 
+// Helper to prefix image paths with base URL
+const img = (path) => getImagePath(path);
 
 export {seasonThemes, seasonMapping, produceData};
 
@@ -12,7 +15,7 @@ export {seasonThemes, seasonMapping, produceData};
 const produceData = {
     almond: {
     name: "Almond",
-    image: "/images/almond.png",
+    image: img("/images/almond.png"),
     season: "Late August through Late October",
     activeperiods: "Late August,Early September,Late September,Early October,Late October",
     benefits: "Almonds deliver impressive amounts of vitamin E, magnesium, and healthy fats that support heart health and brain function while providing satisfying protein and fiber that help maintain stable blood sugar levels. They contain calcium, magnesium, and phosphorus, which are all important for bone health.", 
@@ -26,7 +29,7 @@ const produceData = {
   },
   apple: {
     name: "Apple",
-    image: "/images/apple.png",
+    image: img("/images/apple.png"),
     season: "Early September through Early November",
     activeperiods: "Early September,Late September,Early October,Late October,Early November",
     benefits: "Apples contain pectin, a soluble fiber that lowers cholesterol and feeds beneficial gut bacteria and supports a healthy gut microbiome. They also contain various phytochemicals that benefit the immune system, support bone density, and may reduce the risk of chronic disease.", 
@@ -42,7 +45,7 @@ const produceData = {
 
   apricot: {
     name: "Apricot",
-    image: "/images/apricot.png",
+    image: img("/images/apricot.png"),
     season: "Early May through Late July",
     activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July", 
     benefits: "Apricots pack impressive amounts of vitamin A for eye health and beta-carotene for skin protection, all within their sun-kissed, velvety exterior. Round and yellow, they look like a smaller version of a peach but share the tartness of purple plums. They're a perfectly cute size and a great way to get your daily serving of fruit and veggies. ",
@@ -57,7 +60,7 @@ const produceData = {
 
   artichoke: {
     name: "Artichoke",
-    image: "/images/artichoke.png",
+    image: img("/images/artichoke.png"),
     season: "Early March through Late May",
     activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May", 
     benefits: "Artichokes offer a range of health benefits due to their fiber, antioxidants, and other nutrients. They may improve digestion, lower blood sugar and cholesterol levels, protect the liver, and protect against heart disease.",
@@ -71,7 +74,7 @@ const produceData = {
   },
   arugula: {
     name: "Arugula",
-    image: "/images/arugula.png",
+    image: img("/images/arugula.png"),
     season: "Early October to Late June",
     activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June", 
     benefits: "Arugula's distinctive peppery flavor brings sophisticated depth to salads and dishes while delivering impressive amounts of calcium, potassium, and folate for bone and heart health. This nutrient-dense green contains cancer-fighting compounds called glucosinolates that help detoxify the body, making its bold flavor profile as beneficial for your health as it is exciting for your palate.",
@@ -86,7 +89,7 @@ const produceData = {
 
   asparagus: {
     name: "Asparagus",
-    image: "/images/asparagus.png",
+    image: img("/images/asparagus.png"),
     season: "Late February through Late May",
     activeperiods: "Late February,Early March,Late March,Early April,Late April,Early May,Late May", 
     benefits: "Asparagus spears deliver a remarkable nutrient density, providing folate for cellular health and prebiotic fiber that nourishes beneficial gut bacteria for improved digestion. Their unique combination of antioxidants and anti-inflammatory compounds supports detoxification while their distinctive flavor adds sophisticated elegance to any meal.",
@@ -100,7 +103,7 @@ const produceData = {
 
   avocado: {
     name: "Avocado",
-    image: "/images/avocado.png",
+    image: img("/images/avocado.png"),
     season: "Early April through Early September",
     activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September",
     benefits: "Rich in heart-healthy monounsaturated fats, avocados provide a creamy satisfaction while supporting brain function and nutrient absorption. They're packed with potassium, fiber, and various vitamins and minerals, and their versatility makes them perfect for everything from breakfast to dessert.",
@@ -115,7 +118,7 @@ const produceData = {
 
   beet: {
     name: "Beet",
-    image: "/images/beet.png",
+    image: img("/images/beet.png"),
     season: "Early October through Late March",
     activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
     benefits: "Beets contain natural nitrates that improve blood flow and may enhance athletic performance while their vibrant color comes from betalains that support detoxification and reduce inflammation. Their earthy sweetness becomes even more pronounced when roasted, delivering a satisfying depth of flavor alongside folate for cellular health and fiber for digestive wellness, proving that nature's most colorful foods often deliver the most powerful benefits.", 
@@ -132,7 +135,7 @@ const produceData = {
 
   bell_pepper: {
     name: "Bell Pepper",
-    image: "/images/bell_pepper.png",
+    image: img("/images/bell_pepper.png"),
     season: "Early April through Late November",
     activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
     benefits: "Bell peppers contain more vitamin C than oranges while their vibrant colors signal different antioxidant profiles that support immune function and skin health. Their sweet, crisp texture adds satisfying crunch and natural sweetness to dishes without any heat, while their versatility shines in everything from raw snacking to roasted applications, making them the perfect gateway vegetable for anyone looking to add more colorful nutrition to their meals.", 
@@ -148,7 +151,7 @@ const produceData = {
 
   blackberry: {
     name: "Blackberry",
-    image: "/images/blackberry.png",
+    image: img("/images/blackberry.png"),
     season: "Early July through Late August",
     activeperiods: "Early July,Late July,Early August,Late August",
     benefits: "Blackberries contain one of the highest antioxidant contents of any fruit, with their deep purple-black color signaling powerful compounds that fight inflammation and support brain health. Their unique balance of sweetness and tartness comes with impressive fiber content that supports digestive health and blood sugar regulation, making these juicy berries as beneficial for your body as they are delightful to your taste buds.",
@@ -162,7 +165,7 @@ const produceData = {
 
   blueberry: {
     name: "Blueberry",
-    image: "/images/blueberry.png",
+    image: img("/images/blueberry.png"),
     season: "Early April through Late June",
     activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
     benefits: "These tiny powerhouses pack more antioxidants than almost any other food, protecting your cells from damage while supporting brain function and memory. Just a handful of blueberries delivers essential nutrients that promote eye health, reduce inflammation, and may even help slow aging.",
@@ -179,7 +182,7 @@ const produceData = {
 
   broccoli: {
     name: "Broccoli",
-    image: "/images/broccoli.png",
+    image: img("/images/broccoli.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Broccoli is a highly nutritious vegetable, rich in vitamins, minerals, and antioxidants. A single cup of raw broccoli provides a significant amount of Vitamin C, Vitamin K, folate, and fiber, along with smaller amounts of Vitamin A, phosphorus, potassium, and other nutrients. The sulforaphane in broccoli may also have potential benefits for osteoarthritis and schizophrenia.",
@@ -194,7 +197,7 @@ const produceData = {
 
   brussel_sprout: {
     name: "Brussel Sprout",
-    image: "/images/brussel_sprout.png",
+    image: img("/images/brussel_sprout.png"),
     season: "Early October through Late March",
     activeperiods: "Early March,Late March,Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February",
     benefits: "Brussels sprouts contain more vitamin K than almost any other vegetable, supporting bone health and blood clotting, while their high fiber content promotes digestive wellness and sustained energy. When roasted or sautéed properly, their natural sugars caramelize to create a nutty, slightly sweet flavor that is unmatched.",
@@ -209,7 +212,7 @@ const produceData = {
 
   butternut_squash: {
     name: "Butternut Squash",
-    image: "/images/butternut_squash.png",
+    image: img("/images/butternut_squash.png"),
     season: "Early October through Late January",
     activeperiods: "Early January,Late January,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Butternut squash is a nutritional powerhouse, particularly rich in vitamin A, vitamin C, and fiber. It's also a good source of potassium, magnesium, and manganese. Butternut squash is relatively low in calories and carbs, making it a healthy and versatile addition to many diets.",
@@ -224,7 +227,7 @@ const produceData = {
 
    cabbage: {
     name: "Cabbage",
-    image: "/images/cabbage.png",
+    image: img("/images/cabbage.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Cabbage offers numerous health benefits due to its rich nutritional profile. It's a good source of vitamins C and K, fiber, and various antioxidants. These components contribute to improved digestion, heart health, and potentially reduced risk of certain diseases. Its satisfying crunch and mild flavor make it incredibly versatile, transforming from crisp raw slaws to tender braised comfort foods, while its budget-friendly price and long storage life make it one of the most practical vegetables for adding consistent nutrition and substance to meals year-round.",
@@ -239,7 +242,7 @@ const produceData = {
 
     catus_pad: {
     name: "Cactus Pad",
-    image: "/images/cactus_pad.png",
+    image: img("/images/cactus_pad.png"),
     season: "Early May through Late October",
     activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
     benefits: "Cactus pads, or nopales, or prickly pear cactus, are a good source of fiber, beta carotene, iron, vitamin C, other antioxidants, and calcium. The use of nopal as a food extends back to around 9000 years ago.",
@@ -255,7 +258,7 @@ const produceData = {
 
   carrot: {
     name: "Carrot",
-    image: "/images/carrot.png",
+    image: img("/images/carrot.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Carrots offer many plant compounds, including carotenoids. These are substances with powerful antioxidant activity that have been linked to improved immune function and reduced risk of many illnesses, including heart disease, various degenerative ailments, and certain types of cancer.",
@@ -270,7 +273,7 @@ const produceData = {
 
   cauliflower: {
     name: "Cauliflower",
-    image: "/images/cauliflower.png",
+    image: img("/images/cauliflower.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Cauliflower offers numerous health benefits due to its high content of fiber, antioxidants, vitamins, and minerals. It supports digestion, boosts the immune system, and may even reduce the risk of certain cancers. It's incredibly filling and can be used to lose weight.",
@@ -287,7 +290,7 @@ const produceData = {
 
   celery: {
     name: "Celery",
-    image: "/images/celery.png",
+    image: img("/images/celery.png"),
     season: "Early October through Late December",
     activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
     benefits: "Celery provides natural compounds that may help lower blood pressure and reduce inflammation throughout the body. Its negative-calorie reputation makes it perfect for guilt-free snacking, while its crisp texture and mild flavor create the ideal vehicle for healthy dips and spreads.",
@@ -300,7 +303,7 @@ const produceData = {
 
    chard: {
     name: "Chard",
-    image: "/images/chard.png",
+    image: img("/images/chard.png"),
     season: "Early January through Late April",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
     benefits: "Chard's vibrant stems and dark leafy greens provide exceptional amounts of vitamin K, magnesium, and potassium that support bone health and muscle function, while its colorful varieties add stunning visual appeal to any plate. This nutrient-dense green contains unique antioxidants called betalains that support detoxification and may help regulate blood sugar, while both the tender leaves and crunchy stems can be used in cooking, making chard both a nutritional powerhouse and a beautiful, versatile ingredient that transforms ordinary meals into colorful, health-boosting experiences.",
@@ -313,7 +316,7 @@ const produceData = {
 
   cherry: {
     name: "Cherry",
-    image: "/images/cherry.png",
+    image: img("/images/cherry.png"),
     season: "Early May through Early July",
     activeperiods: "Early May,Late May,Early June,Late June,Early July",
     benefits: "Cherries contain natural melatonin that may improve sleep quality, while their potent antioxidants have been shown to reduce inflammation and speed recovery after exercise. Their deep crimson color signals abundant anthocyanins that fight oxidative stress, making these sweet little gems as beneficial for your health as they are delightful to your taste buds.",
@@ -328,7 +331,7 @@ const produceData = {
 
   chestnut: {
     name: "Chestnut",
-    image: "/images/chestnut.png",
+    image: img("/images/chestnut.png"),
     season: "Late September through Early November",
     activeperiods: "Late September,Early October,Late October,Early November",
     benefits: "Chestnuts offer a unique combination of sweet, nutty flavor with significantly less fat than other nuts while providing complex carbohydrates that deliver sustained energy without the heaviness. Their impressive vitamin C content sets them apart from other nuts, while their natural sweetness and creamy texture when cooked make them perfect for both savory stuffings and dessert applications.",
@@ -344,7 +347,7 @@ const produceData = {
 
   chives: {
     name: "Chives",
-    image: "/images/chives.png",
+    image: img("/images/chives.png"),
     season: "Early March through Late October",
     activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
     benefits: "Chives deliver surprisingly potent antioxidants and immune-supporting vitamin K, while their delicate onion flavor enhances dishes without overwhelming them. The are the perfect low-effort, high-impact addition to transform everyday meals into more nutritious and flavorful experiences.",
@@ -359,7 +362,7 @@ const produceData = {
 
   corn: {
     name: "Corn",
-    image: "/images/corn.png",
+    image: img("/images/corn.png"),
     season: "Early June through Late October",
     activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
     benefits: "Corn provides lutein and zeaxanthin, powerful antioxidants that specifically protect eye health and may prevent age-related vision decline, while its natural sweetness delivers satisfying energy from complex carbohydrates. Corn is a low-glycemic index food, meaning it's digested slowly and doesn't cause a rapid spike in blood sugar levels.",
@@ -376,7 +379,7 @@ const produceData = {
 
   cranberry: {
     name: "Cranberry",
-    image: "/images/cranberry.png",
+    image: img("/images/cranberry.png"),
     season: "Late September through Late November",
     activeperiods: "Late September,Early October,Late October,Early November,Late November",
     benefits: "Cranberries are low in calories and offer a good source of vitamins and fiber. They are particularly rich in vitamin C, vitamin E, and vitamin K, as well as manganese. They contain carotenoids, including beta-carotene, which the body converts to vitamin A for healthy skin, eyes and a strong immune system. They also provide lycopene, which may help protect the skin from UV damage.",
@@ -391,7 +394,7 @@ const produceData = {
 
   cucumber: {
     name: "Cucumber",
-    image: "/images/cucumber.png",
+    image: img("/images/cucumber.png"),
     season: "Late May through Late August",
     activeperiods: "Late May,Early June,Late June,Early July,Late July,Early August,Late August",
     benefits: "Cucumbers provide impressive hydration with their 96% water content while delivering a cooling effect that refreshes from the inside out on hot days. Their crisp texture and mild flavor make them the perfect vehicle for healthy dips and dressings, while their silica content supports skin elasticity and their low calorie count makes them the perfect addition to meals when you want substance and satisfaction without excess calories.",
@@ -408,7 +411,7 @@ const produceData = {
 
   daikon: {
     name: "Daikon",
-    image: "/images/daikon.png",
+    image: img("/images/daikon.png"),
     season: "Early December through Late February",
     activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February",
     benefits: "Daikon radish contains natural enzymes that aid digestion while its crisp, refreshing texture provides vitamin C and fiber that support immune function and digestive health. This mild, versatile root vegetable adds satisfying crunch to salads when raw or becomes tender and sweet when cooked, while its natural compounds may help support liver detoxification.",
@@ -422,7 +425,7 @@ const produceData = {
 
    date: {
     name: "Date",
-    image: "/images/date.png",
+    image: img("/images/date.png"),
     season: "Late August through Late December",
     activeperiods: "Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Dates are naturally sweet fruits that can improve digestion, boost energy levels, support heart health, and potentially help regulate blood sugar levels. They contain fiber, antioxidants, and essential minerals like calcium, magnesium, and potassium. They are a great alternative to refined sugars in recipes.",
@@ -437,7 +440,7 @@ const produceData = {
 
   eggplant: {
     name: "Eggplant",
-    image: "/images/eggplant.png",
+    image: img("/images/eggplant.png"),
     season: "Early June through Late October",
     activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October",
     benefits: "Eggplant's deep purple skin contains nasunin, a powerful antioxidant that specifically protects brain cell membranes from damage while supporting healthy circulation. Its meaty texture absorbs flavors beautifully while providing satisfying bulk with minimal calories, making it the perfect centerpiece for meals that keep you feeling full without weighing you down.",
@@ -454,7 +457,7 @@ const produceData = {
   // too much overlap with green bean
   // fava_bean: {
   //   name: "Fava Bean",
-  //   image: "/images/fava_bean.png",
+  //   image: img("/images/fava_bean.png"),
   //   season: "Early March through Early June",
   //   activeperiods: "Early March,Late March,Early April,Late April,Early May,Late May,Early June",
   //   benefits: "Fava beans, also known as broad beans, are loaded with vitamins, minerals, fiber and protein. They’re thought to offer impressive health effects, such as improved motor function and immunity. They are rich in levodopa (L-dopa), a compound that your body converts to the neurotransmitter dopamine.",
@@ -467,7 +470,7 @@ const produceData = {
   // },
   fig: {
     name: "Fig",
-    image: "/images/fig.png",
+    image: img("/images/fig.png"),
     season: "Late July through Early October",
     activeperiods: "Late July,Early August,Late August,Early September,Late September,Early October",
     benefits: "Figs provide exceptional fiber content that supports digestive health and blood sugar regulation, while their uniquely sweet flavor profile satisfies dessert cravings naturally. Their seed-studded interior delivers a combination of creamy texture and subtle crunch alongside minerals like calcium and potassium, making these ancient fruits a sophisticated treat that supports modern wellness goals.",
@@ -480,7 +483,7 @@ const produceData = {
   },
   frisee: {
     name: "Frisée",
-    image: "/images/frisee.png",
+    image: img("/images/frisee.png"),
     season: "Late December to Late March",
     activeperiods: "Early January,Late January,Early February,Late February,Early Marhc,Late March,Late December",
     benefits: "Frisée's distinctive bitter edge stimulates digestion while its feathery, pale green leaves provide folate and vitamin A that support cellular health and immune function. This elegant chicory adds sophisticated texture and flavor complexity to salads, balancing sweeter ingredients while delivering prebiotic compounds that nourish beneficial gut bacteria, making it the perfect ingredient to elevate ordinary greens into restaurant-quality dishes.",
@@ -495,7 +498,7 @@ const produceData = {
 
   garlic: {
     name: "Garlic",
-    image: "/images/garlic.png",
+    image: img("/images/garlic.png"),
     season: "Early May through Late July",
     activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July",
     benefits: "Garlic is low in calories but packed with nutrients, including vitamins C, B6, and manganese, as well as minerals like calcium, iron, potassium, and magnesium. It also contains beneficial sulfur compounds like allicin, which contribute to its health benefits. ",
@@ -510,7 +513,7 @@ const produceData = {
 
   grape: {
     name: "Grape",
-    image: "/images/grape.png",
+    image: img("/images/grape.png"),
     season: "Early August through Late November",
     activeperiods: "Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
     benefits: "Grapes contain resveratrol, a powerful compound that supports heart health and may activate longevity genes, while providing quick, sustainable energy in perfect bite-sized packages. The potential health benefits of grapes include helping boost heart health, managing blood pressure, protecting the eyes, and preventing health conditions such as cancer and constipation. These fruits are very versatile and can appear in charcuterie boards, salads, desserts, or drinks.",
@@ -524,7 +527,7 @@ const produceData = {
 
   green_bean: {
     name: "Green Bean",
-    image: "/images/green_bean.png",
+    image: img("/images/green_bean.png"),
     season: "Early May through Late November",
     activeperiods: "Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November",
     benefits: "The humble green bean delivers impressive amounts of vitamin K for bone health and folate for cellular function while providing satisfying crunch and vibrant color that makes healthy eating visually appealing. Their fiber content supports digestive wellness and blood sugar stability, while their versatility shines in everything from quick sautés to slow-braised casseroles, making them the perfect vegetable to bridge comfort food cravings with nutritional goals.",
@@ -539,7 +542,7 @@ const produceData = {
 
   guava: {
     name: "Guava",
-    image: "/images/guava.png",
+    image: img("/images/guava.png"),
     season: "Early November to Late February",
     activeperiods: "Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February",
     benefits: "Guava offers numerous health benefits, including boosting immunity with its high vitamin C content, improving digestion due to its fiber, and managing blood sugar levels. It can also help with stress, heart health, and potentially lower cancer risk. It's a fun tropical fruit to add to your diet! ",
@@ -550,7 +553,7 @@ const produceData = {
 
   kale: {
     name: "Kale",
-    image: "/images/kale.png",
+    image: img("/images/kale.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Kale delivers more nutrients per calorie than almost any other food, providing exceptional amounts of vitamins A, C, and K along with powerful antioxidants that support eye health and may help prevent chronic diseases. Kale contains glucosinolates, which are compounds that help the liver neutralize and eliminate toxins. It has a satisfying bite and is very filling!",
@@ -566,7 +569,7 @@ const produceData = {
 
   kiwi: {
     name: "Kiwi",
-    image: "/images/kiwi.png",
+    image: img("/images/kiwi.png"),
     season: "Early November to Late April",
     activeperiods: "Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
     benefits: "Kiwis pack more vitamin C than oranges and contain a unique enzyme called actinidin that aids protein digestion, making them both a nutritional powerhouse and digestive ally. Their fuzzy exterior hides a vibrant green interior with tiny black seeds that provide fiber and omega-3 fatty acids, while their sweet-tart flavor profile delivers tropical satisfaction that can brighten any meal or snack.",
@@ -577,7 +580,7 @@ const produceData = {
 
   leek: {
     name: "Leek",
-    image: "/images/leek.png",
+    image: img("/images/leek.png"),
     season: "Early January through Late May",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May",
     benefits: "Leeks offer a range of health benefits due to their rich nutrient profile. They are a good source of vitamins A, C, and K, and minerals like iron and magnesium. Leeks also contain dietary fiber, which supports digestive health and helps prevent constipation. Furthermore, they are rich in antioxidants like lutein and zeaxanthin, which are beneficial for eye health.", 
@@ -591,7 +594,7 @@ const produceData = {
 
   lemon: {
     name: "Lemon",
-    image: "/images/lemon.png",
+    image: img("/images/lemon.png"),
     season: "Early December through Late March",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early December,Late December",
     benefits: "Bursting with vitamin C, lemons boost your immune system while adding bright, vibrant flavor to any dish without extra calories. Their citric acid aids digestion and their alkalizing effect helps balance your body's pH levels. ", 
@@ -606,7 +609,7 @@ const produceData = {
 
   lettuce: {
     name: "Lettuce",
-    image: "/images/lettuce.png",
+    image: img("/images/lettuce.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Lettuce provides essential hydration and folate that supports cellular health while delivering satisfying crunch with minimal calories, making it the perfect base for nutrient-dense meals. Its mild flavor allows other ingredients to shine while contributing vitamin K for bone health and antioxidants that support overall wellness.", 
@@ -622,7 +625,7 @@ const produceData = {
 
   lychee: {
     name: "Lychee",
-    image: "/images/lychee.png",
+    image: img("/images/lychee.png"),
     season: "Late June through Early September",
     activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
     benefits: "Lychees deliver an impressive amount of vitamin C wrapped in a sweet, floral flavor profile that feels truly indulgent. Their unique combination of antioxidants supports immune function and skin health, while their juicy texture and exotic taste transform ordinary moments into special treats.", 
@@ -633,7 +636,7 @@ const produceData = {
 
   mango: {
     name: "Mango",
-    image: "/images/mango.png",
+    image: img("/images/mango.png"),
     season: "Late April through Late August",
     activeperiods: "Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August",
     benefits: "Mangoes deliver over 20 different vitamins and minerals including vision-supporting vitamin A, while their natural enzymes aid digestion and their fiber content keeps you satisfied. These fruits truly taste like an indulgence.", 
@@ -647,7 +650,7 @@ const produceData = {
   },
   melon: {
     name: "Melon",
-    image: "/images/melon.png",
+    image: img("/images/melon.png"),
     season: "Late June through Late September",
     activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September,Late September",
     benefits: "Melons provide exceptional hydration with their high water content, around 90%, while delivering vitamin A for eye health and potassium for heart function, making them nature's perfect summer refresher. Varieties like cantaloupe offer beta-carotene for skin protection and honeydew provides vitamin C for immune support, proving that the most refreshing foods can also be the most nourishing.", 
@@ -661,7 +664,7 @@ const produceData = {
 
   mushroom: {
     name: "Mushroom",
-    image: "/images/mushroom.png",
+    image: img("/images/mushroom.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Mushrooms provide a unique umami flavor that enhances any dish while delivering impressive amounts of selenium, potassium, and B vitamins that support immune function and energy metabolism. Additionally, they are one of the only vegan sources of vitamin D.", 
@@ -677,7 +680,7 @@ const produceData = {
 
     mulberry: {
     name: "Mulberry",
-    image: "/images/mulberry.png",
+    image: img("/images/mulberry.png"),
     season: "Late May through Late June",
     activeperiods: "Late May,Early June,Late June",
     benefits: "Mulberries are a wild berry with a wonderfully sweet flavor and are packed with antioxidants including anthocyanins, cyanidin, chlorogenic acid, rutin, and myricetin. Mulberry trees hold rich cultural significance worldwide, symbolizing various concepts like patience, expediency, wisdom, abundance, and longevity. Their primary cultural importance stems from their link to the silk industry, with mulberry leaves being the staple food for silkworms.",
@@ -690,7 +693,7 @@ const produceData = {
 
     nectarine: {
     name: "Nectarine",
-    image: "/images/nectarine.png",
+    image: img("/images/nectarine.png"),
     season: "Late June through Early September",
     activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
     benefits: "Nectarines deliver all the nutritional benefits of peaches with their smooth, vibrant skin that contains additional antioxidants and fiber for enhanced health benefits. Their juicy sweetness provides vitamin C for immune support and potassium for heart health, while their firm texture makes them perfect for both fresh eating and cooking applications, offering a sophisticated stone fruit experience that captures summer's peak flavors in every bite.",
@@ -707,7 +710,7 @@ const produceData = {
   
   olive: {
     name: "Olive",
-    image: "/images/olive.png",
+    image: img("/images/olive.png"),
     season: "Late September through Late December",
     activeperiods: "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "The olive appears in many classics and is often used as a symbol for power, peace, and wisdom. They deliver heart-healthy monounsaturated fats and powerful antioxidants like vitamin E that support cardiovascular health while providing satisfying richness that enhances the flavor of countless dishes.", 
@@ -722,7 +725,7 @@ const produceData = {
 
   okra: {
     name: "Okra",
-    image: "/images/okra.png",
+    image: img("/images/okra.png"),
     season: "Early June through Late September",
     activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
     benefits: "Okra's unique mucilaginous texture provides soluble fiber that helps regulate blood sugar and cholesterol levels while supporting digestive health in ways few other vegetables can match. This Southern staple delivers impressive amounts of vitamin C, folate, and antioxidants that support immune function.", 
@@ -739,7 +742,7 @@ const produceData = {
 
   onion: {
     name: "Onion",
-    image: "/images/onion.png",
+    image: img("/images/onion.png"),
     season: "All Year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Onions contain powerful sulfur compounds that support heart health, may help reduce inflammation, and may support bone density, while their natural sugars caramelize beautifully to add depth and sweetness to countless dishes. They are one of the oldest vegetables and eaten in almost every part of the world.", 
@@ -755,7 +758,7 @@ const produceData = {
 
   orange: {
     name: "Orange",
-    image: "/images/orange.png",
+    image: img("/images/orange.png"),
     season: "Early January through Late April",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April",
     benefits: "Although oranges are known for their high vitamin C content, they also have other nutrients beneficial for hydration, digestion, and immune health. Additionally, they help boost collgen production, which is important for skin elasticity. In Chinese culture oranges represent properity and financial prosperity because they are brightly colored and round.", 
@@ -771,7 +774,7 @@ const produceData = {
   },
   pea: {
     name: "Pea",
-    image: "/images/pea.png",
+    image: img("/images/pea.png"),
     season: "Early December through Early May",
     activeperiods: "Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May",
     benefits: "Peas pack surprising amounts of plant-based protein and fiber that support muscle health and digestive wellness, while their natural sweetness makes vegetables appealing even to reluctant eaters. These bright green gems contain unique antioxidants that support eye health and blood sugar regulation.", 
@@ -786,7 +789,7 @@ const produceData = {
 
   pea_shoot: {
     name: "Pea Shoot",
-    image: "/images/pea_shoot.png",
+    image: img("/images/pea_shoot.png"),
     season: "Late February through Late April",
     activeperiods: "Late February,Early March,Late March,Early April,Late April",
     benefits: "Pea shoots deliver the concentrated nutrition of mature peas in a delicate, tender green that contains more vitamin C than blueberries and more folate than spinach. Their sweet, fresh flavor carries hints of both peas and spring itself, providing a versatile ingredient that adds both nutrition and visual elegance to everything from salads to stir-fries with minimal effort.", 
@@ -800,7 +803,7 @@ const produceData = {
 
   peach: {
     name: "Peach",
-    image: "/images/peach.png",
+    image: img("/images/peach.png"),
     season: "Late June through Early September",
     activeperiods: "Late June,Early July,Late July,Early August,Late August,Early September",
     benefits: "Peaches deliver juicy sweetness alongside impressive amounts of vitamin C and potassium that support immune function and heart health, while their fuzzy skin contains additional fiber and antioxidants. Their naturally fragrant flesh provides beta-carotene for healthy skin and eyes, making each bite a perfect balance of indulgent flavor and nutritional benefits that captures the essence of summer in every juicy, satisfying mouthful.", 
@@ -817,7 +820,7 @@ const produceData = {
 
   pear: {
     name: "Pear",
-    image: "/images/pear.png",
+    image: img("/images/pear.png"),
     season: "Early September through Late December",
     activeperiods: "Early September,Late September,Early October,Late October,Early November,Late November,Late November,Early December,Late December",
     benefits: "With their honey-sweet flavor and uniquely satisfying texture, pears deliver soluble fiber that supports digestive health while helping manage cholesterol levels. Their high water content promotes hydration and skin health, while their portable nature makes them the perfect grab-and-go fruit for sustained energy without the crash.", 
@@ -834,7 +837,7 @@ const produceData = {
 
   persimmon: {
     name: "Persimmon",
-    image: "/images/persimmon.png",
+    image: img("/images/persimmon.png"),
     season: "Late September through Late December",
     activeperiods: "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Persimmons contain exceptional levels of antioxidants and tannins that support heart health while their natural sweetness rivals candy when fully ripened. Rich in beta-carotene that promotes eye health and healthy skin, these golden fruits deliver a unique honey-cinnamon flavor experience that changes throughout the ripening process, making them one of nature's most intriguing seasonal treasures.", 
@@ -848,7 +851,7 @@ const produceData = {
 
    pistachio: {
     name: "Pistachio",
-    image: "/images/pistachio.png",
+    image: img("/images/pistachio.png"),
     season: "Early September through Late November",
     activeperiods: "Early September,Late September,Early October,Late October,Early November,Late November",
     benefits: "Pistachios provide more protein per serving than most nuts while delivering heart-healthy monounsaturated fats and fiber that support cardiovascular wellness and sustained energy. They also have a lot of vitamins and minerals and antioxidants.", 
@@ -862,7 +865,7 @@ const produceData = {
 
   plum: {
     name: "Plum",
-    image: "/images/plum.png",
+    image: img("/images/plum.png"),
     season: "Early July through Late September",
     activeperiods:  "Early July,Late July,Early August,Late August,Early September,Late September",
     benefits: "Plums contain unique antioxidants called anthocyanins that give them their deep purple color while supporting brain health and reducing inflammation throughout the body. They have over 15 different vitamins and minerals, as well as fiber to keep you regular.", 
@@ -877,7 +880,7 @@ const produceData = {
 
   pomegranate: {
     name: "Pomegranate",
-    image: "/images/pomegranate.png",
+    image: img("/images/pomegranate.png"),
     season: "Late September through Late December",
     activeperiods:  "Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Bursting with jewel-like seeds, pomegranates deliver potent antioxidants that fight cellular damage while reducing inflammation throughout your body. Their unique combination of sweet-tart flavor and satisfying crunch makes them nature's perfect snack, while studies suggest they may improve heart health and exercise performance.", 
@@ -892,7 +895,7 @@ const produceData = {
 
   pomelo: {
     name: "Pomelo",
-    image: "/images/pomelo.png",
+    image: img("/images/pomelo.png"),
     season: "Early January through Early April",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April",
     benefits: "This giant citrus fruit delivers an explosion of sweet-tart flavor while providing vitamin C, boosting immunity and collagen production for healthier skin. Pomelos contain powerful antioxidants that fight inflammation and may help reduce blood pressure, all while promoting feelings of fullness. It is very fun hold a large, round fruit and to peel off each segment and eat the juicy contents!", 
@@ -906,7 +909,7 @@ const produceData = {
 
   potato: {
     name: "Potato",
-    image: "/images/potato.png",
+    image: img("/images/potato.png"),
     season: "Early October through Late March",
     activeperiods:  "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
     benefits: "The potato's incredible versatility transforms them from simple boiled comfort food to crispy roasted perfection, and when eaten with the nutrient-rich skin, they become a complete source of essential amino acids and fiber that supports digestive health and stable blood sugar levels. Also, they are commonly considered one of the most satiating foods out there, so you can feel full with minimal calories.", 
@@ -922,7 +925,7 @@ const produceData = {
 
   pumpkin: {
     name: "Pumpkin",
-    image: "/images/pumpkin.png",
+    image: img("/images/pumpkin.png"),
     season: "Early October through Late November",
     activeperiods:  "Early October,Late October,Early November,Late November",
     benefits: "Pumpkins are a nutritional powerhouse, particularly rich in vitamin A, vitamin C, and potassium. They also contain fiber, iron, and other beneficial nutrients. Their fun shapes, sizes, and bold colors make them very pleasing to keep around as festive decorations. And then when you're done with having them around as decorations you an eat them! How fun!", 
@@ -937,7 +940,7 @@ const produceData = {
 
     radish: {
     name: "Radish",
-    image: "/images/radish.png",
+    image: img("/images/radish.png"),
     season: "Early October through Late March",
     activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January,Early February,Late February,Early March,Late March",
     benefits: "Radishes provide a satisfying peppery crunch that stimulates digestion while delivering vitamin C and natural compounds called glucosinolates that support detoxification and may help fight inflammation. Their crisp texture and bold flavor add excitement to salads and dishes with minimal calories, while their quick-cooking versatility transforms them from sharp and spicy when raw to mild and sweet when roasted", 
@@ -952,7 +955,7 @@ const produceData = {
 
   raspberry: {
     name: "Raspberry",
-    image: "/images/raspberry.png",
+    image: img("/images/raspberry.png"),
     season: "Late June through Late September",
     activeperiods:  "Late June,Early July,Late July,Early August,Late August,Early September,Late September",
     benefits: "Raspberries pack more fiber than most fruits while delivering powerful antioxidants called ellagitannins that may help fight inflammation and support cellular health. They may have cancer fighting properties, may improve arthritis, and may have anti-aging effects due to their vitamin C content.", 
@@ -966,7 +969,7 @@ const produceData = {
 
     spaghetti_squash: {
     name: "Spaghetti Squash",
-    image: "/images/spaghetti_squash.png",
+    image: img("/images/spaghetti_squash.png"),
     season: "Early October through Late January",
     activeperiods: "Early October,Late October,Early November,Late November,Early December,Late December,Early January,Late January",
     benefits: "Spaghetti squash naturally separates into pasta-like strands when cooked, providing a satisfying low-carb alternative to traditional noodles while delivering vitamin C, potassium, and fiber that support immune function and digestive health. Its mild flavor absorbs sauces beautifully while offering a fraction of the calories and carbohydrates of regular pasta, making it the perfect ingredient for those seeking comfort food satisfaction without compromising their health goals or leaving them feeling heavy and sluggish.", 
@@ -980,7 +983,7 @@ const produceData = {
 
   spinach: {
     name: "Spinach",
-    image: "/images/spinach.png",
+    image: img("/images/spinach.png"),
     season: "All year",
     activeperiods: "Early January,Late January,Early February,Late February,Early March,Late March,Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September,Early October,Late October,Early November,Late November,Early December,Late December",
     benefits: "Spinach provides a wide range of vitamins, minerals, and antioxidants. It's particularly known for its high content of vitamins A, C, and K, as well as folate and iron. Spinach has around 12g of protein per 100 calories, one of the highest protein to calorie ratio of plants!! ", 
@@ -994,7 +997,7 @@ const produceData = {
   },
   strawberry: {
     name: "Strawberry",
-    image: "/images/strawberry.png",
+    image: img("/images/strawberry.png"),
     season: "Late April through Early July",
     activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July",
     benefits: "Strawberries deliver a perfect balance of sweetness and subtle acidity that satisfies cravings naturally. Their abundant antioxidants and polyphenols support skin health, help manage blood sugar, lower inflamation, and delay age-related memory loss. Plus they're delicious and low-calorie!", 
@@ -1008,7 +1011,7 @@ const produceData = {
   },
   tomato: {
     name: "Tomato",
-    image: "/images/tomato.png",
+    image: img("/images/tomato.png"),
     season: "Late May through Late September",
     activeperiods: "Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
     benefits: "Tomatoes contain lycopene, a powerful antioxidant that becomes more bioavailable when cooked, protecting your skin and heart while potentially reducing cancer risk. Their versatility shines in countless cuisines, providing essential vitamins and minerals with a perfect balance of acidity and umami that enhances almost any savory dish.",
@@ -1023,7 +1026,7 @@ const produceData = {
 
   watermelon: {
     name: "Watermelon",
-    image: "/images/watermelon.png",
+    image: img("/images/watermelon.png"),
     season: "Late May through Late August",
     activeperiods: "Late May,Early June,Late June,Early July,Late July,Early August,Late August",
     benefits: "Watermelon's juicy sweetness delivers hydration and electrolytes that quench thirst more effectively than water alone, making it nature's perfect summer refresher. With its high lycopene content protecting your skin from sun damage and its natural sugars providing quick energy, this low-calorie treat satisfies sweet cravings while supporting overall health.",
@@ -1038,7 +1041,7 @@ const produceData = {
 
   yam_leaf: {
     name: "Yam Leaves",
-    image: "/images/yam_leaf.png",
+    image: img("/images/yam_leaf.png"),
     season: "Early April through Late September",
     activeperiods: "Early April,Late April,Early May,Late May,Early June,Late June,Early July,Late July,Early August,Late August,Early September,Late September",
     benefits: "Yam leaves offer numerous health benefits due to their rich nutrient content, including vitamins A, B6, C, and E, as well as minerals like potassium, phosphorus, and magnesium, and even protein! Additionally, the chorophyll in green leaves boost red blood cells, help with weight loss, heal damaged skin, neutralize toxins, and so much more.",
@@ -1052,7 +1055,7 @@ const produceData = {
 
   zucchini: {
     name: "Zucchini",
-    image: "/images/zucchini.png",
+    image: img("/images/zucchini.png"),
     season: "Early June through Late August",
     activeperiods: "Early June,Late June,Early July,Late July,Early August,Late August",
     benefits: "Zucchini's high water content keeps you hydrated while its fiber promotes digestive health and sustained energy without weighing you down. This versatile summer squash absorbs flavors brilliantly while providing essential minerals like potassium and manganese that support muscle function and metabolism, all with minimal calories that fit perfectly into any healthy eating plan.",

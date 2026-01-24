@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSeason } from '../contexts/SeasonContext';
 import Header from '../components/Header';
+import { getImagePath } from '../utils/imagePath';
 import '../styles/About.css';
 
 const About = () => {
@@ -36,11 +37,11 @@ const About = () => {
               </h2>
             </div>
           </div>
-          <img id="about-image" src="/images/picnic_basket.png" alt="Picnic Basket" />
+          <img id="about-image" src={getImagePath("/images/picnic_basket.png")} alt="Picnic Basket" />
         </div>
 
         <div className="about-container">
-          <img id="about-image" src="/images/cut_vegetables.png" alt="Cutting Produce on Board" />
+          <img id="about-image" src={getImagePath("/images/cut_vegetables.png")} alt="Cutting Produce on Board" />
           <div className="about-section">
             <div className="about-text">
               <h2>A few notes about how I defined selection and seasonality:</h2>
@@ -73,7 +74,7 @@ const About = () => {
               </ul>
             </div>
           </div>
-          <img id="about-image" src="/images/meal.png" alt="Shakshuka and Stuffed Eggplant Meal" />
+          <img id="about-image" src={getImagePath("/images/meal.png")} alt="Shakshuka and Stuffed Eggplant Meal" />
         </div>
       </div>
     </>

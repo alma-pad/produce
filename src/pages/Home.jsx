@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSeason } from '../contexts/SeasonContext';
 import { produceData } from '../data/produce-data';
 import Header from '../components/Header';
+import { getImagePath } from '../utils/imagePath';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -132,7 +133,7 @@ const Home = () => {
           <div className="container-empty-state">
             <div className="empty-state" id="empty-state">
               <img
-                src="/images/empty_state.png"
+                src={getImagePath("/images/empty_state.png")}
                 alt="No items found"
                 className="empty-state-image"
               />

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSeason } from '../contexts/SeasonContext';
+import { getImagePath } from '../utils/imagePath';
 import '../styles/NavBar.css';
 
 const NavBar = () => {
@@ -135,12 +136,10 @@ const NavBar = () => {
       {/* Desktop Nav */}
       <div className="nav-container">
         <div className="nav">
-          <div className="nav-left">
-            <img src="/images/favicon.png" alt="Logo" id="favicon" />
+          <div className="nav-left" onClick={handleHomeClick}>
+            <img src={getImagePath("/images/favicon.png")} alt="Logo" id="favicon" />
             <h3>
-              <Link to="/" className="home-link" onClick={handleHomeClick}>
-                Home
-              </Link>
+              <span className="home-link">Home</span>
             </h3>
           </div>
           <h3>
@@ -173,12 +172,10 @@ const NavBar = () => {
           ×
         </button>
         <div className="mobile-nav-links">
-          <div className="nav-left">
-            <img src="/images/favicon.png" alt="Logo" id="favicon" />
+          <div className="nav-left" onClick={handleHomeClick}>
+            <img src={getImagePath("/images/favicon.png")} alt="Logo" id="favicon" />
             <h2>
-              <Link to="/" className="delayed-nav home-link" onClick={handleHomeClick}>
-                Home
-              </Link>
+              <span className="delayed-nav home-link">Home</span>
             </h2>
           </div>
           <h2>
