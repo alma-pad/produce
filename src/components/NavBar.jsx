@@ -51,75 +51,65 @@ const NavBar = () => {
   }, [isMobileMenuOpen]);
 
   useEffect(() => {
-    let scrollHandler = null;
+    let resizeObserver = null;
     let timeoutId = null;
+    let observedNav = null;
 
-    // Wait a bit for Header to render, then set up scroll handler
-    const setupScrollHandler = () => {
-      const nav = document.querySelector('.nav-container');
-      const navMobile = document.querySelector('.nav-container-mobile');
-      const scallopContainer = document.querySelector('.scallop-container');
+    const getActiveNav = () => {
+      const isMobile = window.innerWidth <= 767;
+      return isMobile
+        ? document.querySelector('.nav-container-mobile')
+        : document.querySelector('.nav-container');
+    };
 
-      if (!scallopContainer) {
-        // If scallop-container doesn't exist yet, try again after a short delay
-        timeoutId = setTimeout(setupScrollHandler, 100);
+    const updateScallopStickyTop = () => {
+      const isMobile = window.innerWidth <= 767;
+      const nav = getActiveNav();
+      if (!nav) return;
+
+      const navStickyTop = isMobile ? 5 : 10;
+      document.documentElement.style.setProperty(
+        '--scallop-sticky-top',
+        `${navStickyTop + nav.offsetHeight}px`
+      );
+
+      document.querySelectorAll('.scallop-container').forEach((el) => {
+        el.classList.remove('frozen');
+        el.style.top = '';
+      });
+    };
+
+    const setup = () => {
+      const nav = getActiveNav();
+      if (!nav) {
+        timeoutId = setTimeout(setup, 100);
         return;
       }
 
-      const handleScroll = () => {
-        // Re-query elements in case they were re-rendered
-        const currentNav = document.querySelector('.nav-container');
-        const currentNavMobile = document.querySelector('.nav-container-mobile');
-        const currentScallopContainer = document.querySelector('.scallop-container');
-        
-        if (!currentScallopContainer) return;
-        
-        // Get positions
-        const navRect = currentNav?.getBoundingClientRect();
-        const navMobileRect = currentNavMobile?.getBoundingClientRect();
-        const scallopRect = currentScallopContainer.getBoundingClientRect();
-        
-        // Determine if we're on mobile
-        const isMobile = window.innerWidth <= 767;
-        
-        // Use desktop nav if available, otherwise mobile nav
-        const activeNav = isMobile ? currentNavMobile : currentNav;
-        const activeNavRect = isMobile ? navMobileRect : navRect;
-        
-        if (!activeNavRect) return;
-        
-        // Get the actual bottom position of the nav in the viewport
-        // When sticky, getBoundingClientRect() gives us the actual viewport position
-        const navBottom = activeNavRect.bottom;
-        const scallopTop = scallopRect.top;
-        
-        // Freeze when the top of scallop-container reaches the bottom of nav-container
-        if (scallopTop <= navBottom) {
-          currentScallopContainer.classList.add('frozen');
-          // Set the top position to be right below the nav-container
-          // Use the actual bottom position from getBoundingClientRect()
-          currentScallopContainer.style.top = `${navBottom}px`;
-        } else {
-          currentScallopContainer.classList.remove('frozen');
-          currentScallopContainer.style.top = '';
-        }
-      };
+      if (observedNav !== nav) {
+        resizeObserver?.disconnect();
+        resizeObserver = new ResizeObserver(updateScallopStickyTop);
+        resizeObserver.observe(nav);
+        observedNav = nav;
+      }
 
-      scrollHandler = handleScroll;
-      window.addEventListener('scroll', handleScroll);
-      handleScroll(); // Check on mount
+      updateScallopStickyTop();
     };
 
-    // Set up handler after a short delay to ensure Header is rendered
-    timeoutId = setTimeout(setupScrollHandler, 100);
-    
+    const handleResize = () => {
+      observedNav = null;
+      setup();
+    };
+
+    timeoutId = setTimeout(setup, 100);
+    window.addEventListener('resize', handleResize);
+
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
-      if (scrollHandler) {
-        window.removeEventListener('scroll', scrollHandler);
-      }
+      resizeObserver?.disconnect();
+      window.removeEventListener('resize', handleResize);
     };
-  }, [location]); // Re-run when route changes
+  }, [location]);
 
   return (
     <>
