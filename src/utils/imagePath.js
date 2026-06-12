@@ -1,5 +1,5 @@
 /**
- * Get the correct image path with base URL prefix for GitHub Pages
+ * Get the correct image path with the Vite base URL prefix
  * @param {string} path - Image path starting with /
  * @returns {string} - Path with base URL prefix
  */

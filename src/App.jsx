@@ -11,12 +11,9 @@ import Mission from './pages/Mission';
 import './styles/App.css';
 
 function App() {
-  // Only use basename in production (for GitHub Pages)
-  const basename = import.meta.env.PROD ? '/produce' : '';
-  
   return (
     <SeasonProvider>
-      <Router basename={basename}>
+      <Router>
         <ScrollToTop />
         <div className="app">
           <NavBar />
