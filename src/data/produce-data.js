@@ -1074,7 +1074,7 @@ const produceData = {
 
 const seasonThemes = {
   "Spring": {
-    primary: "#F06668",      
+    primary: "#DF4363",      
     secondary: "#E2F0B2",    
     background: "#FBFEEB",   
     text: "#333333"          
