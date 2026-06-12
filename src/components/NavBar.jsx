@@ -16,23 +16,32 @@ const NavBar = () => {
     e.preventDefault();
     const currentPeriod = getCurrentPeriod();
     setSelectedPeriod(currentPeriod);
-    setIsMobileMenuOpen(false);
+    closeMobileNav();
     navigate('/');
   };
 
   const handleLinkClick = () => {
-    setIsMobileMenuOpen(false);
+    closeMobileNav();
   };
 
   const toggleMobileNav = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    document.body.style.overflow = !isMobileMenuOpen ? 'hidden' : '';
+    setIsMobileMenuOpen((open) => !open);
   };
 
   const closeMobileNav = () => {
     setIsMobileMenuOpen(false);
-    document.body.style.overflow = '';
   };
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleEscape = (e) => {
